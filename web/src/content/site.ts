@@ -25,7 +25,8 @@ export const companies: Company[] = [
   { name: "Empresa Cinco" },
 ];
 
-export const contactEmail = "tu-email@ejemplo.com";
+// TODO: swap for a @kevinmeneses.com address once you set up email on the domain.
+export const contactEmail = "kevinmenesesgonzalez@gmail.com";
 
 export const strapiUrl =
   process.env.NEXT_PUBLIC_STRAPI_URL ?? "http://localhost:1337";

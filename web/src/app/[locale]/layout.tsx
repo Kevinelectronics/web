@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "[Tu Nombre] — Content & Technical Writer",
+  title: "Kevin Meneses — Content & Technical Writer",
   description:
     "Content writer y technical writer especializado en comunicar ideas complejas con claridad.",
 };
