@@ -14,20 +14,20 @@ export default function ArticleCard({ article }: { article: Article }) {
   return (
     <Link
       href={`/articles/${article.slug}`}
-      className="group block border-b border-neutral-100 py-8 first:pt-0 dark:border-neutral-900"
+      className="group block border-b border-line py-8 first:pt-0"
     >
-      <time className="text-xs uppercase tracking-wide text-neutral-400 dark:text-neutral-600">
+      <time className="text-xs uppercase tracking-wide text-ink-soft/70">
         {date}
       </time>
-      <h3 className="mt-2 text-xl font-medium text-neutral-900 transition-colors group-hover:text-neutral-600 dark:text-neutral-100 dark:group-hover:text-neutral-400">
+      <h3 className="mt-2 font-display text-xl font-medium text-ink transition-colors group-hover:text-accent">
         {article.title}
       </h3>
       {article.excerpt && (
-        <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+        <p className="mt-2 text-sm leading-relaxed text-ink-soft">
           {article.excerpt}
         </p>
       )}
-      <span className="mt-3 inline-block text-sm font-medium text-neutral-900 dark:text-neutral-100">
+      <span className="mt-3 inline-block text-sm font-medium text-accent">
         {t("readMore")} →
       </span>
     </Link>

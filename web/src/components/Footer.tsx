@@ -10,14 +10,11 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer
-      id="contact"
-      className="mt-auto border-t border-neutral-100 py-12 dark:border-neutral-900"
-    >
+    <footer id="contact" className="mt-auto border-t border-line py-12">
       <Container className="flex flex-col items-center gap-6 text-center">
         <a
           href={`mailto:${contactEmail}`}
-          className="text-sm text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+          className="text-sm text-ink-soft transition-colors hover:text-accent"
         >
           {contactEmail}
         </a>
@@ -32,7 +29,7 @@ export default function Footer() {
           }}
         />
 
-        <p className="text-xs text-neutral-400 dark:text-neutral-600">
+        <p className="text-xs text-ink-soft/70">
           © {year} {hero("name")}. {t("rights")}
         </p>
       </Container>

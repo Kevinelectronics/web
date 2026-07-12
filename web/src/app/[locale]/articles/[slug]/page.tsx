@@ -31,15 +31,15 @@ export default async function ArticlePage({
       <Container className="max-w-2xl">
         <Link
           href="/articles"
-          className="text-sm text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+          className="text-sm text-ink-soft hover:text-accent"
         >
           ← {t("back")}
         </Link>
 
-        <time className="mt-6 block text-xs uppercase tracking-wide text-neutral-400 dark:text-neutral-600">
+        <time className="mt-6 block text-xs uppercase tracking-wide text-ink-soft/70">
           {date}
         </time>
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl dark:text-neutral-100">
+        <h1 className="mt-2 font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl">
           {article.title}
         </h1>
 
@@ -54,7 +54,7 @@ export default async function ArticlePage({
           </div>
         )}
 
-        <div className="prose prose-neutral mt-10 max-w-none dark:prose-invert prose-headings:tracking-tight prose-a:text-neutral-900 dark:prose-a:text-neutral-100">
+        <div className="prose mt-10 max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:no-underline hover:prose-a:underline">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {article.content}
           </ReactMarkdown>

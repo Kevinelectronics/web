@@ -15,18 +15,16 @@ export default async function ArticlesPage({
   return (
     <section className="py-16 sm:py-24">
       <Container>
-        <p className="text-sm font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+        <p className="text-sm font-medium uppercase tracking-wide text-accent">
           {t("title")}
         </p>
-        <h1 className="mt-2 text-2xl font-semibold tracking-tight text-neutral-900 sm:text-3xl dark:text-neutral-100">
+        <h1 className="mt-2 font-display text-2xl font-medium tracking-tight text-ink sm:text-3xl">
           {t("subtitle")}
         </h1>
 
         <div className="mt-10">
           {articles.length === 0 ? (
-            <p className="text-neutral-500 dark:text-neutral-400">
-              {t("empty")}
-            </p>
+            <p className="text-ink-soft">{t("empty")}</p>
           ) : (
             articles.map((article) => (
               <ArticleCard key={article.id} article={article} />

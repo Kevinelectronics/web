@@ -13,16 +13,14 @@ export default function LocaleSwitcher() {
     <div className="flex items-center gap-1 text-sm">
       {routing.locales.map((loc, index) => (
         <span key={loc} className="flex items-center gap-1">
-          {index > 0 && (
-            <span className="text-neutral-300 dark:text-neutral-700">/</span>
-          )}
+          {index > 0 && <span className="text-line">/</span>}
           <button
             onClick={() => router.replace(pathname, { locale: loc })}
             aria-current={loc === locale}
             className={`px-1 uppercase tracking-wide transition-colors ${
               loc === locale
-                ? "font-medium text-neutral-900 dark:text-neutral-100"
-                : "text-neutral-400 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-300"
+                ? "font-medium text-accent"
+                : "text-ink-soft hover:text-accent"
             }`}
           >
             {loc}

@@ -28,7 +28,7 @@ export default function SocialLinks({
             rel="noopener noreferrer"
             aria-label={labels[key]}
             title={labels[key]}
-            className={`flex ${dimension} items-center justify-center rounded-full border border-neutral-200 text-neutral-600 transition-colors hover:border-neutral-900 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:border-neutral-100 dark:hover:text-neutral-100`}
+            className={`flex ${dimension} items-center justify-center rounded-full border border-line text-ink-soft transition-colors hover:border-accent hover:text-accent`}
           >
             <Icon size={iconSize} />
           </a>
