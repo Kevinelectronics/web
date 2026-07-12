@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "home": "Home",
+    "articles": "Articles",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "[Your Name]",
+    "role": "Content Writer & Technical Writer",
+    "tagline": "I help tech companies communicate complex ideas clearly — from technical documentation to content that converts.",
+    "cta": "View articles",
+    "ctaSecondary": "Get in touch"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "How I can help",
+    "items": [
+      {
+        "title": "Content Writing",
+        "description": "Blog posts, newsletters and web content that connects with your audience and strengthens your brand."
+      },
+      {
+        "title": "Technical Writing",
+        "description": "Clear, accurate and maintainable guides, product manuals and developer documentation."
+      },
+      {
+        "title": "Content Strategy",
+        "description": "Editorial planning and content architecture aligned with your business goals."
+      }
+    ]
+  },
+  "companies": {
+    "title": "Companies I've collaborated with"
+  },
+  "articles": {
+    "title": "Articles",
+    "subtitle": "Latest posts",
+    "viewAll": "View all articles",
+    "empty": "No articles published yet. Check back soon.",
+    "readMore": "Read more",
+    "back": "Back to articles"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js and Strapi"
+  },
+  "social": {
+    "linkedin": "LinkedIn",
+    "medium": "Medium",
+    "youtube": "YouTube",
+    "github": "GitHub"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "One-off helper scripts for the personal site (Medium import, etc).",
+  "scripts": {
+    "import-medium": "node import-medium.mjs"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "cheerio": "^1.1.0",
+    "turndown": "^7.2.4"
+  }
+}
