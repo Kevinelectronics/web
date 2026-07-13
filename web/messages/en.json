@@ -82,6 +82,19 @@
   "companies": {
     "title": "Companies I've collaborated with"
   },
+  "testimonials": {
+    "eyebrow": "Results",
+    "title": "What people I've worked with say",
+    "items": [
+      {
+        "quote": "Kevin's content doesn't stay surface-level — he understands the API, tests the examples, and explains exactly why a developer should use EODHD. His work helped us convert organic traffic better.",
+        "name": "Nick",
+        "role": "EODHD",
+        "statValue": "+$20,000",
+        "statLabel": "in revenue generated through organic content"
+      }
+    ]
+  },
   "articles": {
     "title": "Articles",
     "subtitle": "Latest posts",

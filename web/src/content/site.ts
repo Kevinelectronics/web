@@ -23,12 +23,37 @@ export type Company = {
   url?: string;
 };
 
+/**
+ * Drop the matching image files into web/public/logos/ using these exact
+ * filenames (any of .png/.svg/.webp — just update the extension below to
+ * match what you drop in) and the logos will render automatically.
+ */
 export const companies: Company[] = [
-  { name: "Empresa Uno" },
-  { name: "Empresa Dos" },
-  { name: "Empresa Tres" },
-  { name: "Empresa Cuatro" },
-  { name: "Empresa Cinco" },
+  {
+    name: "EODHD APIs",
+    logoUrl: "/logos/eodhd.png",
+    url: "https://eodhd.com",
+  },
+  {
+    name: "ZenRows",
+    logoUrl: "/logos/zenrows.png",
+    url: "https://www.zenrows.com",
+  },
+  {
+    name: "Decodo",
+    logoUrl: "/logos/decodo.png",
+    url: "https://decodo.com",
+  },
+  {
+    name: "IronPDF",
+    logoUrl: "/logos/ironpdf.png",
+    url: "https://ironpdf.com",
+  },
+  {
+    name: "Bluehost",
+    logoUrl: "/logos/bluehost.png",
+    url: "https://www.bluehost.com",
+  },
 ];
 
 // TODO: swap for a @kevinmeneses.com address once you set up email on the domain.

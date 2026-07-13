@@ -12,20 +12,24 @@ export default function CompanyLogos() {
     <section className="border-t border-line py-16">
       <Container>
         <p className="text-center text-sm text-ink-soft">{t("title")}</p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           {companies.map((company) => {
-            const content = company.logoUrl ? (
-              <Image
-                src={company.logoUrl}
-                alt={company.name}
-                width={120}
-                height={40}
-                className="h-8 w-auto object-contain opacity-50 grayscale transition-opacity hover:opacity-90"
-              />
-            ) : (
-              <span className="font-display text-lg font-medium tracking-tight text-ink-soft/70 transition-colors hover:text-accent">
-                {company.name}
-              </span>
+            const card = (
+              <div className="flex h-20 w-40 items-center justify-center rounded-2xl border border-line bg-white p-4 transition-shadow hover:shadow-[0_12px_30px_-18px_rgba(15,26,51,0.35)]">
+                {company.logoUrl ? (
+                  <Image
+                    src={company.logoUrl}
+                    alt={company.name}
+                    width={140}
+                    height={56}
+                    className="h-full w-full object-contain"
+                  />
+                ) : (
+                  <span className="font-display text-base font-medium tracking-tight text-ink-soft/70">
+                    {company.name}
+                  </span>
+                )}
+              </div>
             );
 
             return company.url ? (
@@ -34,11 +38,12 @@ export default function CompanyLogos() {
                 href={company.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={company.name}
               >
-                {content}
+                {card}
               </a>
             ) : (
-              <span key={company.name}>{content}</span>
+              <span key={company.name}>{card}</span>
             );
           })}
         </div>

@@ -82,6 +82,19 @@
   "companies": {
     "title": "Empresas con las que he colaborado"
   },
+  "testimonials": {
+    "eyebrow": "Resultados",
+    "title": "Lo que dicen quienes han trabajado conmigo",
+    "items": [
+      {
+        "quote": "El contenido de Kevin no se queda en la superficie: entiende la API, prueba los ejemplos y explica exactamente por qué un desarrollador debería usar EODHD. Su trabajo nos ayudó a convertir mejor el tráfico orgánico.",
+        "name": "Nick",
+        "role": "EODHD",
+        "statValue": "+20.000 €",
+        "statLabel": "en facturación generada a través de contenido orgánico"
+      }
+    ]
+  },
   "articles": {
     "title": "Artículos",
     "subtitle": "Últimas publicaciones",

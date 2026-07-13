@@ -4,6 +4,7 @@ import Offerings from "@/components/Offerings";
 import Process from "@/components/Process";
 import WhyMe from "@/components/WhyMe";
 import CompanyLogos from "@/components/CompanyLogos";
+import Testimonials from "@/components/Testimonials";
 import Asset from "@/components/Asset";
 import Talk from "@/components/Talk";
 
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Process />
       <WhyMe />
       <CompanyLogos />
+      <Testimonials />
       <Asset />
       <Talk />
     </>

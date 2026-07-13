@@ -1,5 +1,12 @@
+import {
+  HiOutlineCodeBracket,
+  HiOutlineCog6Tooth,
+  HiOutlineMegaphone,
+} from "react-icons/hi2";
 import { useTranslations } from "next-intl";
 import Container from "./Container";
+
+const icons = [HiOutlineCodeBracket, HiOutlineCog6Tooth, HiOutlineMegaphone];
 
 export default function WhyMe() {
   const t = useTranslations("whyMe");
@@ -19,19 +26,22 @@ export default function WhyMe() {
         </p>
 
         <div className="mt-10 grid gap-10 sm:grid-cols-3">
-          {profiles.map((profile, index) => (
-            <div key={profile.title}>
-              <span className="font-display text-sm text-accent/50">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-3 text-base font-medium text-ink">
-                {profile.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                {profile.description}
-              </p>
-            </div>
-          ))}
+          {profiles.map((profile, index) => {
+            const Icon = icons[index] ?? HiOutlineCodeBracket;
+            return (
+              <div key={profile.title}>
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-soft text-accent">
+                  <Icon size={18} />
+                </span>
+                <h3 className="mt-4 text-base font-medium text-ink">
+                  {profile.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                  {profile.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
 
         <p className="mt-10 max-w-2xl text-base leading-relaxed text-ink-soft">
