@@ -7,6 +7,12 @@ export type StrapiImage = {
   height?: number;
 };
 
+export type Tag = {
+  id: number;
+  name: string;
+  slug: string;
+};
+
 export type Article = {
   id: number;
   documentId: string;
@@ -16,6 +22,7 @@ export type Article = {
   content: string;
   coverImage?: StrapiImage | null;
   sourceUrl?: string | null;
+  tags?: Tag[];
   publishedAt: string;
   locale: string;
 };
@@ -41,10 +48,16 @@ export function strapiImageUrl(url: string): string {
   return `${strapiUrl}${url}`;
 }
 
-export async function getArticles(locale: string): Promise<Article[]> {
+export async function getArticles(
+  locale: string,
+  tagSlug?: string,
+): Promise<Article[]> {
   try {
+    const tagFilter = tagSlug
+      ? `&filters[tags][slug][$eq]=${encodeURIComponent(tagSlug)}`
+      : "";
     const json = await strapiFetch<StrapiListResponse<Article>>(
-      `/articles?locale=${locale}&sort=publishedAt:desc&populate=coverImage&status=published`,
+      `/articles?locale=${locale}&sort=publishedAt:desc&populate=coverImage,tags&status=published${tagFilter}`,
     );
     return json.data;
   } catch {
@@ -58,10 +71,24 @@ export async function getArticleBySlug(
 ): Promise<Article | null> {
   try {
     const json = await strapiFetch<StrapiListResponse<Article>>(
-      `/articles?locale=${locale}&filters[slug][$eq]=${encodeURIComponent(slug)}&populate=coverImage&status=published`,
+      `/articles?locale=${locale}&filters[slug][$eq]=${encodeURIComponent(slug)}&populate=coverImage,tags&status=published`,
     );
     return json.data[0] ?? null;
   } catch {
     return null;
+  }
+}
+
+// Tags aren't locale-specific (a topic like "Langchain" is reused across
+// languages) — only list ones actually used by a published article in the
+// current locale, so the filter pills don't show empty sections.
+export async function getTags(locale: string): Promise<Tag[]> {
+  try {
+    const json = await strapiFetch<StrapiListResponse<Tag>>(
+      `/tags?sort=name:asc&filters[articles][locale][$eq]=${locale}&filters[articles][publishedAt][$notNull]=true`,
+    );
+    return json.data;
+  } catch {
+    return [];
   }
 }

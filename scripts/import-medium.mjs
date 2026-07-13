@@ -11,9 +11,13 @@
  *   node import-medium.mjs https://medium.com/@you/your-post-slug-abc123
  *   node import-medium.mjs ./saved-medium-page.html https://medium.com/@you/original-url
  *
+ * Also pulls Medium's own topic tags (e.g. "Langchain", "AI Agent") and the
+ * post's cover image, creating/reusing matching Tag entries and uploading
+ * the image as the Article's coverImage.
+ *
  * Env (optional, in scripts/.env — see .env.example):
  *   STRAPI_URL         e.g. https://your-cms.onrender.com
- *   STRAPI_API_TOKEN   API token with Article create/find/update permissions
+ *   STRAPI_API_TOKEN   API token with Article/Tag create/find/update permissions
  *   STRAPI_LOCALE      defaults to "en"
  *
  * Output: ./imports/<slug>.md (always) + a draft Article in Strapi (if configured)
@@ -128,6 +132,20 @@ async function main() {
   const excerpt =
     $("meta[property='og:description']").attr("content")?.trim() || "";
 
+  const coverImageUrl = $("meta[property='og:image']").attr("content")?.trim();
+
+  // Medium's topic tags render either inside or outside <article> depending
+  // on the page's DOM shape (varies between requests) — search the whole
+  // document so they're picked up either way.
+  const topics = [
+    ...new Set(
+      $('[aria-label^="Topic:"]')
+        .map((_, el) => $(el).attr("aria-label").replace(/^Topic:\s*/, "").trim())
+        .get()
+        .filter(Boolean),
+    ),
+  ];
+
   const article = $("article").first();
   if (article.length === 0) {
     throw new Error(
@@ -195,14 +213,45 @@ async function main() {
   }
 
   const locale = STRAPI_LOCALE || "en";
+  const authHeaders = { Authorization: `Bearer ${STRAPI_API_TOKEN}` };
+
+  const tagIds = [];
+  for (const name of topics) {
+    try {
+      tagIds.push(await upsertTag(STRAPI_URL, authHeaders, name));
+    } catch (err) {
+      console.error(`Skipping tag "${name}": ${err.message}`);
+    }
+  }
+
+  let coverImageId;
+  if (coverImageUrl) {
+    try {
+      coverImageId = await uploadCoverImage(
+        STRAPI_URL,
+        authHeaders,
+        coverImageUrl,
+        slug,
+      );
+    } catch (err) {
+      console.error(`Skipping cover image: ${err.message}`);
+    }
+  }
+
   const res = await fetch(`${STRAPI_URL}/api/articles`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${STRAPI_API_TOKEN}`,
-    },
+    headers: { "Content-Type": "application/json", ...authHeaders },
     body: JSON.stringify({
-      data: { title, slug, excerpt, content: markdown, sourceUrl, locale },
+      data: {
+        title,
+        slug,
+        excerpt,
+        content: markdown,
+        sourceUrl,
+        locale,
+        tags: tagIds,
+        ...(coverImageId ? { coverImage: coverImageId } : {}),
+      },
     }),
   });
 
@@ -217,6 +266,56 @@ async function main() {
   console.log(
     `Created draft Article #${data.id} in Strapi (locale: ${locale}). Review and hit Publish at:\n${STRAPI_URL}/admin/content-manager/collection-types/api::article.article/${data.documentId}?status=draft`,
   );
+  if (tagIds.length > 0) {
+    console.log(`Tags: ${topics.join(", ")}`);
+  }
+}
+
+async function upsertTag(strapiUrl, authHeaders, name) {
+  const found = await fetch(
+    `${strapiUrl}/api/tags?filters[name][$eq]=${encodeURIComponent(name)}`,
+    { headers: authHeaders },
+  );
+  if (!found.ok) {
+    throw new Error(`lookup failed (HTTP ${found.status})`);
+  }
+  const { data: existing } = await found.json();
+  if (existing.length > 0) return existing[0].id;
+
+  const created = await fetch(`${strapiUrl}/api/tags`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...authHeaders },
+    body: JSON.stringify({ data: { name } }),
+  });
+  if (!created.ok) {
+    throw new Error(`create failed (HTTP ${created.status})`);
+  }
+  const { data } = await created.json();
+  return data.id;
+}
+
+async function uploadCoverImage(strapiUrl, authHeaders, imageUrl, slug) {
+  const imageRes = await fetch(imageUrl);
+  if (!imageRes.ok) {
+    throw new Error(`fetch failed (HTTP ${imageRes.status})`);
+  }
+  const contentType = imageRes.headers.get("content-type") || "image/jpeg";
+  const ext = contentType.split("/")[1]?.split("+")[0] || "jpg";
+  const blob = await imageRes.blob();
+
+  const form = new FormData();
+  form.append("files", blob, `${slug}-cover.${ext}`);
+
+  const uploadRes = await fetch(`${strapiUrl}/api/upload`, {
+    method: "POST",
+    headers: authHeaders,
+    body: form,
+  });
+  if (!uploadRes.ok) {
+    throw new Error(`upload failed (HTTP ${uploadRes.status})`);
+  }
+  const [uploaded] = await uploadRes.json();
+  return uploaded.id;
 }
 
 main().catch((err) => {

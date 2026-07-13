@@ -93,6 +93,19 @@ export default async function ArticlePage({
           </p>
         )}
 
+        {article.tags && article.tags.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {article.tags.map((tag) => (
+              <span
+                key={tag.id}
+                className="rounded-full bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent-strong"
+              >
+                {tag.name}
+              </span>
+            ))}
+          </div>
+        )}
+
         {article.coverImage && (
           <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-lg">
             <Image

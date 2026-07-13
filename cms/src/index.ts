@@ -1,7 +1,7 @@
 import type { Core } from "@strapi/strapi";
 
 /**
- * Grants the public role read-only access to published articles,
+ * Grants the public role read-only access to published articles and tags,
  * so the Next.js site can fetch them without an API token. Runs
  * idempotently on every boot (including on Strapi Cloud after deploy),
  * so no manual click-through in the admin panel is required.
@@ -16,6 +16,8 @@ async function grantPublicArticleReadAccess(strapi: Core.Strapi) {
   const actions = [
     "api::article.article.find",
     "api::article.article.findOne",
+    "api::tag.tag.find",
+    "api::tag.tag.findOne",
   ];
 
   for (const action of actions) {

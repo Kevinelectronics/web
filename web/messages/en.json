@@ -103,7 +103,8 @@
     "readMore": "Read more",
     "back": "Back to articles",
     "metaDescription": "Technical articles on APIs, AI, and development, written by Kevin Meneses.",
-    "originallyPublishedOn": "Originally published on"
+    "originallyPublishedOn": "Originally published on",
+    "allTags": "All"
   },
   "footer": {
     "rights": "All rights reserved.",
