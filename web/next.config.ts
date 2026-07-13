@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
         hostname: "*.strapiapp.com",
       },
       {
+        protocol: "https",
+        hostname: "*.onrender.com",
+      },
+      {
         protocol: "http",
         hostname: "localhost",
         port: "1337",
