@@ -75,18 +75,26 @@ Manager → Article), no desde archivos del repo.
    otro idioma (o deja solo un idioma si aún no tienes la traducción).
 4. Pulsa **Publish**. El artículo aparece en el sitio en <60s (revalidación ISR).
 
-## 5. Importar un artículo de Medium (puntual, manual)
+## 5. Importar un artículo de Medium (pasando una URL)
 
 ```bash
 cd scripts
 npm install
+cp .env.example .env   # rellena STRAPI_URL y STRAPI_API_TOKEN (opcional, ver abajo)
 node import-medium.mjs https://medium.com/@tu-usuario/tu-articulo-abc123
 ```
 
-Esto genera `scripts/imports/<slug>.md` con `title`, `slug`, `excerpt`, `sourceUrl` y el
-cuerpo convertido a Markdown. Revísalo/edítalo y copia los campos al formulario de
-Strapi (paso 4). Guarda la URL original en el campo `sourceUrl` del artículo para dar
-crédito/canonical a Medium si lo republicas.
+Siempre genera `scripts/imports/<slug>.md` (Markdown + frontmatter) como copia local.
+
+Si `scripts/.env` tiene `STRAPI_URL` y `STRAPI_API_TOKEN` (un API token de Strapi con
+permisos `Article: create / find / findOne / update` — Settings → API Tokens → Create
+new API Token), el script además crea el artículo directamente en Strapi **como
+borrador** (no se publica solo): revísalo en el admin y pulsa **Publish** cuando esté
+listo. Sin esas variables, el script se comporta como antes: solo genera el `.md` para
+copiar/pegar a mano en el formulario de Strapi (paso 4).
+
+Guarda la URL original en el campo `sourceUrl` del artículo para dar crédito/canonical
+a Medium si lo republicas (el script ya lo rellena solo).
 
 > Si Medium bloquea la petición automática (403), guarda la página desde el navegador
 > (Ctrl/Cmd+S, "Página web completa") y pasa la ruta del archivo local en vez de la URL:

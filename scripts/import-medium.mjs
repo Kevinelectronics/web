@@ -1,21 +1,43 @@
 #!/usr/bin/env node
 /**
- * One-time Medium -> Markdown importer.
+ * Medium -> Strapi importer.
  *
  * Fetches a public Medium article (or reads a locally saved HTML copy, useful
- * when Medium blocks the fetch) and converts it to a Markdown file with
- * frontmatter, ready to copy/paste into the Strapi admin (Article content
- * type: title, slug, excerpt, content, sourceUrl).
+ * when Medium blocks the fetch), converts it to Markdown, saves a local copy
+ * under ./imports/, and — when STRAPI_URL + STRAPI_API_TOKEN are set — creates
+ * it as a draft Article in Strapi so it just needs a review + Publish click.
  *
  * Usage:
  *   node import-medium.mjs https://medium.com/@you/your-post-slug-abc123
  *   node import-medium.mjs ./saved-medium-page.html https://medium.com/@you/original-url
  *
- * Output: ./imports/<slug>.md
+ * Env (optional, in scripts/.env — see .env.example):
+ *   STRAPI_URL         e.g. https://your-cms.onrender.com
+ *   STRAPI_API_TOKEN   API token with Article create/find/update permissions
+ *   STRAPI_LOCALE      defaults to "en"
+ *
+ * Output: ./imports/<slug>.md (always) + a draft Article in Strapi (if configured)
  */
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import * as cheerio from "cheerio";
 import TurndownService from "turndown";
+
+async function loadDotEnv() {
+  try {
+    const text = await readFile(new URL("./.env", import.meta.url), "utf-8");
+    for (const line of text.split("\n")) {
+      const match = line.match(/^\s*([\w.-]+)\s*=\s*(.*)?\s*$/);
+      if (!match) continue;
+      const [, key, rawValue = ""] = match;
+      if (process.env[key] === undefined) {
+        process.env[key] = rawValue.replace(/^["']|["']$/g, "");
+      }
+    }
+  } catch {
+    // No .env file — fine, Strapi push is optional.
+  }
+}
+await loadDotEnv();
 
 const [, , input, secondArg] = process.argv;
 
@@ -115,10 +137,38 @@ async function main() {
   await mkdir("./imports", { recursive: true });
   const outPath = `./imports/${slug}.md`;
   await writeFile(outPath, frontmatter + markdown, "utf-8");
-
   console.log(`Saved ${outPath}`);
+
+  const { STRAPI_URL, STRAPI_API_TOKEN, STRAPI_LOCALE } = process.env;
+  if (!STRAPI_URL || !STRAPI_API_TOKEN) {
+    console.log(
+      "STRAPI_URL / STRAPI_API_TOKEN not set — skipping Strapi push. Copy the file above into the admin manually, or set those env vars to automate this.",
+    );
+    return;
+  }
+
+  const locale = STRAPI_LOCALE || "en";
+  const res = await fetch(`${STRAPI_URL}/api/articles`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${STRAPI_API_TOKEN}`,
+    },
+    body: JSON.stringify({
+      data: { title, slug, excerpt, content: markdown, sourceUrl, locale },
+    }),
+  });
+
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(
+      `Strapi rejected the article (HTTP ${res.status}): ${body}`,
+    );
+  }
+
+  const { data } = await res.json();
   console.log(
-    "Review/edit the file, then copy title / slug / excerpt / content / sourceUrl into the Strapi admin (Content Manager -> Article -> Create new entry).",
+    `Created draft Article #${data.id} in Strapi (locale: ${locale}). Review and hit Publish at:\n${STRAPI_URL}/admin/content-manager/collection-types/api::article.article/${data.documentId}?status=draft`,
   );
 }
 
