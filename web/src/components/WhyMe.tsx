@@ -1,35 +1,42 @@
 import { useTranslations } from "next-intl";
 import Container from "./Container";
 
-export default function Services() {
-  const t = useTranslations("services");
-  const items = t.raw("items") as { title: string; description: string }[];
+export default function WhyMe() {
+  const t = useTranslations("whyMe");
+  const profiles = t.raw("profiles") as { title: string; description: string }[];
 
   return (
     <section className="border-t border-line py-20">
       <Container>
         <p className="text-sm font-medium uppercase tracking-wide text-accent">
-          {t("title")}
+          {t("eyebrow")}
         </p>
         <h2 className="mt-2 font-display text-2xl font-medium tracking-tight text-ink sm:text-3xl">
-          {t("subtitle")}
+          {t("title")}
         </h2>
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft">
+          {t("intro")}
+        </p>
 
-        <div className="mt-12 grid gap-10 sm:grid-cols-3">
-          {items.map((item, index) => (
-            <div key={item.title}>
+        <div className="mt-10 grid gap-10 sm:grid-cols-3">
+          {profiles.map((profile, index) => (
+            <div key={profile.title}>
               <span className="font-display text-sm text-accent/50">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-3 text-base font-medium text-ink">
-                {item.title}
+                {profile.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                {item.description}
+                {profile.description}
               </p>
             </div>
           ))}
         </div>
+
+        <p className="mt-10 max-w-2xl text-base leading-relaxed text-ink-soft">
+          {t("closing")}
+        </p>
       </Container>
     </section>
   );

@@ -12,23 +12,72 @@
     "cta": "Ver artículos",
     "ctaSecondary": "Contactar"
   },
-  "services": {
-    "title": "Servicios",
-    "subtitle": "Cómo puedo ayudarte",
+  "pitch": {
+    "headline": "Convierte a desarrolladores en clientes con contenido técnico que genera confianza",
+    "paragraphs": [
+      "La mayoría de empresas tecnológicas tienen un gran producto, pero un problema común: muy pocos desarrolladores entienden por qué deberían usarlo.",
+      "Las características no venden. La documentación por sí sola no crea demanda. Y la publicidad tradicional rara vez funciona con una audiencia técnica.",
+      "Ahí es donde entra el contenido educativo."
+    ],
+    "body": "Creo contenido técnico que explica problemas reales, muestra soluciones con código y posiciona tu producto de forma natural dentro del flujo de trabajo de los desarrolladores. El objetivo no es vender de forma agresiva, sino generar confianza, autoridad y adopción.",
+    "experience": "Durante los últimos años he trabajado con APIs, plataformas de IA, herramientas para desarrolladores, soluciones fintech y productos SaaS, creando artículos, vídeos y tutoriales que llegan a miles de ingenieros, data scientists y profesionales de la automatización.",
+    "question": "¿Cómo puede esta tecnología ayudar a un desarrollador a resolver un problema real?",
+    "closing": "Porque cuando el contenido aporta valor primero, las conversiones llegan después."
+  },
+  "offerings": {
+    "eyebrow": "Servicios",
+    "title": "¿Qué puedo hacer por tu empresa?",
     "items": [
-      {
-        "title": "Redacción de contenido",
-        "description": "Artículos de blog, newsletters y contenido web que conecta con tu audiencia y refuerza tu marca."
-      },
-      {
-        "title": "Documentación técnica",
-        "description": "Guías, manuales de producto y documentación para desarrolladores clara, precisa y fácil de mantener."
-      },
-      {
-        "title": "Estrategia de contenido",
-        "description": "Planificación editorial y arquitectura de contenido alineada con tus objetivos de negocio."
-      }
+      "Artículos técnicos optimizados para SEO",
+      "Vídeos de YouTube con demostraciones prácticas",
+      "Tutoriales paso a paso con código real",
+      "Comparativas entre herramientas y APIs",
+      "Casos de uso con IA, Python y automatización",
+      "Contenido para Medium, LinkedIn, Dev.to y blogs corporativos",
+      "Reutilización del contenido para múltiples canales"
     ]
+  },
+  "process": {
+    "eyebrow": "Proceso",
+    "title": "Mi proceso",
+    "intro": "No creo contenido superficial.",
+    "body1": "Primero entiendo vuestro producto, analizo el mercado y detecto qué busca vuestra audiencia. Después construyo un tutorial o caso práctico donde vuestra solución tiene sentido dentro de un problema real.",
+    "body2": "El resultado es contenido que educa, posiciona vuestra marca como referente y sigue generando visitas meses después de su publicación."
+  },
+  "whyMe": {
+    "eyebrow": "Por qué yo",
+    "title": "¿Por qué trabajar conmigo?",
+    "intro": "Combino tres perfiles que rara vez se encuentran en una sola persona:",
+    "profiles": [
+      {
+        "title": "Desarrollador",
+        "description": "Capaz de construir ejemplos reales y explicar conceptos complejos de forma sencilla."
+      },
+      {
+        "title": "Consultor tecnológico",
+        "description": "Con experiencia en CRM, automatización, IA y software empresarial."
+      },
+      {
+        "title": "Creador de contenido",
+        "description": "Con una audiencia consolidada de miles de desarrolladores y profesionales tecnológicos."
+      }
+    ],
+    "closing": "Esto me permite crear contenido que no solo es técnicamente correcto, sino también atractivo, fácil de consumir y orientado a resultados."
+  },
+  "asset": {
+    "title": "Más que contenido: un activo para tu negocio",
+    "paragraphs": [
+      "Un buen artículo puede posicionarse durante años en Google.",
+      "Un vídeo puede seguir generando visualizaciones y clientes mucho después de su publicación.",
+      "Un tutorial bien construido puede convertirse en la primera experiencia que cientos o miles de desarrolladores tengan con tu producto."
+    ],
+    "closing": "El contenido deja de ser un gasto y se convierte en un activo que trabaja para tu empresa las 24 horas del día."
+  },
+  "talk": {
+    "title": "Hablemos",
+    "body": "Si estás construyendo una API, una plataforma de IA, un producto SaaS o una herramienta para desarrolladores y quieres aumentar tu visibilidad con contenido técnico de alta calidad, estaré encantado de ayudarte.",
+    "closing": "Creemos contenido que los desarrolladores realmente quieran leer, ver y compartir.",
+    "cta": "Hablemos de tu proyecto"
   },
   "companies": {
     "title": "Empresas con las que he colaborado"

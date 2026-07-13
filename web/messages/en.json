@@ -12,23 +12,72 @@
     "cta": "View articles",
     "ctaSecondary": "Get in touch"
   },
-  "services": {
-    "title": "Services",
-    "subtitle": "How I can help",
+  "pitch": {
+    "headline": "Turn developers into customers with technical content that builds trust",
+    "paragraphs": [
+      "Most tech companies have a great product, but a common problem: very few developers understand why they should use it.",
+      "Features don't sell. Documentation alone doesn't create demand. And traditional advertising rarely works with a technical audience.",
+      "That's where educational content comes in."
+    ],
+    "body": "I create technical content that explains real problems, shows solutions with actual code, and positions your product naturally within developers' workflows. The goal isn't aggressive selling — it's building trust, authority, and adoption.",
+    "experience": "Over the past few years I've worked with APIs, AI platforms, developer tools, fintech solutions, and SaaS products — creating articles, videos, and tutorials that reach thousands of engineers, data scientists, and automation professionals.",
+    "question": "How can this technology help a developer solve a real problem?",
+    "closing": "Because when content delivers value first, conversions follow."
+  },
+  "offerings": {
+    "eyebrow": "Services",
+    "title": "What I can do for your company",
     "items": [
-      {
-        "title": "Content Writing",
-        "description": "Blog posts, newsletters and web content that connects with your audience and strengthens your brand."
-      },
-      {
-        "title": "Technical Writing",
-        "description": "Clear, accurate and maintainable guides, product manuals and developer documentation."
-      },
-      {
-        "title": "Content Strategy",
-        "description": "Editorial planning and content architecture aligned with your business goals."
-      }
+      "SEO-optimized technical articles",
+      "YouTube videos with hands-on demos",
+      "Step-by-step tutorials with real code",
+      "Tool and API comparisons",
+      "Use cases with AI, Python, and automation",
+      "Content for Medium, LinkedIn, Dev.to, and company blogs",
+      "Repurposing content across multiple channels"
     ]
+  },
+  "process": {
+    "eyebrow": "Process",
+    "title": "My process",
+    "intro": "I don't create shallow content.",
+    "body1": "First, I get to know your product, study the market, and figure out what your audience is actually looking for. Then I build a tutorial or case study where your solution makes sense within a real problem.",
+    "body2": "The result is content that educates, positions your brand as a reference, and keeps driving traffic months after publishing."
+  },
+  "whyMe": {
+    "eyebrow": "Why me",
+    "title": "Why work with me?",
+    "intro": "I combine three profiles that rarely come together in one person:",
+    "profiles": [
+      {
+        "title": "Developer",
+        "description": "Able to build real examples and explain complex concepts simply."
+      },
+      {
+        "title": "Tech consultant",
+        "description": "Experienced in CRM, automation, AI, and enterprise software."
+      },
+      {
+        "title": "Content creator",
+        "description": "With an established audience of thousands of developers and tech professionals."
+      }
+    ],
+    "closing": "That lets me create content that's not only technically accurate, but also engaging, easy to consume, and results-driven."
+  },
+  "asset": {
+    "title": "More than content: an asset for your business",
+    "paragraphs": [
+      "A good article can rank on Google for years.",
+      "A video can keep generating views and customers long after it's published.",
+      "A well-built tutorial can become the first experience hundreds — or thousands — of developers have with your product."
+    ],
+    "closing": "Content stops being an expense and becomes an asset that works for your business 24 hours a day."
+  },
+  "talk": {
+    "title": "Let's talk",
+    "body": "If you're building an API, an AI platform, a SaaS product, or a developer tool and want to grow your visibility with high-quality technical content, I'd love to help.",
+    "closing": "Let's create content developers actually want to read, watch, and share.",
+    "cta": "Let's talk about your project"
   },
   "companies": {
     "title": "Companies I've collaborated with"
