@@ -14,7 +14,13 @@ export const socials = {
  * Path under /public. Drop your real photo at web/public/photo.jpg (or .png)
  * and update this path — until then the hero shows a monogram placeholder.
  */
-export const profilePhoto: string | null = null;
+export const profilePhoto: string | null = "/photo.jpg";
+
+/**
+ * Path under /public for a secondary, square/circle-cropped portrait used
+ * as a small avatar (e.g. next to the closing CTA). Leave null to hide it.
+ */
+export const avatarPhoto: string | null = "/photo-avatar.jpg";
 
 export type Company = {
   name: string;

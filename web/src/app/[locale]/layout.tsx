@@ -19,9 +19,9 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Kevin Meneses — Content & Technical Writer",
+  title: "Kevin Meneses — SaaS Content & Technical Writer",
   description:
-    "Content writer y technical writer especializado en comunicar ideas complejas con claridad.",
+    "Content writer y technical writer para empresas SaaS y de tecnología, especializado en comunicar ideas complejas con claridad.",
 };
 
 export function generateStaticParams() {

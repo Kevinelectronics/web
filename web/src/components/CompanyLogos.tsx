@@ -12,16 +12,16 @@ export default function CompanyLogos() {
     <section className="border-t border-line py-16">
       <Container>
         <p className="text-center text-sm text-ink-soft">{t("title")}</p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
           {companies.map((company) => {
             const card = (
-              <div className="flex h-20 w-40 items-center justify-center rounded-2xl border border-line bg-white p-4 transition-shadow hover:shadow-[0_12px_30px_-18px_rgba(15,26,51,0.35)]">
+              <div className="flex h-28 w-56 items-center justify-center rounded-2xl border border-line bg-white p-6 transition-shadow hover:shadow-[0_12px_30px_-18px_rgba(15,26,51,0.35)]">
                 {company.logoUrl ? (
                   <Image
                     src={company.logoUrl}
                     alt={company.name}
-                    width={140}
-                    height={56}
+                    width={200}
+                    height={88}
                     className="h-full w-full object-contain"
                   />
                 ) : (
