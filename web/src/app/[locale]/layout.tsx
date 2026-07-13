@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Fraunces } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { siteUrl } from "@/content/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "../globals.css";
@@ -18,11 +20,35 @@ const fraunces = Fraunces({
   axes: ["opsz", "SOFT", "WONK"],
 });
 
-export const metadata: Metadata = {
-  title: "Kevin Meneses — SaaS Content & Technical Writer",
-  description:
-    "Content writer y technical writer para empresas SaaS y de tecnología, especializado en comunicar ideas complejas con claridad.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "hero" });
+
+  const title = `${t("name")} — ${t("role")}`;
+  const description = t("tagline");
+
+  return {
+    metadataBase: new URL(siteUrl),
+    title: { default: title, template: `%s — ${t("name")}` },
+    description,
+    openGraph: {
+      type: "website",
+      siteName: t("name"),
+      title,
+      description,
+      locale: locale === "es" ? "es_ES" : "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

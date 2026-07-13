@@ -101,7 +101,9 @@
     "viewAll": "Ver todos los artículos",
     "empty": "Todavía no hay artículos publicados. Vuelve pronto.",
     "readMore": "Leer más",
-    "back": "Volver a artículos"
+    "back": "Volver a artículos",
+    "metaDescription": "Artículos técnicos sobre APIs, IA y desarrollo, escritos por Kevin Meneses.",
+    "originallyPublishedOn": "Publicado originalmente en"
   },
   "footer": {
     "rights": "Todos los derechos reservados.",

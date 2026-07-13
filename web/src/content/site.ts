@@ -67,3 +67,6 @@ export const contactEmail = "kevinmenesesgonzalez@gmail.com";
 
 export const strapiUrl =
   process.env.NEXT_PUBLIC_STRAPI_URL ?? "http://localhost:1337";
+
+/** Canonical production origin, used to build absolute URLs for SEO metadata (sitemap, canonical, OG). */
+export const siteUrl = "https://kevinmeneses.com";

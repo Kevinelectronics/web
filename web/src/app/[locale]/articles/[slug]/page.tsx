@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
@@ -6,6 +7,41 @@ import { getTranslations } from "next-intl/server";
 import Container from "@/components/Container";
 import { Link } from "@/i18n/navigation";
 import { getArticleBySlug, strapiImageUrl } from "@/lib/strapi";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const article = await getArticleBySlug(slug, locale);
+
+  if (!article) {
+    return {};
+  }
+
+  // Content imported from Medium published there first — point the
+  // canonical tag back at the original so Google doesn't see two competing
+  // copies of the same article (it would otherwise favor Medium's higher
+  // domain authority anyway, but without a canonical both copies risk being
+  // flagged as duplicate content instead of just one deferring to the other).
+  const canonical = article.sourceUrl || `/${locale}/articles/${slug}`;
+
+  return {
+    title: article.title,
+    description: article.excerpt,
+    alternates: { canonical },
+    openGraph: {
+      type: "article",
+      title: article.title,
+      description: article.excerpt,
+      publishedTime: article.publishedAt,
+      images: article.coverImage
+        ? [strapiImageUrl(article.coverImage.url)]
+        : undefined,
+    },
+  };
+}
 
 export default async function ArticlePage({
   params,
@@ -42,6 +78,20 @@ export default async function ArticlePage({
         <h1 className="mt-2 font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl">
           {article.title}
         </h1>
+
+        {article.sourceUrl && (
+          <p className="mt-2 text-sm text-ink-soft">
+            {t("originallyPublishedOn")}{" "}
+            <a
+              href={article.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:underline"
+            >
+              {new URL(article.sourceUrl).hostname.replace(/^www\./, "")}
+            </a>
+          </p>
+        )}
 
         {article.coverImage && (
           <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-lg">

@@ -1,7 +1,30 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import Container from "@/components/Container";
 import ArticleCard from "@/components/ArticleCard";
 import { getArticles } from "@/lib/strapi";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "articles" });
+
+  return {
+    title: t("title"),
+    description: t("metaDescription"),
+    alternates: {
+      canonical: `/${locale}/articles`,
+      languages: {
+        es: "/es/articles",
+        en: "/en/articles",
+        "x-default": "/es/articles",
+      },
+    },
+  };
+}
 
 export default async function ArticlesPage({
   params,

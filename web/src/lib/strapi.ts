@@ -15,6 +15,7 @@ export type Article = {
   excerpt?: string;
   content: string;
   coverImage?: StrapiImage | null;
+  sourceUrl?: string | null;
   publishedAt: string;
   locale: string;
 };
