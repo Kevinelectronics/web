@@ -3,8 +3,9 @@ import { Geist, Fraunces } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { routing } from "@/i18n/routing";
-import { siteUrl } from "@/content/site";
+import { siteUrl, googleAnalyticsId } from "@/content/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "../globals.css";
@@ -79,6 +80,9 @@ export default async function LocaleLayout({
           <Footer />
         </NextIntlClientProvider>
       </body>
+      {process.env.NODE_ENV === "production" && (
+        <GoogleAnalytics gaId={googleAnalyticsId} />
+      )}
     </html>
   );
 }

@@ -70,3 +70,6 @@ export const strapiUrl =
 
 /** Canonical production origin, used to build absolute URLs for SEO metadata (sitemap, canonical, OG). */
 export const siteUrl = "https://kevinmeneses.com";
+
+/** Google Analytics 4 measurement ID. Measurement IDs are public by design (visible in every page's source). */
+export const googleAnalyticsId = "G-YC8R1FQRGQ";

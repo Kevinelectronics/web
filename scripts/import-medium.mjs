@@ -282,10 +282,12 @@ async function upsertTag(strapiUrl, authHeaders, name) {
   const { data: existing } = await found.json();
   if (existing.length > 0) return existing[0].id;
 
+  // The `uid` field only auto-generates from targetField in the admin UI —
+  // the content API needs it passed explicitly.
   const created = await fetch(`${strapiUrl}/api/tags`, {
     method: "POST",
     headers: { "Content-Type": "application/json", ...authHeaders },
-    body: JSON.stringify({ data: { name } }),
+    body: JSON.stringify({ data: { name, slug: slugify(name) } }),
   });
   if (!created.ok) {
     throw new Error(`create failed (HTTP ${created.status})`);
