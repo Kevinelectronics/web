@@ -83,8 +83,7 @@ const turndown = new TurndownService({
   codeBlockStyle: "fenced",
 });
 
-// Medium wraps code blocks in <pre><code> already, and images in <figure>;
-// make sure figcaptions survive as italic captions under the image.
+// Medium's images live in <figure>; keep figcaptions as italic captions.
 turndown.addRule("mediumFigure", {
   filter: "figure",
   replacement: (content, node) => {
@@ -95,6 +94,25 @@ turndown.addRule("mediumFigure", {
     const alt = img.getAttribute("alt") || "";
     const caption = figcaption ? figcaption.textContent.trim() : "";
     return `\n\n![${alt}](${src})${caption ? `\n*${caption}*` : ""}\n\n`;
+  },
+});
+
+// Medium doesn't nest a <code> element inside <pre> — it's a <span> with
+// <br> tags for line breaks — so Turndown's default fenced-code-block rule
+// (which only fires for pre > code) never matches and the code gets escaped
+// as plain prose instead. Handle <pre> directly and rebuild real newlines.
+turndown.addRule("mediumCodeBlock", {
+  filter: "pre",
+  replacement: (_content, node) => {
+    const text = (node.innerHTML || "")
+      .replace(/<br\s*\/?>/gi, "\n")
+      .replace(/<[^>]+>/g, "")
+      .replace(/&quot;/g, '"')
+      .replace(/&#0?39;/g, "'")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&amp;/g, "&");
+    return `\n\n\`\`\`\n${text.trim()}\n\`\`\`\n\n`;
   },
 });
 
@@ -117,11 +135,40 @@ async function main() {
     );
   }
 
-  // Drop the title (already extracted) so it isn't duplicated in the body.
-  article.find("h1").first().remove();
+  // Medium's class names are hashed/unstable, but it keeps a handful of
+  // data-testid markers on the chrome around the actual post body (title,
+  // avatar, byline, read time, clap/bookmark/audio/share buttons). The whole
+  // header block lives in storyTitle's parent — drop it in one shot instead
+  // of the title alone, otherwise the byline/actions leak into the body.
+  const storyTitle = article.find('[data-testid="storyTitle"]').first();
+  if (storyTitle.length > 0) {
+    storyTitle.parent().remove();
+  } else {
+    article.find("h1").first().remove();
+  }
+  article.find('[data-testid="og"]').remove();
+
+  // Topic tags ("Langchain", "AI Agent", ...) and sign-in prompts for
+  // claps/bookmarks/highlights sometimes render inside <article> too.
+  article.find('[aria-label^="Topic:"]').remove();
+  article.find('a[href^="/m/signin"]').remove();
+
+  // The "Press enter or click to view image in full size" a11y caption
+  // Medium injects next to every zoomable image.
+  article
+    .find("span")
+    .filter(
+      (_, el) => $(el).text().trim() === "Press enter or click to view image in full size",
+    )
+    .remove();
 
   const bodyHtml = article.html() ?? "";
-  const markdown = turndown.turndown(bodyHtml).trim();
+  let markdown = turndown.turndown(bodyHtml).trim();
+
+  // Collapse the extra blank lines left behind by removed elements, without
+  // touching content inside fenced code blocks (blank-line meaning differs
+  // there — e.g. a lone "--" could be real SQL, not leftover chrome).
+  markdown = markdown.replace(/\n{3,}/g, "\n\n");
 
   const slug = slugify(title);
   const frontmatter = [
