@@ -3,7 +3,6 @@ import { Geist, Fraunces } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { routing } from "@/i18n/routing";
 import { siteUrl, googleAnalyticsId } from "@/content/site";
 import Header from "@/components/Header";
@@ -73,6 +72,22 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${geistSans.variable} ${fraunces.variable} h-full antialiased`}
     >
+      {process.env.NODE_ENV === "production" && (
+        <head>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${googleAnalyticsId}');`,
+            }}
+          />
+        </head>
+      )}
       <body className="flex min-h-full flex-col bg-paper text-ink">
         <NextIntlClientProvider>
           <Header />
@@ -80,9 +95,6 @@ export default async function LocaleLayout({
           <Footer />
         </NextIntlClientProvider>
       </body>
-      {process.env.NODE_ENV === "production" && (
-        <GoogleAnalytics gaId={googleAnalyticsId} />
-      )}
     </html>
   );
 }
