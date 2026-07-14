@@ -19,7 +19,7 @@ export default function ArticleCard({ article }: { article: Article }) {
       className="group flex gap-6 border-b border-line py-8 first:pt-0"
     >
       {article.coverImage && (
-        <div className="relative hidden aspect-[4/3] w-40 shrink-0 overflow-hidden rounded-lg bg-accent-soft sm:block">
+        <div className="relative hidden aspect-video w-56 shrink-0 overflow-hidden rounded-lg bg-accent-soft sm:block">
           <Image
             src={strapiImageUrl(article.coverImage.url)}
             alt={article.coverImage.alternativeText ?? article.title}

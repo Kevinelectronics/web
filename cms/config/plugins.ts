@@ -37,6 +37,21 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
         allowedTypes: allowedMediaTypes,
         deniedTypes: deniedExecutableTypes,
       },
+      // Render's free web services have no persistent disk — anything
+      // written to the local filesystem (the default upload provider)
+      // disappears on the next deploy. Cloudinary keeps uploads outside
+      // the app server entirely. Falls back to local storage (fine for
+      // local dev, where the filesystem does persist) when unset.
+      ...(env('CLOUDINARY_NAME')
+        ? {
+            provider: 'cloudinary',
+            providerOptions: {
+              cloud_name: env('CLOUDINARY_NAME'),
+              api_key: env('CLOUDINARY_KEY'),
+              api_secret: env('CLOUDINARY_SECRET'),
+            },
+          }
+        : {}),
     },
   },
 });
