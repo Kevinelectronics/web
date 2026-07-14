@@ -7,6 +7,7 @@ import { getTranslations } from "next-intl/server";
 import Container from "@/components/Container";
 import { Link } from "@/i18n/navigation";
 import { getArticleBySlug, strapiImageUrl } from "@/lib/strapi";
+import { siteUrl, socials } from "@/content/site";
 
 export async function generateMetadata({
   params,
@@ -62,8 +63,58 @@ export default async function ArticlePage({
     day: "numeric",
   });
 
+  const articleUrl = `${siteUrl}/${locale}/articles/${slug}`;
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: t("back"), item: `${siteUrl}/${locale}` },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: t("title"),
+        item: `${siteUrl}/${locale}/articles`,
+      },
+      { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
+    ],
+  };
+
+  // Only claim Article schema for content we're the canonical source for —
+  // syndicated posts already point their canonical (and sitemap entry)
+  // elsewhere, so asserting mainEntityOfPage here would contradict that.
+  const articleJsonLd = article.sourceUrl
+    ? null
+    : {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: article.title,
+        description: article.excerpt,
+        image: article.coverImage
+          ? [strapiImageUrl(article.coverImage.url)]
+          : undefined,
+        datePublished: article.publishedAt,
+        dateModified: article.publishedAt,
+        mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
+        author: {
+          "@type": "Person",
+          name: "Kevin Meneses",
+          url: siteUrl,
+          sameAs: [socials.linkedin, socials.medium, socials.youtube, socials.github],
+        },
+      };
+
   return (
     <article className="py-16 sm:py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      {articleJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        />
+      )}
       <Container className="max-w-2xl">
         <Link
           href="/articles"

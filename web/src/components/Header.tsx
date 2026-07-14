@@ -16,7 +16,7 @@ export default function Header() {
         >
           {hero("name")}
         </Link>
-        <nav className="flex items-center gap-6">
+        <nav className="hidden items-center gap-6 sm:flex">
           <Link
             href="/"
             className="text-sm text-ink-soft transition-colors hover:text-accent"
@@ -24,13 +24,40 @@ export default function Header() {
             {t("home")}
           </Link>
           <Link
+            href="/#services"
+            className="text-sm text-ink-soft transition-colors hover:text-accent"
+          >
+            {t("services")}
+          </Link>
+          <Link
+            href="/#case-studies"
+            className="text-sm text-ink-soft transition-colors hover:text-accent"
+          >
+            {t("caseStudies")}
+          </Link>
+          <Link
             href="/articles"
             className="text-sm text-ink-soft transition-colors hover:text-accent"
           >
             {t("articles")}
           </Link>
+          <Link
+            href="/#about"
+            className="text-sm text-ink-soft transition-colors hover:text-accent"
+          >
+            {t("about")}
+          </Link>
+          <Link
+            href="/#contact"
+            className="text-sm text-ink-soft transition-colors hover:text-accent"
+          >
+            {t("contact")}
+          </Link>
           <LocaleSwitcher />
         </nav>
+        <div className="sm:hidden">
+          <LocaleSwitcher />
+        </div>
       </Container>
     </header>
   );

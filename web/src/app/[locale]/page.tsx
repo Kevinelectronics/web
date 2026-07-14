@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
-import Pitch from "@/components/Pitch";
+import Metrics from "@/components/Metrics";
 import Offerings from "@/components/Offerings";
 import Process from "@/components/Process";
 import WhyMe from "@/components/WhyMe";
 import CompanyLogos from "@/components/CompanyLogos";
-import Testimonials from "@/components/Testimonials";
-import Asset from "@/components/Asset";
+import CaseStudyMain from "@/components/CaseStudyMain";
+import CaseStudies from "@/components/CaseStudies";
+import ContentPackages from "@/components/ContentPackages";
 import Talk from "@/components/Talk";
 
 export async function generateMetadata({
@@ -27,13 +28,14 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Pitch />
+      <Metrics />
+      <CompanyLogos />
       <Offerings />
+      <CaseStudyMain />
+      <CaseStudies />
+      <ContentPackages />
       <Process />
       <WhyMe />
-      <CompanyLogos />
-      <Testimonials />
-      <Asset />
       <Talk />
     </>
   );

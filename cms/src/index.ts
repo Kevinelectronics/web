@@ -18,6 +18,10 @@ async function grantPublicArticleReadAccess(strapi: Core.Strapi) {
     "api::article.article.findOne",
     "api::tag.tag.find",
     "api::tag.tag.findOne",
+    // Write-only: the public role can submit a lead, but reading, updating,
+    // and deleting are not exposed by the route (see api/lead/routes) — this
+    // permission alone can't be used to list or read other people's leads.
+    "api::lead.lead.create",
   ];
 
   for (const action of actions) {

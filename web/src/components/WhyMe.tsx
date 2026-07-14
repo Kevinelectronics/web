@@ -13,7 +13,7 @@ export default function WhyMe() {
   const profiles = t.raw("profiles") as { title: string; description: string }[];
 
   return (
-    <section className="border-t border-line py-20">
+    <section id="about" className="scroll-mt-16 border-t border-line py-20">
       <Container>
         <p className="text-sm font-medium uppercase tracking-wide text-accent">
           {t("eyebrow")}

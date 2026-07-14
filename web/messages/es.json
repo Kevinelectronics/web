@@ -1,53 +1,143 @@
 {
   "nav": {
     "home": "Inicio",
+    "services": "Servicios",
+    "caseStudies": "Casos de éxito",
     "articles": "Artículos",
+    "about": "Sobre mí",
     "contact": "Contacto"
   },
   "hero": {
     "greeting": "Hola, soy",
     "name": "Kevin Meneses",
     "role": "SaaS Content Writer & Technical Writer",
-    "tagline": "Ayudo a empresas SaaS y de tecnología a comunicar ideas complejas con claridad — desde documentación técnica hasta contenido que convierte.",
-    "cta": "Ver artículos",
-    "ctaSecondary": "Contactar"
+    "headline": "Convierte tu SaaS en contenido técnico que atrae desarrolladores y genera clientes",
+    "tagline": "Creo artículos SEO, tutoriales con código, vídeos de YouTube y campañas de contenido para empresas de IA, APIs, FinTech y herramientas para desarrolladores.",
+    "cta": "Ver casos de éxito",
+    "ctaSecondary": "Solicitar propuesta",
+    "authority": [
+      "+12.500 suscriptores en YouTube",
+      "+27.000 lecturas mensuales",
+      "+5.000 seguidores en Medium",
+      "+20.000 € generados para un cliente mediante contenido"
+    ]
+  },
+  "metrics": {
+    "items": [
+      { "value": "+12.500", "label": "Suscriptores en YouTube" },
+      { "value": "+27k", "label": "Lecturas mensuales" },
+      { "value": "+300", "label": "Artículos técnicos" },
+      { "value": "+20.000 €", "label": "Facturación generada para un cliente" }
+    ]
   },
   "pitch": {
-    "headline": "Convierte a desarrolladores en clientes con contenido técnico que genera confianza",
-    "paragraphs": [
-      "La mayoría de empresas tecnológicas tienen un gran producto, pero un problema común: muy pocos desarrolladores entienden por qué deberían usarlo.",
-      "Las características no venden. La documentación por sí sola no crea demanda. Y la publicidad tradicional rara vez funciona con una audiencia técnica.",
-      "Ahí es donde entra el contenido educativo."
-    ],
-    "body": "Creo contenido técnico que explica problemas reales, muestra soluciones con código y posiciona tu producto de forma natural dentro del flujo de trabajo de los desarrolladores. El objetivo no es vender de forma agresiva, sino generar confianza, autoridad y adopción.",
-    "experience": "Durante los últimos años he trabajado con APIs, plataformas de IA, herramientas para desarrolladores, soluciones fintech y productos SaaS, creando artículos, vídeos y tutoriales que llegan a miles de ingenieros, data scientists y profesionales de la automatización.",
-    "question": "¿Cómo puede esta tecnología ayudar a un desarrollador a resolver un problema real?",
-    "closing": "Porque cuando el contenido aporta valor primero, las conversiones llegan después."
+    "headline": "Muchas empresas SaaS tienen un gran producto, pero pocos desarrolladores entienden por qué deberían usarlo.",
+    "body": "Creo contenido técnico basado en problemas reales, código funcional y casos de uso que generan confianza y aceleran la adopción."
   },
   "offerings": {
     "eyebrow": "Servicios",
     "title": "¿Qué puedo hacer por tu empresa?",
+    "categories": [
+      {
+        "title": "Technical SEO Content",
+        "benefit": "Contenido que posiciona en Google y educa a la vez, para que los desarrolladores te encuentren cuando buscan una solución.",
+        "items": [
+          "Artículos técnicos optimizados para SEO",
+          "Comparativas entre herramientas y APIs",
+          "Tutoriales paso a paso con código real",
+          "Casos de uso con IA, Python y automatización"
+        ]
+      },
+      {
+        "title": "Developer Marketing",
+        "benefit": "Distribución donde vive tu audiencia técnica, para generar autoridad más allá de tu propio blog.",
+        "items": [
+          "Campañas de contenido completas",
+          "Publicación en Medium",
+          "Publicación en Dev.to",
+          "Contenido para LinkedIn",
+          "Presencia técnica en GitHub"
+        ]
+      },
+      {
+        "title": "YouTube & Product Demos",
+        "benefit": "Contenido en vídeo que muestra tu producto funcionando de verdad, la forma más rápida de generar confianza técnica.",
+        "items": [
+          "Vídeos de YouTube con demostraciones prácticas",
+          "Reviews de producto",
+          "Vídeos de integraciones",
+          "Demos de APIs",
+          "Ejemplos en Python"
+        ]
+      }
+    ]
+  },
+  "contentPackages": {
+    "eyebrow": "Colaboración",
+    "title": "Content Packages",
+    "subtitle": "Así entendemos rápido el alcance de cada colaboración — la propuesta final siempre se adapta a tu caso.",
+    "cta": "Solicitar propuesta",
     "items": [
-      "Artículos técnicos optimizados para SEO",
-      "Vídeos de YouTube con demostraciones prácticas",
-      "Tutoriales paso a paso con código real",
-      "Comparativas entre herramientas y APIs",
-      "Casos de uso con IA, Python y automatización",
-      "Contenido para Medium, LinkedIn, Dev.to y blogs corporativos",
-      "Reutilización del contenido para múltiples canales"
+      {
+        "name": "Starter",
+        "description": "Ideal para empresas que quieren validar una estrategia de contenido técnico.",
+        "features": [
+          "2 artículos técnicos SEO",
+          "1 vídeo de YouTube con demostración práctica",
+          "Promoción en mis canales"
+        ]
+      },
+      {
+        "name": "Growth",
+        "description": "Pensado para generar autoridad y aumentar la visibilidad de forma constante.",
+        "features": [
+          "4 artículos técnicos SEO",
+          "2 vídeos de YouTube",
+          "Promoción en Medium, LinkedIn, Dev.to y otros canales",
+          "Reutilización del contenido para múltiples plataformas"
+        ]
+      },
+      {
+        "name": "Authority",
+        "description": "La solución más completa para empresas que quieren posicionarse como referentes dentro de su sector.",
+        "features": [
+          "10 artículos técnicos SEO",
+          "3 vídeos de YouTube",
+          "Estrategia editorial",
+          "Distribución multicanal",
+          "Reutilización del contenido en diferentes formatos"
+        ]
+      }
     ]
   },
   "process": {
     "eyebrow": "Proceso",
     "title": "Mi proceso",
     "intro": "No creo contenido superficial.",
-    "body1": "Primero entiendo vuestro producto, analizo el mercado y detecto qué busca vuestra audiencia. Después construyo un tutorial o caso práctico donde vuestra solución tiene sentido dentro de un problema real.",
-    "body2": "El resultado es contenido que educa, posiciona vuestra marca como referente y sigue generando visitas meses después de su publicación."
+    "steps": [
+      {
+        "title": "Discovery",
+        "description": "Entiendo tu producto, tu audiencia técnica y qué te diferencia de la competencia."
+      },
+      {
+        "title": "Research",
+        "description": "Investigo qué busca realmente tu audiencia y detecto los huecos de contenido que puedes ocupar."
+      },
+      {
+        "title": "Production",
+        "description": "Construyo el artículo, tutorial o vídeo probando el código y la solución de principio a fin."
+      },
+      {
+        "title": "Distribution",
+        "description": "Publico y reutilizo el contenido en los canales donde tu audiencia técnica ya está."
+      }
+    ],
+    "closing": "El resultado es contenido que educa, posiciona tu marca como referente y sigue generando visitas meses después de su publicación."
   },
   "whyMe": {
     "eyebrow": "Por qué yo",
     "title": "¿Por qué trabajar conmigo?",
-    "intro": "Combino tres perfiles que rara vez se encuentran en una sola persona:",
+    "intro": "Combino tres pilares que rara vez se encuentran en una sola persona:",
     "profiles": [
       {
         "title": "Desarrollador",
@@ -58,42 +148,73 @@
         "description": "Con experiencia en CRM, automatización, IA y software empresarial."
       },
       {
-        "title": "Creador de contenido",
-        "description": "Con una audiencia consolidada de miles de desarrolladores y profesionales tecnológicos."
+        "title": "Distribución propia",
+        "description": "Audiencia consolidada en YouTube, Medium, LinkedIn, Dev.to y GitHub — tu contenido no depende solo de tu propio blog."
       }
     ],
     "closing": "Esto me permite crear contenido que no solo es técnicamente correcto, sino también atractivo, fácil de consumir y orientado a resultados."
   },
-  "asset": {
-    "title": "Más que contenido: un activo para tu negocio",
-    "paragraphs": [
-      "Un buen artículo puede posicionarse durante años en Google.",
-      "Un vídeo puede seguir generando visualizaciones y clientes mucho después de su publicación.",
-      "Un tutorial bien construido puede convertirse en la primera experiencia que cientos o miles de desarrolladores tengan con tu producto."
-    ],
-    "closing": "El contenido deja de ser un gasto y se convierte en un activo que trabaja para tu empresa las 24 horas del día."
+  "caseStudyMain": {
+    "eyebrow": "Caso de éxito",
+    "title": "Cómo ayudé a EODHD a convertir tráfico técnico en clientes",
+    "problemLabel": "Problema",
+    "solutionLabel": "Solución",
+    "contentTypeLabel": "Tipo de contenido",
+    "resultLabel": "Resultado",
+    "problem": "EODHD tiene una API financiera sólida, pero muchos desarrolladores no entendían por qué elegirla frente a otras fuentes de datos del mercado.",
+    "solution": "Artículos técnicos y tutoriales con código real que muestran la API resolviendo problemas concretos — desde agentes de IA con LangChain hasta análisis técnico automatizado.",
+    "contentType": "Artículos técnicos SEO, tutoriales con código y vídeos de demostración.",
+    "quote": "El contenido de Kevin no se queda en la superficie: entiende la API, prueba los ejemplos y explica exactamente por qué un desarrollador debería usar EODHD. Su trabajo nos ayudó a convertir mejor el tráfico orgánico.",
+    "name": "Nick",
+    "role": "EODHD",
+    "statValue": "+20.000 €",
+    "statLabel": "en facturación generada a través de contenido orgánico"
+  },
+  "caseStudies": {
+    "eyebrow": "Más casos",
+    "title": "Otras empresas con las que he trabajado",
+    "items": [
+      {
+        "company": "Nutrient",
+        "problem": "Necesitaban llegar a más desarrolladores y dar visibilidad a su SDK de procesamiento de documentos frente a alternativas más conocidas.",
+        "solution": "Contenido técnico práctico mostrando integraciones reales del SDK en distintos lenguajes y casos de uso.",
+        "contentType": "Artículos técnicos y tutoriales con código."
+      },
+      {
+        "company": "Zernio",
+        "problem": "El producto era sólido, pero pocos desarrolladores sabían cómo empezar a usarlo en un proyecto real.",
+        "solution": "Tutoriales paso a paso enfocados en la primera integración, para reducir la fricción de adopción.",
+        "contentType": "Tutoriales técnicos y contenido educativo."
+      },
+      {
+        "company": "Snowball Analytics",
+        "problem": "Buscaban generar adopción de producto entre un público técnico e inversor, sin sonar a marketing genérico.",
+        "solution": "Contenido que explica el producto desde el caso de uso real, con datos y ejemplos prácticos.",
+        "contentType": "Artículos y casos de uso con datos reales."
+      }
+    ]
   },
   "talk": {
     "title": "Hablemos",
     "body": "Si estás construyendo una API, una plataforma de IA, un producto SaaS o una herramienta para desarrolladores y quieres aumentar tu visibilidad con contenido técnico de alta calidad, estaré encantado de ayudarte.",
-    "closing": "Creemos contenido que los desarrolladores realmente quieran leer, ver y compartir.",
-    "cta": "Hablemos de tu proyecto"
+    "closing": "Creemos contenido que los desarrolladores realmente quieran leer, ver y compartir."
+  },
+  "contactForm": {
+    "name": "Nombre",
+    "company": "Empresa",
+    "email": "Email",
+    "projectType": "Tipo de proyecto",
+    "projectTypePlaceholder": "Ej. artículos SEO, vídeos, campaña completa...",
+    "budget": "Presupuesto",
+    "budgetPlaceholder": "Ej. 500-1.000 €",
+    "message": "Mensaje",
+    "submit": "Enviar",
+    "submitting": "Enviando...",
+    "success": "¡Gracias! Te responderé lo antes posible.",
+    "error": "Algo ha fallado. Prueba de nuevo o escríbeme directamente a"
   },
   "companies": {
     "title": "Empresas con las que he colaborado"
-  },
-  "testimonials": {
-    "eyebrow": "Resultados",
-    "title": "Lo que dicen quienes han trabajado conmigo",
-    "items": [
-      {
-        "quote": "El contenido de Kevin no se queda en la superficie: entiende la API, prueba los ejemplos y explica exactamente por qué un desarrollador debería usar EODHD. Su trabajo nos ayudó a convertir mejor el tráfico orgánico.",
-        "name": "Nick",
-        "role": "EODHD",
-        "statValue": "+20.000 €",
-        "statLabel": "en facturación generada a través de contenido orgánico"
-      }
-    ]
   },
   "articles": {
     "title": "Artículos",

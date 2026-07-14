@@ -1,53 +1,143 @@
 {
   "nav": {
     "home": "Home",
+    "services": "Services",
+    "caseStudies": "Case Studies",
     "articles": "Articles",
+    "about": "About",
     "contact": "Contact"
   },
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Kevin Meneses",
     "role": "SaaS Content Writer & Technical Writer",
-    "tagline": "I help SaaS and tech companies communicate complex ideas clearly — from technical documentation to content that converts.",
-    "cta": "View articles",
-    "ctaSecondary": "Get in touch"
+    "headline": "Turn your SaaS into technical content that attracts developers and generates customers",
+    "tagline": "I create SEO articles, code tutorials, YouTube videos, and content campaigns for AI, API, FinTech, and developer tool companies.",
+    "cta": "View case studies",
+    "ctaSecondary": "Request a proposal",
+    "authority": [
+      "+12,500 YouTube subscribers",
+      "+27,000 monthly reads",
+      "+5,000 Medium followers",
+      "+$20,000 generated for a client through content"
+    ]
+  },
+  "metrics": {
+    "items": [
+      { "value": "+12,500", "label": "YouTube subscribers" },
+      { "value": "+27k", "label": "Monthly readers" },
+      { "value": "+300", "label": "Technical articles" },
+      { "value": "+$20,000", "label": "Revenue generated for a client" }
+    ]
   },
   "pitch": {
-    "headline": "Turn developers into customers with technical content that builds trust",
-    "paragraphs": [
-      "Most tech companies have a great product, but a common problem: very few developers understand why they should use it.",
-      "Features don't sell. Documentation alone doesn't create demand. And traditional advertising rarely works with a technical audience.",
-      "That's where educational content comes in."
-    ],
-    "body": "I create technical content that explains real problems, shows solutions with actual code, and positions your product naturally within developers' workflows. The goal isn't aggressive selling — it's building trust, authority, and adoption.",
-    "experience": "Over the past few years I've worked with APIs, AI platforms, developer tools, fintech solutions, and SaaS products — creating articles, videos, and tutorials that reach thousands of engineers, data scientists, and automation professionals.",
-    "question": "How can this technology help a developer solve a real problem?",
-    "closing": "Because when content delivers value first, conversions follow."
+    "headline": "Most SaaS companies have a great product, but very few developers understand why they should use it.",
+    "body": "I create technical content grounded in real problems, working code, and use cases that build trust and accelerate adoption."
   },
   "offerings": {
     "eyebrow": "Services",
     "title": "What I can do for your company",
+    "categories": [
+      {
+        "title": "Technical SEO Content",
+        "benefit": "Content that ranks on Google and educates at the same time, so developers find you when they're searching for a solution.",
+        "items": [
+          "SEO-optimized technical articles",
+          "Tool and API comparisons",
+          "Step-by-step tutorials with real code",
+          "Use cases with AI, Python, and automation"
+        ]
+      },
+      {
+        "title": "Developer Marketing",
+        "benefit": "Distribution where your technical audience already is, to build authority beyond your own blog.",
+        "items": [
+          "Full content campaigns",
+          "Medium publishing",
+          "Dev.to publishing",
+          "LinkedIn content",
+          "Technical presence on GitHub"
+        ]
+      },
+      {
+        "title": "YouTube & Product Demos",
+        "benefit": "Video content that shows your product actually working — the fastest way to build technical trust.",
+        "items": [
+          "YouTube videos with hands-on demos",
+          "Product reviews",
+          "Integration videos",
+          "API demos",
+          "Python examples"
+        ]
+      }
+    ]
+  },
+  "contentPackages": {
+    "eyebrow": "Collaboration",
+    "title": "Content Packages",
+    "subtitle": "A quick way to understand the scope of each collaboration — the final proposal is always tailored to your case.",
+    "cta": "Request a proposal",
     "items": [
-      "SEO-optimized technical articles",
-      "YouTube videos with hands-on demos",
-      "Step-by-step tutorials with real code",
-      "Tool and API comparisons",
-      "Use cases with AI, Python, and automation",
-      "Content for Medium, LinkedIn, Dev.to, and company blogs",
-      "Repurposing content across multiple channels"
+      {
+        "name": "Starter",
+        "description": "Ideal for companies that want to validate a technical content strategy.",
+        "features": [
+          "2 SEO technical articles",
+          "1 YouTube video with a hands-on demo",
+          "Promotion across my channels"
+        ]
+      },
+      {
+        "name": "Growth",
+        "description": "Built to generate authority and steadily grow visibility.",
+        "features": [
+          "4 SEO technical articles",
+          "2 YouTube videos",
+          "Promotion on Medium, LinkedIn, Dev.to, and other channels",
+          "Content repurposed across multiple platforms"
+        ]
+      },
+      {
+        "name": "Authority",
+        "description": "The most complete option for companies that want to become a reference in their space.",
+        "features": [
+          "10 SEO technical articles",
+          "3 YouTube videos",
+          "Editorial strategy",
+          "Multi-channel distribution",
+          "Content repurposed across different formats"
+        ]
+      }
     ]
   },
   "process": {
     "eyebrow": "Process",
     "title": "My process",
     "intro": "I don't create shallow content.",
-    "body1": "First, I get to know your product, study the market, and figure out what your audience is actually looking for. Then I build a tutorial or case study where your solution makes sense within a real problem.",
-    "body2": "The result is content that educates, positions your brand as a reference, and keeps driving traffic months after publishing."
+    "steps": [
+      {
+        "title": "Discovery",
+        "description": "I get to know your product, your technical audience, and what sets you apart from the competition."
+      },
+      {
+        "title": "Research",
+        "description": "I research what your audience is actually looking for and spot the content gaps you can own."
+      },
+      {
+        "title": "Production",
+        "description": "I build the article, tutorial, or video, testing the code and the solution end to end."
+      },
+      {
+        "title": "Distribution",
+        "description": "I publish and repurpose the content across the channels your technical audience already uses."
+      }
+    ],
+    "closing": "The result is content that educates, positions your brand as a reference, and keeps driving traffic months after publishing."
   },
   "whyMe": {
     "eyebrow": "Why me",
     "title": "Why work with me?",
-    "intro": "I combine three profiles that rarely come together in one person:",
+    "intro": "I combine three pillars that rarely come together in one person:",
     "profiles": [
       {
         "title": "Developer",
@@ -58,42 +148,73 @@
         "description": "Experienced in CRM, automation, AI, and enterprise software."
       },
       {
-        "title": "Content creator",
-        "description": "With an established audience of thousands of developers and tech professionals."
+        "title": "Own distribution",
+        "description": "An established audience on YouTube, Medium, LinkedIn, Dev.to, and GitHub — your content doesn't depend only on your own blog."
       }
     ],
     "closing": "That lets me create content that's not only technically accurate, but also engaging, easy to consume, and results-driven."
   },
-  "asset": {
-    "title": "More than content: an asset for your business",
-    "paragraphs": [
-      "A good article can rank on Google for years.",
-      "A video can keep generating views and customers long after it's published.",
-      "A well-built tutorial can become the first experience hundreds — or thousands — of developers have with your product."
-    ],
-    "closing": "Content stops being an expense and becomes an asset that works for your business 24 hours a day."
+  "caseStudyMain": {
+    "eyebrow": "Case study",
+    "title": "How I helped EODHD turn technical traffic into customers",
+    "problemLabel": "Problem",
+    "solutionLabel": "Solution",
+    "contentTypeLabel": "Content type",
+    "resultLabel": "Result",
+    "problem": "EODHD has a solid financial data API, but many developers didn't understand why they should choose it over other market data sources.",
+    "solution": "Technical articles and tutorials with real code showing the API solving concrete problems — from LangChain AI agents to automated technical analysis.",
+    "contentType": "SEO technical articles, code tutorials, and demo videos.",
+    "quote": "Kevin's content doesn't stay surface-level — he understands the API, tests the examples, and explains exactly why a developer should use EODHD. His work helped us convert organic traffic better.",
+    "name": "Nick",
+    "role": "EODHD",
+    "statValue": "+$20,000",
+    "statLabel": "in revenue generated through organic content"
+  },
+  "caseStudies": {
+    "eyebrow": "More case studies",
+    "title": "Other companies I've worked with",
+    "items": [
+      {
+        "company": "Nutrient",
+        "problem": "They needed to reach more developers and give visibility to their document processing SDK against better-known alternatives.",
+        "solution": "Practical technical content showing real SDK integrations across different languages and use cases.",
+        "contentType": "Technical articles and code tutorials."
+      },
+      {
+        "company": "Zernio",
+        "problem": "The product was solid, but few developers knew how to start using it in a real project.",
+        "solution": "Step-by-step tutorials focused on the first integration, to reduce adoption friction.",
+        "contentType": "Technical tutorials and educational content."
+      },
+      {
+        "company": "Snowball Analytics",
+        "problem": "They wanted to drive product adoption among a technical and investor audience, without sounding like generic marketing.",
+        "solution": "Content that explains the product through the real use case, with data and practical examples.",
+        "contentType": "Articles and use cases backed by real data."
+      }
+    ]
   },
   "talk": {
     "title": "Let's talk",
     "body": "If you're building an API, an AI platform, a SaaS product, or a developer tool and want to grow your visibility with high-quality technical content, I'd love to help.",
-    "closing": "Let's create content developers actually want to read, watch, and share.",
-    "cta": "Let's talk about your project"
+    "closing": "Let's create content developers actually want to read, watch, and share."
+  },
+  "contactForm": {
+    "name": "Name",
+    "company": "Company",
+    "email": "Email",
+    "projectType": "Project type",
+    "projectTypePlaceholder": "E.g. SEO articles, videos, full campaign...",
+    "budget": "Budget",
+    "budgetPlaceholder": "E.g. $500-1,000",
+    "message": "Message",
+    "submit": "Send",
+    "submitting": "Sending...",
+    "success": "Thanks! I'll get back to you as soon as possible.",
+    "error": "Something went wrong. Try again or email me directly at"
   },
   "companies": {
     "title": "Companies I've collaborated with"
-  },
-  "testimonials": {
-    "eyebrow": "Results",
-    "title": "What people I've worked with say",
-    "items": [
-      {
-        "quote": "Kevin's content doesn't stay surface-level — he understands the API, tests the examples, and explains exactly why a developer should use EODHD. His work helped us convert organic traffic better.",
-        "name": "Nick",
-        "role": "EODHD",
-        "statValue": "+$20,000",
-        "statLabel": "in revenue generated through organic content"
-      }
-    ]
   },
   "articles": {
     "title": "Articles",

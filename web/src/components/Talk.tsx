@@ -1,13 +1,14 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Container from "./Container";
+import ContactForm from "./ContactForm";
 import { avatarPhoto, contactEmail } from "@/content/site";
 
 export default function Talk() {
   const t = useTranslations("talk");
 
   return (
-    <section className="border-t border-line bg-accent py-20 text-white">
+    <section id="contact" className="scroll-mt-16 border-t border-line bg-accent py-20 text-white">
       <Container className="max-w-2xl text-center">
         {avatarPhoto ? (
           <Image
@@ -27,14 +28,14 @@ export default function Talk() {
         <p className="mt-3 text-base leading-relaxed text-white/85">
           {t("closing")}
         </p>
-        <div className="mt-8">
-          <a
-            href={`mailto:${contactEmail}`}
-            className="inline-block rounded-full bg-white px-6 py-3 text-sm font-medium text-accent-strong transition-colors hover:bg-accent-soft"
-          >
-            {t("cta")}
+        <p className="mt-6 text-sm text-white/70">
+          <a href={`mailto:${contactEmail}`} className="underline hover:text-white">
+            {contactEmail}
           </a>
-        </div>
+        </p>
+      </Container>
+      <Container className="mt-10 max-w-lg text-left">
+        <ContactForm />
       </Container>
     </section>
   );
