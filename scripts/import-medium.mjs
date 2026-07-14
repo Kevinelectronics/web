@@ -183,6 +183,21 @@ async function main() {
   const bodyHtml = article.html() ?? "";
   let markdown = turndown.turndown(bodyHtml).trim();
 
+  // Medium sprinkles non-breaking spaces (U+00A0) through its text nodes —
+  // invisible in a diff/preview, but they defeat plain-space text matching
+  // (and look identical to normal spaces if they ever cause odd wrapping).
+  markdown = markdown.replace(/ /g, " ");
+
+  // Medium sometimes injects a "subscribe to this author" interstitial
+  // mid-article. Its DOM shape is as unstable as the topic tags (doesn't
+  // show up on every fetch of the same URL), so selector-based removal
+  // can't reliably catch it — strip it from the rendered markdown instead,
+  // matching on its fixed wording regardless of author name.
+  markdown = markdown.replace(
+    /## Get [^\n]+['’]s stories in your inbox\s*\n+Join Medium for free to get updates from this writer\.\s*\n+Subscribe\s*\n+Subscribe\s*\n+Remember me for faster sign in\s*\n*/g,
+    "",
+  );
+
   // Collapse the extra blank lines left behind by removed elements, without
   // touching content inside fenced code blocks (blank-line meaning differs
   // there — e.g. a lone "--" could be real SQL, not leftover chrome).
