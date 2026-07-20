@@ -72,6 +72,12 @@
       }
     ]
   },
+  "videos": {
+    "eyebrow": "Video",
+    "title": "I also create videos",
+    "body": "Alongside articles, I record technical videos on YouTube with hands-on demos and real use cases.",
+    "cta": "Watch the YouTube channel"
+  },
   "contentPackages": {
     "eyebrow": "Collaboration",
     "title": "Content Packages",

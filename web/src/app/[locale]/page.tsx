@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Metrics from "@/components/Metrics";
 import Offerings from "@/components/Offerings";
+import Videos from "@/components/Videos";
 import Process from "@/components/Process";
 import WhyMe from "@/components/WhyMe";
 import CompanyLogos from "@/components/CompanyLogos";
@@ -31,6 +32,7 @@ export default function HomePage() {
       <Metrics />
       <CompanyLogos />
       <Offerings />
+      <Videos />
       <CaseStudyMain />
       <CaseStudies />
       <ContentPackages />

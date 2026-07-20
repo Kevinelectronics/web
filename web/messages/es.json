@@ -72,6 +72,12 @@
       }
     ]
   },
+  "videos": {
+    "eyebrow": "Vídeo",
+    "title": "También creo vídeos",
+    "body": "Además de artículos, grabo vídeos técnicos en YouTube con demostraciones prácticas y casos de uso reales.",
+    "cta": "Ver el canal de YouTube"
+  },
   "contentPackages": {
     "eyebrow": "Colaboración",
     "title": "Content Packages",

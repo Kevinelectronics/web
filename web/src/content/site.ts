@@ -73,3 +73,6 @@ export const siteUrl = "https://kevinmeneses.com";
 
 /** Google Analytics 4 measurement ID. Measurement IDs are public by design (visible in every page's source). */
 export const googleAnalyticsId = "G-YC8R1FQRGQ";
+
+/** YouTube video ID featured on the homepage (from a youtu.be/<id> or youtube.com/watch?v=<id> URL). */
+export const featuredVideoId = "4K0SXE7hz6w";
