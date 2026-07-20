@@ -1,12 +1,6 @@
 import { useTranslations } from "next-intl";
 import Container from "./Container";
 
-/**
- * DRAFT COPY — the EODHD quote below was written by Kevin as a proposed
- * testimonial (see messages/{es,en}.json -> caseStudyMain.quote), not a
- * verbatim statement from Nick. Do not treat it as final/approved until
- * Nick has reviewed and confirmed the wording.
- */
 export default function CaseStudyMain() {
   const t = useTranslations("caseStudyMain");
 
