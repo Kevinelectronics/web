@@ -31,6 +31,29 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
       },
     },
   },
+  email: {
+    config: {
+      // Strapi's default "sendmail" provider needs a local sendmail binary
+      // that doesn't exist on Render — use Resend's SMTP relay instead.
+      // Resend's shared sandbox address (no domain verification needed) can
+      // only deliver to the account's own signup address, which is exactly
+      // the lead-notification target, so that's fine for this use case.
+      provider: 'nodemailer',
+      providerOptions: {
+        host: 'smtp.resend.com',
+        port: 465,
+        secure: true,
+        auth: {
+          user: 'resend',
+          pass: env('RESEND_API_KEY'),
+        },
+      },
+      settings: {
+        defaultFrom: 'onboarding@resend.dev',
+        defaultReplyTo: 'onboarding@resend.dev',
+      },
+    },
+  },
   upload: {
     config: {
       security: {
