@@ -4,6 +4,11 @@ import { useLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
+const localeFlags: Record<string, string> = {
+  es: "🇪🇸",
+  en: "🇬🇧",
+};
+
 export default function LocaleSwitcher() {
   const locale = useLocale();
   const pathname = usePathname();
@@ -17,12 +22,14 @@ export default function LocaleSwitcher() {
           <button
             onClick={() => router.replace(pathname, { locale: loc })}
             aria-current={loc === locale}
-            className={`px-1 uppercase tracking-wide transition-colors ${
+            aria-label={loc}
+            className={`flex items-center gap-1 px-1 uppercase tracking-wide transition-colors ${
               loc === locale
                 ? "font-medium text-accent"
                 : "text-ink-soft hover:text-accent"
             }`}
           >
+            <span aria-hidden="true">{localeFlags[loc]}</span>
             {loc}
           </button>
         </span>
