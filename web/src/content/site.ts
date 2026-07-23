@@ -60,6 +60,15 @@ export const companies: Company[] = [
     logoUrl: "/logos/bluehost.png",
     url: "https://www.bluehost.com",
   },
+  {
+    name: "Zernio",
+    logoUrl: "/logos/zernio.png",
+  },
+  {
+    name: "Mailtrap",
+    logoUrl: "/logos/mailtrap.png",
+    url: "https://mailtrap.io",
+  },
 ];
 
 // TODO: swap for a @kevinmeneses.com address once you set up email on the domain.

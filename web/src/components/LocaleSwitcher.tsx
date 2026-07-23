@@ -15,24 +15,24 @@ export default function LocaleSwitcher() {
   const router = useRouter();
 
   return (
-    <div className="flex items-center gap-1 text-sm">
-      {routing.locales.map((loc, index) => (
-        <span key={loc} className="flex items-center gap-1">
-          {index > 0 && <span className="text-line">/</span>}
-          <button
-            onClick={() => router.replace(pathname, { locale: loc })}
-            aria-current={loc === locale}
-            aria-label={loc}
-            className={`flex items-center gap-1 px-1 uppercase tracking-wide transition-colors ${
-              loc === locale
-                ? "font-medium text-accent"
-                : "text-ink-soft hover:text-accent"
-            }`}
-          >
-            <span aria-hidden="true">{localeFlags[loc]}</span>
-            {loc}
-          </button>
-        </span>
+    <div className="flex items-center gap-1.5 rounded-full border border-line p-1 text-sm">
+      {routing.locales.map((loc) => (
+        <button
+          key={loc}
+          onClick={() => router.replace(pathname, { locale: loc })}
+          aria-current={loc === locale}
+          aria-label={loc}
+          className={`flex items-center gap-1.5 rounded-full px-2.5 py-1 uppercase tracking-wide transition-colors ${
+            loc === locale
+              ? "bg-accent-soft font-medium text-accent-strong"
+              : "text-ink-soft hover:text-accent"
+          }`}
+        >
+          <span aria-hidden="true" className="text-base leading-none">
+            {localeFlags[loc]}
+          </span>
+          {loc}
+        </button>
       ))}
     </div>
   );
