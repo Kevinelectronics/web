@@ -10,7 +10,7 @@ export default function Metrics() {
   return (
     <section className="border-t border-line py-14">
       <Container>
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
           {items.map((item) => (
             <div key={item.label} className="text-center sm:text-left">
               <p className="font-display text-3xl font-medium text-accent sm:text-4xl">

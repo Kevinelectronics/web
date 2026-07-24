@@ -25,8 +25,9 @@
   "metrics": {
     "items": [
       { "value": "+12,500", "label": "YouTube subscribers" },
+      { "value": "+350", "label": "YouTube videos" },
       { "value": "+27k", "label": "Monthly readers" },
-      { "value": "+300", "label": "Technical articles" },
+      { "value": "+600", "label": "Technical articles" },
       { "value": "+$20,000", "label": "Revenue generated for a client" }
     ]
   },

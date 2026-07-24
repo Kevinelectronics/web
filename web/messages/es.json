@@ -25,8 +25,9 @@
   "metrics": {
     "items": [
       { "value": "+12.500", "label": "Suscriptores en YouTube" },
+      { "value": "+350", "label": "Vídeos de YouTube" },
       { "value": "+27k", "label": "Lecturas mensuales" },
-      { "value": "+300", "label": "Artículos técnicos" },
+      { "value": "+600", "label": "Artículos técnicos" },
       { "value": "+20.000 €", "label": "Facturación generada para un cliente" }
     ]
   },
