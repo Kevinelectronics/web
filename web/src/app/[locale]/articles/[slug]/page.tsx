@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getTranslations } from "next-intl/server";
 import Container from "@/components/Container";
+import OutboundLinkParams from "@/components/OutboundLinkParams";
 import { Link } from "@/i18n/navigation";
 import { getArticleBySlug, strapiImageUrl } from "@/lib/strapi";
 import { siteUrl, socials } from "@/content/site";
@@ -131,17 +132,19 @@ export default async function ArticlePage({
         </h1>
 
         {article.sourceUrl && (
-          <p className="mt-2 text-sm text-ink-soft">
-            {t("originallyPublishedOn")}{" "}
-            <a
-              href={article.sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:underline"
-            >
-              {new URL(article.sourceUrl).hostname.replace(/^www\./, "")}
-            </a>
-          </p>
+          <OutboundLinkParams>
+            <p className="mt-2 text-sm text-ink-soft">
+              {t("originallyPublishedOn")}{" "}
+              <a
+                href={article.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:underline"
+              >
+                {new URL(article.sourceUrl).hostname.replace(/^www\./, "")}
+              </a>
+            </p>
+          </OutboundLinkParams>
         )}
 
         {article.tags && article.tags.length > 0 && (
@@ -168,11 +171,13 @@ export default async function ArticlePage({
           </div>
         )}
 
-        <div className="prose mt-10 max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:no-underline hover:prose-a:underline">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {article.content}
-          </ReactMarkdown>
-        </div>
+        <OutboundLinkParams>
+          <div className="prose mt-10 max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:no-underline hover:prose-a:underline">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {article.content}
+            </ReactMarkdown>
+          </div>
+        </OutboundLinkParams>
       </Container>
     </article>
   );
