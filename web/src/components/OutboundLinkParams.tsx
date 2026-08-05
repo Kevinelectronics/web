@@ -2,12 +2,10 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 
-const TARGET_HOSTNAMES = new Set(["massive.com", "www.massive.com"]);
-
-// Massive (a referral partner) needs their attribution params forwarded
-// on click-throughs from the article body. Only touch links to their
-// domain — other outbound links (LinkedIn, GitHub, etc.) don't need
-// tracking params appended.
+// Referral/affiliate links (Massive, EODHD, etc.) lose any UTM/campaign
+// params a visitor arrived with, since the article body is static markdown
+// with hardcoded hrefs. Forward the current page's query string onto every
+// outbound link so click-throughs keep that attribution.
 export default function OutboundLinkParams({
   children,
 }: {
@@ -33,7 +31,9 @@ export default function OutboundLinkParams({
         return;
       }
 
-      if (!TARGET_HOSTNAMES.has(url.hostname)) return;
+      const isOutbound = url.hostname !== window.location.hostname;
+      const isHttp = url.protocol === "http:" || url.protocol === "https:";
+      if (!isOutbound || !isHttp) return;
 
       incomingParams.forEach((value, key) => {
         if (!url.searchParams.has(key)) {
