@@ -88,34 +88,61 @@ const turndown = new TurndownService({
 });
 
 // Medium's images live in <figure>; keep figcaptions as italic captions.
+// Recent Medium markup renders responsive images as <picture><source
+// srcset="...800w, ...1400w"><img (no src)></picture> — the plain <img> has
+// no `src` at all, so grab the largest candidate out of the <source>'s
+// srcset instead, falling back to `src`/`data-src` for older post markup.
 turndown.addRule("mediumFigure", {
   filter: "figure",
   replacement: (content, node) => {
     const img = node.querySelector("img");
     const figcaption = node.querySelector("figcaption");
     if (!img) return content;
-    const src = img.getAttribute("src") || "";
     const alt = img.getAttribute("alt") || "";
     const caption = figcaption ? figcaption.textContent.trim() : "";
+    let src = img.getAttribute("src") || img.getAttribute("data-src") || "";
+    if (!src) {
+      const source = node.querySelector("source[srcset]");
+      const srcset = source?.getAttribute("srcset") || "";
+      const candidates = srcset
+        .split(",")
+        .map((entry) => entry.trim().split(/\s+/))
+        .filter(([url]) => Boolean(url));
+      const widest = candidates.sort(
+        (a, b) => (parseInt(b[1]) || 0) - (parseInt(a[1]) || 0),
+      )[0];
+      src = widest?.[0] || "";
+    }
+    if (!src) return content;
     return `\n\n![${alt}](${src})${caption ? `\n*${caption}*` : ""}\n\n`;
   },
 });
 
-// Medium doesn't nest a <code> element inside <pre> — it's a <span> with
-// <br> tags for line breaks — so Turndown's default fenced-code-block rule
-// (which only fires for pre > code) never matches and the code gets escaped
-// as plain prose instead. Handle <pre> directly and rebuild real newlines.
+// Medium doesn't nest a <code> element inside <pre> — each line of a code
+// block is a direct <span> child of <pre> (with <br> tags only for a single
+// line that wraps), and consecutive lines in the editor with no blank line
+// between them can be siblings with no separator at all between the spans.
+// Stripping tags from the raw innerHTML therefore runs separate lines
+// together (e.g. "foo = 1bar = 2"). Join each direct child's own text as one
+// line instead of flattening the whole <pre> in one pass.
 turndown.addRule("mediumCodeBlock", {
   filter: "pre",
   replacement: (_content, node) => {
-    const text = (node.innerHTML || "")
-      .replace(/<br\s*\/?>/gi, "\n")
-      .replace(/<[^>]+>/g, "")
-      .replace(/&quot;/g, '"')
-      .replace(/&#0?39;/g, "'")
-      .replace(/&lt;/g, "<")
-      .replace(/&gt;/g, ">")
-      .replace(/&amp;/g, "&");
+    const decode = (html) =>
+      (html || "")
+        .replace(/<br\s*\/?>/gi, "\n")
+        .replace(/<[^>]+>/g, "")
+        .replace(/&quot;/g, '"')
+        .replace(/&#0?39;/g, "'")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&amp;/g, "&");
+    const children = Array.from(node.childNodes).filter(
+      (child) => child.nodeType === 1 || (child.textContent || "").trim(),
+    );
+    const text = children.length
+      ? children.map((child) => decode(child.innerHTML ?? child.textContent)).join("\n")
+      : decode(node.innerHTML);
     return `\n\n\`\`\`\n${text.trim()}\n\`\`\`\n\n`;
   },
 });
