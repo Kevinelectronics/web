@@ -193,6 +193,20 @@ async function main() {
   }
   article.find('[data-testid="og"]').remove();
 
+  // The hero image right after the title is the same asset as `og:image`,
+  // which we already upload separately as the Article's `coverImage` — left
+  // in place, it renders a second time at the top of the body. Match on the
+  // stable filename segment (e.g. "1*Zq7OZUMEvxWwDVcqUdxPjA.png") rather
+  // than the full URL, since the inline <picture> and og:image use
+  // different resize/format query params for the same underlying asset.
+  const coverImageFilename = coverImageUrl?.match(/([^/?]+\.(?:png|jpe?g|webp|gif))/i)?.[1];
+  if (coverImageFilename) {
+    const firstFigure = article.find("figure").first();
+    if (firstFigure.length > 0 && (firstFigure.html() || "").includes(coverImageFilename)) {
+      firstFigure.remove();
+    }
+  }
+
   // Topic tags ("Langchain", "AI Agent", ...) and sign-in prompts for
   // claps/bookmarks/highlights sometimes render inside <article> too.
   article.find('[aria-label^="Topic:"]').remove();
