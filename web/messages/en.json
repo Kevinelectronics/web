@@ -73,6 +73,11 @@
       }
     ]
   },
+  "featuredArticles": {
+    "eyebrow": "Featured",
+    "title": "Featured articles",
+    "viewAll": "View all articles"
+  },
   "videos": {
     "eyebrow": "Video",
     "title": "I also create videos",
@@ -232,7 +237,8 @@
     "back": "Back to articles",
     "metaDescription": "Technical articles on APIs, AI, and development, written by Kevin Meneses.",
     "originallyPublishedOn": "Originally published on",
-    "allTags": "All"
+    "allTags": "All",
+    "featured": "Featured"
   },
   "footer": {
     "rights": "All rights reserved.",

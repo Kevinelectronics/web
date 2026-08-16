@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import Container from "@/components/Container";
 import ArticleCard from "@/components/ArticleCard";
 import { Link } from "@/i18n/navigation";
-import { getArticles, getTags } from "@/lib/strapi";
+import { getArticlesFeaturedFirst, getTags } from "@/lib/strapi";
 
 export async function generateMetadata({
   params,
@@ -38,7 +38,7 @@ export default async function ArticlesPage({
   const { tag: activeTag } = await searchParams;
   const t = await getTranslations("articles");
   const [articles, tags] = await Promise.all([
-    getArticles(locale, activeTag),
+    getArticlesFeaturedFirst(locale, activeTag),
     getTags(locale),
   ]);
 

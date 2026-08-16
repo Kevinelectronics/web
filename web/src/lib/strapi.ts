@@ -23,6 +23,7 @@ export type Article = {
   coverImage?: StrapiImage | null;
   sourceUrl?: string | null;
   tags?: Tag[];
+  featured?: boolean;
   publishedAt: string;
   locale: string;
 };
@@ -63,6 +64,41 @@ export async function getArticles(
   } catch {
     return [];
   }
+}
+
+export async function getFeaturedArticles(
+  locale: string,
+  limit = 3,
+  tagSlug?: string,
+): Promise<Article[]> {
+  try {
+    const tagFilter = tagSlug
+      ? `&filters[tags][slug][$eq]=${encodeURIComponent(tagSlug)}`
+      : "";
+    const json = await strapiFetch<StrapiListResponse<Article>>(
+      `/articles?locale=${locale}&filters[featured][$eq]=true&sort=publishedAt:desc&populate=coverImage,tags&status=published&pagination[limit]=${limit}${tagFilter}`,
+    );
+    return json.data;
+  } catch {
+    return [];
+  }
+}
+
+// Featured articles (max 5) first, then the rest — used on the articles
+// listing page. Fetches both lists and dedupes client-side rather than
+// filtering "not featured" server-side, so it doesn't depend on how
+// existing rows resolve the `featured` field (false vs. null) before a
+// migration backfills it.
+export async function getArticlesFeaturedFirst(
+  locale: string,
+  tagSlug?: string,
+): Promise<Article[]> {
+  const [featured, all] = await Promise.all([
+    getFeaturedArticles(locale, 5, tagSlug),
+    getArticles(locale, tagSlug),
+  ]);
+  const featuredIds = new Set(featured.map((a) => a.id));
+  return [...featured, ...all.filter((a) => !featuredIds.has(a.id))];
 }
 
 export async function getArticleBySlug(

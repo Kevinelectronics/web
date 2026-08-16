@@ -29,9 +29,16 @@ export default function ArticleCard({ article }: { article: Article }) {
         </div>
       )}
       <div className="min-w-0">
-        <time className="text-xs uppercase tracking-wide text-ink-soft/70">
-          {date}
-        </time>
+        <div className="flex flex-wrap items-center gap-2">
+          <time className="text-xs uppercase tracking-wide text-ink-soft/70">
+            {date}
+          </time>
+          {article.featured && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-accent px-2 py-0.5 text-xs font-medium text-white">
+              ★ {t("featured")}
+            </span>
+          )}
+        </div>
         <h3 className="mt-2 font-display text-xl font-medium text-ink transition-colors group-hover:text-accent">
           {article.title}
         </h3>
