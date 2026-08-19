@@ -10,7 +10,7 @@
   "hero": {
     "greeting": "Hola, soy",
     "name": "Kevin Meneses",
-    "role": "SaaS Content Writer & Technical Writer",
+    "role": "Redactor de Contenido SaaS y Technical Writer",
     "headline": "Convierte tu SaaS en contenido técnico que atrae desarrolladores y genera clientes",
     "tagline": "Creo artículos SEO, tutoriales con código, vídeos de YouTube y campañas de contenido para empresas de IA, APIs, FinTech y herramientas para desarrolladores.",
     "cta": "Ver casos de éxito",
@@ -233,12 +233,16 @@
     "subtitle": "Últimas publicaciones",
     "viewAll": "Ver todos los artículos",
     "empty": "Todavía no hay artículos publicados. Vuelve pronto.",
+    "emptyOtherLocaleHint": "Mientras tanto, puedes leer los artículos disponibles en inglés:",
+    "emptyOtherLocaleCta": "Ver artículos en inglés",
     "readMore": "Leer más",
     "back": "Volver a artículos",
     "metaDescription": "Artículos técnicos sobre APIs, IA y desarrollo, escritos por Kevin Meneses.",
+    "tagMetaDescription": "Artículos sobre {tag}, escritos por Kevin Meneses.",
     "originallyPublishedOn": "Publicado originalmente en",
     "allTags": "Todos",
-    "featured": "Destacado"
+    "featured": "Destacado",
+    "related": "Artículos relacionados"
   },
   "footer": {
     "rights": "Todos los derechos reservados.",

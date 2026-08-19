@@ -7,7 +7,8 @@ import { getTranslations } from "next-intl/server";
 import Container from "@/components/Container";
 import OutboundLinkParams from "@/components/OutboundLinkParams";
 import { Link } from "@/i18n/navigation";
-import { getArticleBySlug, strapiImageUrl } from "@/lib/strapi";
+import { getArticleBySlug, getRelatedArticles, strapiImageUrl } from "@/lib/strapi";
+import { buildMetaDescription } from "@/lib/seo";
 import { siteUrl, socials } from "@/content/site";
 
 export async function generateMetadata({
@@ -28,15 +29,20 @@ export async function generateMetadata({
   // domain authority anyway, but without a canonical both copies risk being
   // flagged as duplicate content instead of just one deferring to the other).
   const canonical = article.sourceUrl || `/${locale}/articles/${slug}`;
+  const description = buildMetaDescription(article.excerpt, article.content);
 
   return {
-    title: article.title,
-    description: article.excerpt,
+    // `absolute` skips the root layout's `%s — Kevin Meneses` title
+    // template — CMS-authored titles are already long listicle-style
+    // headlines, and the extra suffix was pushing many of them past the
+    // ~60-char budget search engines display before truncating.
+    title: { absolute: article.title },
+    description,
     alternates: { canonical },
     openGraph: {
       type: "article",
       title: article.title,
-      description: article.excerpt,
+      description,
       publishedTime: article.publishedAt,
       images: article.coverImage
         ? [strapiImageUrl(article.coverImage.url)]
@@ -57,6 +63,9 @@ export default async function ArticlePage({
   if (!article) {
     notFound();
   }
+
+  const relatedArticles = await getRelatedArticles(locale, article.tags, article.id);
+  const description = buildMetaDescription(article.excerpt, article.content);
 
   const date = new Date(article.publishedAt).toLocaleDateString(locale, {
     year: "numeric",
@@ -89,7 +98,7 @@ export default async function ArticlePage({
         "@context": "https://schema.org",
         "@type": "Article",
         headline: article.title,
-        description: article.excerpt,
+        description,
         image: article.coverImage
           ? [strapiImageUrl(article.coverImage.url)]
           : undefined,
@@ -178,6 +187,26 @@ export default async function ArticlePage({
             </ReactMarkdown>
           </div>
         </OutboundLinkParams>
+
+        {relatedArticles.length > 0 && (
+          <div className="mt-16 border-t border-line pt-10">
+            <h2 className="font-display text-xl font-medium tracking-tight text-ink">
+              {t("related")}
+            </h2>
+            <ul className="mt-6 space-y-4">
+              {relatedArticles.map((related) => (
+                <li key={related.id}>
+                  <Link
+                    href={`/articles/${related.slug}`}
+                    className="text-accent hover:underline"
+                  >
+                    {related.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </Container>
     </article>
   );

@@ -233,12 +233,16 @@
     "subtitle": "Latest posts",
     "viewAll": "View all articles",
     "empty": "No articles published yet. Check back soon.",
+    "emptyOtherLocaleHint": "In the meantime, you can read the articles available in Spanish:",
+    "emptyOtherLocaleCta": "View articles in Spanish",
     "readMore": "Read more",
     "back": "Back to articles",
     "metaDescription": "Technical articles on APIs, AI, and development, written by Kevin Meneses.",
+    "tagMetaDescription": "Articles about {tag}, written by Kevin Meneses.",
     "originallyPublishedOn": "Originally published on",
     "allTags": "All",
-    "featured": "Featured"
+    "featured": "Featured",
+    "related": "Related articles"
   },
   "footer": {
     "rights": "All rights reserved.",

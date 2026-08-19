@@ -7,11 +7,35 @@ import { getArticlesFeaturedFirst, getTags } from "@/lib/strapi";
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ tag?: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const { tag } = await searchParams;
   const t = await getTranslations({ locale, namespace: "articles" });
+
+  // Tag-filtered views are faceted navigation over the same articles, not
+  // unique content of their own — give them their own title/description for
+  // clarity when shared, but keep them out of the index so they don't
+  // compete with (or dilute) the main articles list in search results.
+  if (tag) {
+    const tags = await getTags(locale);
+    const tagName = tags.find((tagItem) => tagItem.slug === tag)?.name ?? tag;
+
+    return {
+      title: `${tagName} — ${t("title")}`,
+      description: t("tagMetaDescription", { tag: tagName }),
+      alternates: { canonical: `/${locale}/articles?tag=${tag}` },
+      robots: { index: false, follow: true },
+    };
+  }
+
+  // Most articles currently only exist in the "en" locale (see
+  // getArticles/getTags) — noindex the list for a locale with nothing to
+  // show yet rather than let a near-empty page sit in the index.
+  const articles = await getArticlesFeaturedFirst(locale);
 
   return {
     title: t("title"),
@@ -24,6 +48,7 @@ export async function generateMetadata({
         "x-default": "/es/articles",
       },
     },
+    ...(articles.length === 0 ? { robots: { index: false, follow: true } } : {}),
   };
 }
 
@@ -82,7 +107,19 @@ export default async function ArticlesPage({
 
         <div className="mt-10">
           {articles.length === 0 ? (
-            <p className="text-ink-soft">{t("empty")}</p>
+            <div className="text-ink-soft">
+              <p>{t("empty")}</p>
+              <p className="mt-4">
+                {t("emptyOtherLocaleHint")}{" "}
+                <Link
+                  href="/articles"
+                  locale={locale === "es" ? "en" : "es"}
+                  className="font-medium text-accent hover:underline"
+                >
+                  {t("emptyOtherLocaleCta")} →
+                </Link>
+              </p>
+            </div>
           ) : (
             articles.map((article) => (
               <ArticleCard key={article.id} article={article} />

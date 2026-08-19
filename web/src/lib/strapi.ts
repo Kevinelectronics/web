@@ -115,6 +115,43 @@ export async function getArticleBySlug(
   }
 }
 
+// Other published articles for the "related articles" internal-linking
+// module on article detail pages. Tries every one of the article's tags
+// (not just the first) to widen the shared-topic pool, then — since a
+// locale can have thin or inconsistent tagging, especially while ES
+// content is still being built out — fills any remaining slots with the
+// most recent other articles so every page links to at least `limit`
+// others instead of sitting as an island until tag coverage catches up.
+export async function getRelatedArticles(
+  locale: string,
+  tags: Tag[] | undefined,
+  excludeId: number,
+  limit = 3,
+): Promise<Article[]> {
+  const byTag = new Map<number, Article>();
+  for (const tag of tags ?? []) {
+    if (byTag.size >= limit) break;
+    const articles = await getArticles(locale, tag.slug);
+    for (const article of articles) {
+      if (article.id !== excludeId) byTag.set(article.id, article);
+    }
+  }
+
+  const related = [...byTag.values()].slice(0, limit);
+
+  if (related.length < limit) {
+    const recent = await getArticles(locale);
+    for (const article of recent) {
+      if (related.length >= limit) break;
+      if (article.id === excludeId) continue;
+      if (related.some((a) => a.id === article.id)) continue;
+      related.push(article);
+    }
+  }
+
+  return related;
+}
+
 // Tags aren't locale-specific (a topic like "Langchain" is reused across
 // languages) — only list ones actually used by a published article in the
 // current locale, so the filter pills don't show empty sections.

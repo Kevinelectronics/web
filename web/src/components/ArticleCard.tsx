@@ -39,9 +39,9 @@ export default function ArticleCard({ article }: { article: Article }) {
             </span>
           )}
         </div>
-        <h3 className="mt-2 font-display text-xl font-medium text-ink transition-colors group-hover:text-accent">
+        <h2 className="mt-2 font-display text-xl font-medium text-ink transition-colors group-hover:text-accent">
           {article.title}
-        </h3>
+        </h2>
         {article.excerpt && (
           <p className="mt-2 text-sm leading-relaxed text-ink-soft">
             {article.excerpt}
