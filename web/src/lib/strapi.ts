@@ -57,8 +57,11 @@ export async function getArticles(
     const tagFilter = tagSlug
       ? `&filters[tags][slug][$eq]=${encodeURIComponent(tagSlug)}`
       : "";
+    // Strapi defaults to 25 results per page — without an explicit limit,
+    // any locale with more than 25 published articles silently loses the
+    // rest from the listing page and the sitemap.
     const json = await strapiFetch<StrapiListResponse<Article>>(
-      `/articles?locale=${locale}&sort=publishedAt:desc&populate=coverImage,tags&status=published${tagFilter}`,
+      `/articles?locale=${locale}&sort=publishedAt:desc&populate=coverImage,tags&status=published&pagination[limit]=200${tagFilter}`,
     );
     return json.data;
   } catch {
