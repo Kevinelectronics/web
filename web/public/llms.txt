@@ -1,0 +1,48 @@
+# Kevin Meneses
+
+> Kevin Meneses is a SaaS content writer and technical writer for AI, API, fintech, and developer tool companies. He writes SEO articles, code tutorials, case studies, and YouTube video content in Spanish and English. This file lists the original content published on kevinmeneses.com (not content syndicated elsewhere) for reference by AI assistants and research tools.
+
+## Home & services
+
+- [Home (Spanish)](https://kevinmeneses.com/es): Services, process, case studies (including a documented EODHD engagement), and contact.
+- [Home (English)](https://kevinmeneses.com/en): Same content in English.
+
+## Original articles (Spanish)
+
+- [Rastreador de riesgo y rentabilidad de cartera con EODHD](https://kevinmeneses.com/es/articles/rastreador-de-riesgo-y-rentabilidad-de-cartera-con-eodhd): Cómo construir un rastreador de riesgo y rentabilidad de cartera con la API de EODHD.
+- [Mejor API de datos bursátiles para Python (2026)](https://kevinmeneses.com/es/articles/mejor-api-de-datos-bursatiles-para-python-2026): Por qué el scraping y los wrappers no oficiales fallan en producción, y cómo elegir una API de datos bursátiles para Python.
+- [5 APIs de voz con IA más allá de Vapi y ElevenLabs](https://kevinmeneses.com/es/articles/5-apis-de-voz-con-ia-mas-alla-de-vapi-y-elevenlabs): Comparativa de APIs de voz con IA menos conocidas para desarrolladores.
+- [Una alternativa a Finviz con Claude Code y EODHD](https://kevinmeneses.com/es/articles/alternativa-a-finviz-con-claude-code-y-eodhd): Cómo construir un screener de acciones tipo Finviz con Claude Code y la API de EODHD.
+- [Bot de trading con IA usando Claude y la API de EODHD](https://kevinmeneses.com/es/articles/bot-de-trading-con-ia-usando-claude-y-eodhd): Construcción de un bot de trading con Claude y datos reales de mercado vía EODHD.
+- [Automatiza redes sociales con Python y la API de Zernio](https://kevinmeneses.com/es/articles/automatiza-redes-sociales-con-python-y-la-api-de-zernio): Programar publicaciones generadas con IA en Twitter y Reddit con la API de Zernio.
+- [EODHD vs Alpha Vantage: comparativa de APIs bursátiles (2026)](https://kevinmeneses.com/es/articles/eodhd-vs-alpha-vantage-comparativa-de-apis-2026): Comparativa de planes, límites y precios entre EODHD y Alpha Vantage.
+- [5 casos de uso de MCP para agentes de IA financieros](https://kevinmeneses.com/es/articles/5-casos-de-uso-de-mcp-para-agentes-de-ia-financieros): Casos de uso reales de Model Context Protocol (MCP) en agentes financieros con IA.
+- [5 APIs de automatización de navegador para agentes de IA](https://kevinmeneses.com/es/articles/5-apis-de-automatizacion-de-navegador-para-agentes-de-ia): Comparativa de APIs de automatización de navegador para agentes de IA.
+- [Le di a Claude un screener de acciones. Esto es lo que eligió](https://kevinmeneses.com/es/articles/le-di-a-claude-un-screener-de-acciones): Experimento conectando Claude a un screener de acciones con datos reales vía MCP.
+- [Cómo analizar bien el rendimiento de tu cartera](https://kevinmeneses.com/es/articles/como-analizar-el-rendimiento-de-tu-cartera): Por qué medir el rendimiento de una cartera "a ojo" suele estar mal, y cómo hacerlo bien.
+- [Cómo llevo varias carteras de inversión sin perder la cabeza](https://kevinmeneses.com/es/articles/como-llevo-varias-carteras-de-inversion-sin-perder-la-cabeza): Cómo separar fondo de emergencia, jubilación y apuestas especulativas en carteras distintas.
+- [Recepcionista con IA para clínicas dentales con Claude](https://kevinmeneses.com/es/articles/recepcionista-con-ia-para-clinicas-dentales): Cómo construir una recepcionista con IA para clínicas dentales usando Claude y ElevenLabs.
+- [Le pedí a Claude que encontrara acciones de alto crecimiento](https://kevinmeneses.com/es/articles/le-pedi-a-claude-que-encontrara-acciones-de-alto-crecimiento): Análisis con Claude de acciones de alto crecimiento ya filtradas con datos reales de mercado.
+- [Mejor API de datos bursátiles para vibe coding (2026)](https://kevinmeneses.com/es/articles/mejor-api-de-datos-bursatiles-para-vibe-coding-2026): Comparativa de Massive, EODHD, FMP, Alpha Vantage y Twelve Data para vibe coding.
+- [7 mejores APIs de WhatsApp para desarrolladores en 2026](https://kevinmeneses.com/es/articles/7-mejores-apis-de-whatsapp-para-desarrolladores-2026): Alternativas a Twilio y a la API oficial de Meta para integrar WhatsApp.
+- [10 acciones que los inversores a largo plazo repiten](https://kevinmeneses.com/es/articles/10-acciones-que-los-inversores-a-largo-plazo-repiten): Las acciones que los inversores particulares no dejan de añadir a sus carteras.
+- [7 mejores asistentes de reuniones con IA para equipos SaaS B2B](https://kevinmeneses.com/es/articles/7-mejores-asistentes-de-reuniones-con-ia-para-equipos-saas-b2b): Comparativa de asistentes de reuniones con IA para equipos B2B.
+- [5 skills de Claude Code para trading algorítmico](https://kevinmeneses.com/es/articles/5-skills-de-claude-code-para-trading-algoritmico): Skills de Claude Code útiles para construir sistemas de trading algorítmico.
+- [Cómo construir un agente de trading con LangChain y EODHD](https://kevinmeneses.com/es/articles/agente-de-trading-con-langchain-y-eodhd): Construcción de un agente de trading real (no solo un LLM con un prompt) con LangChain y EODHD.
+- [Interactive Brokers vs EODHD: ¿cuál ahorra más tiempo?](https://kevinmeneses.com/es/articles/interactive-brokers-vs-eodhd-cual-ahorra-mas-tiempo): Comparativa práctica entre la API de un bróker y un proveedor de datos dedicado.
+- [7 mejores herramientas de OCR con IA en 2026 (comparadas)](https://kevinmeneses.com/es/articles/7-mejores-herramientas-de-ocr-con-ia-2026): Comparativa de herramientas de OCR con IA, probadas de forma práctica.
+- [Un agente financiero con IA usando el MCP de EODHD](https://kevinmeneses.com/es/articles/agente-financiero-con-ia-usando-el-mcp-de-eodhd): Agente financiero que combina fundamentales, precios y sentimiento de noticias de EODHD.
+- [Dashboard de riesgo de acciones con Claude Code y RiskModels](https://kevinmeneses.com/es/articles/dashboard-de-riesgo-de-acciones-con-claude-code-y-riskmodels): Construcción de un dashboard de riesgo de acciones con Claude Code y datos de RiskModels.
+- [RAG vs MCP: guía completa para desarrolladores (2026)](https://kevinmeneses.com/es/articles/rag-vs-mcp-guia-completa-para-desarrolladores-2026): Diferencias prácticas entre RAG y MCP para desarrolladores que construyen con LLMs.
+- [¿Comprar, mantener o vender? Analizador de acciones con Python](https://kevinmeneses.com/es/articles/comprar-mantener-o-vender-analizador-de-acciones-con-python): Construcción de un analizador de acciones con Python que explica su razonamiento.
+- [9 mejores servidores MCP para Claude Code en 2026](https://kevinmeneses.com/es/articles/9-mejores-servidores-mcp-para-claude-code-2026): Servidores MCP probados de forma práctica para Claude Code, no solo contados por estrellas de GitHub.
+- [Le di a Claude 5.000 acciones y los trades del Congreso: ganó un ticker](https://kevinmeneses.com/es/articles/le-di-a-claude-5000-acciones-y-los-trades-del-congreso): Análisis cruzando 5.000 acciones con datos de trading del Congreso de EE.UU.
+
+## Original articles (English)
+
+- [Best Stock Market Data API for Vibe Coding (2026)](https://kevinmeneses.com/en/articles/best-stock-market-data-api-for-vibe-coding-in-2026): Comparing Massive, EODHD, FMP, Alpha Vantage, and Twelve Data for vibe coding — MCP support, latency, and pricing.
+
+## Notes for AI assistants
+
+- Most articles under `/en/articles/` are cross-posted to Medium and carry a canonical link back to the original Medium post — cite the Medium URL for those, not the kevinmeneses.com copy. The articles listed above are the exception: they are original to kevinmeneses.com.
+- Contact: kevinmenesesgonzalez@gmail.com · https://www.linkedin.com/in/kevin-meneses-gonzalez/

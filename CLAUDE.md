@@ -14,7 +14,7 @@ Personal site + blog for Kevin Meneses (SaaS content/technical writer). Monorepo
 | Piece | Service | Plan | Notes |
 |---|---|---|---|
 | Frontend (`web/`) | Vercel, project **"web"** under team `kevinelectronics-projects` | Hobby | Root Directory = `web` |
-| CMS (`cms/`) | Render, service `kevin-personal-website-cms` | Free | No persistent disk (see below) |
+| CMS (`cms/`) | Render, service `kevin-personal-website-cms` | Starter (~$7/mo) | No persistent disk (see below) |
 | Database | Neon Postgres, project `kevin-personal-website-cms` | Free | org `Kevin Meneses` |
 | Media uploads | Cloudinary, cloud name `f8d8xtx1` | Free | Strapi's local disk doesn't survive Render redeploys |
 | Analytics | Google Analytics 4, `G-YC8R1FQRGQ` | — | Rendered as a raw `<script>` snippet in `layout.tsx`, not `@next/third-parties` — that package injects client-side only, which Google's own install checker doesn't detect in the raw HTML |
@@ -37,11 +37,22 @@ local secrets and are gitignored.
   deploying to "web" when run without an existing link. There's a leftover
   empty project called `personal-website` under the same team from this bug —
   safe to delete from the Vercel dashboard, never got a domain attached.
-- **Render's free web service has no persistent disk.** Anything written to
-  local disk (Strapi's default upload provider) disappears on the next deploy.
-  Fixed by switching Strapi's upload provider to Cloudinary
+- **Render web services have no persistent disk by default** (disk is a
+  separate paid add-on, not included by bumping the compute plan). Anything
+  written to local disk (Strapi's default upload provider) disappears on the
+  next deploy. Fixed by switching Strapi's upload provider to Cloudinary
   (`cms/config/plugins.ts`) — don't revert that without adding a persistent
   disk or another external storage provider instead.
+- **The CMS was on Render's Free plan until 2026-08-01**, which spins the
+  service down after ~15 min of inactivity — the next request pays a 30-60s+
+  cold-start penalty (measured once at 64s on `/articles`). Upgraded to
+  **Starter** to fix it at the root; confirmed back down to ~2.7s afterward.
+  A GitHub Actions cron (`keep-strapi-awake.yml`) used to ping the CMS every
+  10 min as a workaround — removed once Starter made it unnecessary. If the
+  CMS ever gets moved back to Free, that workaround (or an equivalent) should
+  come back too. `web/src/lib/strapi.ts` also has an 8s `AbortSignal.timeout`
+  on CMS fetches and `articles`/`articles/[slug]` have `loading.tsx` skeletons
+  — both defensive since the plan upgrade, kept in case Render has a bad day.
 - **Render doesn't auto-deploy on git push** — no GitHub App is installed on
   the (public) repo, so pushing to `main` does not trigger a CMS deploy by
   itself. Trigger manually: `POST https://api.render.com/v1/services/<id>/deploys`
@@ -76,6 +87,31 @@ node import-medium.mjs https://medium.com/@you/your-post-slug
 - Auto-creates/reuses Tag entries from Medium's own topic tags on the post.
 - Auto-uploads the post's `og:image` as the Article's cover image.
 - Sets `sourceUrl` to the original Medium link.
+- Re-running the same URL/file **updates** the existing draft (matched by
+  slug) instead of failing on a duplicate-slug error or creating a second
+  Article — safe to re-run after a fix or a flaky Medium fetch.
+
+### Always add a Spanish translation
+
+The site is bilingual (`es` default, `en`) but Medium imports only land in
+`en`. **Every imported article needs an `es` localization pushed too** —
+this isn't automated (translation needs a human/Claude pass, not a script),
+so after importing: translate the saved `scripts/imports/<slug>.md` into
+natural (non-literal) Spanish — including the title and a Spanish slug — as
+a new file (convention: `<slug>.es.md`, same frontmatter shape), then push
+it as a linked locale of the *same* document:
+
+```bash
+node push-translation.mjs <documentId> es ./imports/<slug>.es.md
+```
+
+This creates the `es` version as a true Strapi i18n localization of the
+same document (shared `documentId`, locale switcher in the admin), not a
+separate Article. `coverImage` carries over automatically since it isn't a
+localized field, but **tags don't auto-carry** despite also not being
+localized — the script explicitly copies tag IDs from the `en` locale
+(pass a 4th arg to override the source locale) to avoid a silently
+untagged translation.
 
 ### Why syndicated articles get a cross-domain canonical
 

@@ -121,6 +121,10 @@ turndown.addRule("mediumFigure", {
       )[0];
       src = widest?.[0] || "";
     }
+    // No resolvable image URL at all (e.g. an embed Medium didn't fully
+    // render server-side) — fall back to any already-converted child
+    // content (typically just the caption) instead of emitting a bare
+    // `![]()`, which would leave a permanent broken-image icon.
     if (!src) return content;
     return `\n\n![${alt}](${src})${caption ? `\n*${caption}*` : ""}\n\n`;
   },
@@ -171,14 +175,18 @@ async function main() {
 
   // Medium's topic tags render either inside or outside <article> depending
   // on the page's DOM shape (varies between requests) — search the whole
-  // document so they're picked up either way.
+  // document so they're picked up either way. Medium used to mark these with
+  // an aria-label="Topic: ..." attribute; it now only identifies them by the
+  // /tag/ link href, so match both to survive either markup.
   const topics = [
-    ...new Set(
-      $('[aria-label^="Topic:"]')
+    ...new Set([
+      ...$('[aria-label^="Topic:"]')
         .map((_, el) => $(el).attr("aria-label").replace(/^Topic:\s*/, "").trim())
-        .get()
-        .filter(Boolean),
-    ),
+        .get(),
+      ...$('a[href^="/tag/"]')
+        .map((_, el) => $(el).text().trim())
+        .get(),
+    ].filter(Boolean)),
   ];
 
   const article = $("article").first();
@@ -218,6 +226,7 @@ async function main() {
   // Topic tags ("Langchain", "AI Agent", ...) and sign-in prompts for
   // claps/bookmarks/highlights sometimes render inside <article> too.
   article.find('[aria-label^="Topic:"]').remove();
+  article.find('a[href^="/tag/"]').remove();
   article.find('a[href^="/m/signin"]').remove();
 
   // The "Press enter or click to view image in full size" a11y caption
@@ -302,22 +311,39 @@ async function main() {
     }
   }
 
-  const res = await fetch(`${STRAPI_URL}/api/articles`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", ...authHeaders },
-    body: JSON.stringify({
-      data: {
-        title,
-        slug,
-        excerpt,
-        content: markdown,
-        sourceUrl,
-        locale,
-        tags: tagIds,
-        ...(coverImageId ? { coverImage: coverImageId } : {}),
-      },
-    }),
-  });
+  // Re-running an import for the same slug (e.g. to pick up a content-extraction
+  // fix, or retry flaky topic tags) should update the existing draft, not fail
+  // on Strapi's unique-slug constraint or create a duplicate.
+  const existingRes = await fetch(
+    `${STRAPI_URL}/api/articles?filters[slug][$eq]=${encodeURIComponent(slug)}&locale=${locale}&status=draft`,
+    { headers: authHeaders },
+  );
+  const { data: existingMatches } = existingRes.ok
+    ? await existingRes.json()
+    : { data: [] };
+  const existingDocumentId = existingMatches?.[0]?.documentId;
+
+  const articleData = {
+    title,
+    slug,
+    excerpt,
+    content: markdown,
+    sourceUrl,
+    locale,
+    tags: tagIds,
+    ...(coverImageId ? { coverImage: coverImageId } : {}),
+  };
+
+  const res = await fetch(
+    existingDocumentId
+      ? `${STRAPI_URL}/api/articles/${existingDocumentId}`
+      : `${STRAPI_URL}/api/articles`,
+    {
+      method: existingDocumentId ? "PUT" : "POST",
+      headers: { "Content-Type": "application/json", ...authHeaders },
+      body: JSON.stringify({ data: articleData }),
+    },
+  );
 
   if (!res.ok) {
     const body = await res.text();
@@ -328,7 +354,7 @@ async function main() {
 
   const { data } = await res.json();
   console.log(
-    `Created draft Article #${data.id} in Strapi (locale: ${locale}). Review and hit Publish at:\n${STRAPI_URL}/admin/content-manager/collection-types/api::article.article/${data.documentId}?status=draft`,
+    `${existingDocumentId ? "Updated" : "Created"} draft Article #${data.id} in Strapi (locale: ${locale}). Review and hit Publish at:\n${STRAPI_URL}/admin/content-manager/collection-types/api::article.article/${data.documentId}?status=draft`,
   );
   if (tagIds.length > 0) {
     console.log(`Tags: ${topics.join(", ")}`);

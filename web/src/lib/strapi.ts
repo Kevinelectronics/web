@@ -32,9 +32,14 @@ type StrapiListResponse<T> = {
   data: T[];
 };
 
+// Render's free-tier CMS can take 60s+ to wake from a cold start — without a
+// cap, a stale page (or a request nothing has warmed yet) blocks the whole
+// SSR response for that long. Bail out well before that and let the callers'
+// existing try/catch fall back to an empty state instead of hanging.
 async function strapiFetch<T>(path: string): Promise<T> {
   const res = await fetch(`${strapiUrl}/api${path}`, {
     next: { revalidate: 60 },
+    signal: AbortSignal.timeout(8000),
   });
 
   if (!res.ok) {

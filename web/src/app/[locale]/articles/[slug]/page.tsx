@@ -8,7 +8,7 @@ import Container from "@/components/Container";
 import OutboundLinkParams from "@/components/OutboundLinkParams";
 import { Link } from "@/i18n/navigation";
 import { getArticleBySlug, getRelatedArticles, strapiImageUrl } from "@/lib/strapi";
-import { buildMetaDescription } from "@/lib/seo";
+import { buildMetaDescription, extractFaqs } from "@/lib/seo";
 import { siteUrl, socials } from "@/content/site";
 
 export async function generateMetadata({
@@ -66,6 +66,7 @@ export default async function ArticlePage({
 
   const relatedArticles = await getRelatedArticles(locale, article.tags, article.id);
   const description = buildMetaDescription(article.excerpt, article.content);
+  const faqs = extractFaqs(article.content);
 
   const date = new Date(article.publishedAt).toLocaleDateString(locale, {
     year: "numeric",
@@ -113,6 +114,22 @@ export default async function ArticlePage({
         },
       };
 
+  // FAQPage schema describes what's visibly rendered on this page, so it
+  // applies regardless of canonical status — unlike Article/BreadcrumbList
+  // above, it isn't a claim about which domain originated the content.
+  const faqJsonLd =
+    faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: { "@type": "Answer", text: faq.answer },
+          })),
+        }
+      : null;
+
   return (
     <article className="py-16 sm:py-24">
       <script
@@ -123,6 +140,12 @@ export default async function ArticlePage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        />
+      )}
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       )}
       <Container className="max-w-2xl">

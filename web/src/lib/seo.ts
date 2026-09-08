@@ -49,3 +49,84 @@ export function buildMetaDescription(
   const combined = base ? `${base} ${filler}` : plainContent;
   return truncate(combined, MAX_DESCRIPTION_LENGTH);
 }
+
+export type Faq = { question: string; answer: string };
+
+// Matches the "## FAQs" / "## Preguntas Frecuentes" heading our own articles
+// use, whichever locale wrote it.
+const FAQ_HEADING = /^##\s*(FAQs?|Preguntas Frecuentes)\s*$/im;
+
+// Pulls Q&A pairs out of an article's "FAQs" section for FAQPage schema.
+// Two question styles show up across the catalog — a bold line ("**Q?**")
+// or an emoji-prefixed line ("❓ Q?", with the answer often starting "✅ ") —
+// so this walks line by line instead of one fixed regex, collecting every
+// line after a question marker as that question's (possibly multi-line)
+// answer. Returns [] when the article has no FAQ section, so callers can
+// skip rendering the schema entirely rather than emitting an empty
+// mainEntity.
+export function extractFaqs(content: string): Faq[] {
+  const headingMatch = content.match(FAQ_HEADING);
+  if (!headingMatch || headingMatch.index === undefined) return [];
+
+  const afterHeading = content.slice(headingMatch.index + headingMatch[0].length);
+  const nextHeadingIndex = afterHeading.search(/^##\s/m);
+  const section =
+    nextHeadingIndex === -1 ? afterHeading : afterHeading.slice(0, nextHeadingIndex);
+
+  const faqs: Faq[] = [];
+  let question: string | null = null;
+  let answerLines: string[] = [];
+
+  const flush = () => {
+    if (question && answerLines.length > 0) {
+      const cleanQuestion = stripMarkdown(question).trim();
+      const cleanAnswer = stripMarkdown(answerLines.join(" ")).trim();
+      if (cleanQuestion && cleanAnswer) {
+        faqs.push({ question: cleanQuestion, answer: cleanAnswer });
+      }
+    }
+    question = null;
+    answerLines = [];
+  };
+
+  for (const rawLine of section.split("\n")) {
+    const line = rawLine.trim();
+    if (!line) continue;
+    // Some articles put the question and answer on one line:
+    // "❓ **Question?** ✅ Answer." — handle that before the
+    // question-only cases below, since it also contains "❓".
+    const inlineEmojiPair = line.match(/^❓\s*(.+?)\s*✅\s*(.+)$/);
+    if (inlineEmojiPair) {
+      flush();
+      question = inlineEmojiPair[1];
+      answerLines = [inlineEmojiPair[2]];
+      flush();
+      continue;
+    }
+    // Others put a bold question and its answer on one line too:
+    // "**Question?** Answer." — vs. a bold-only line meant to be
+    // followed by the answer on the next line(s).
+    const boldMatch = line.match(/^\*\*(.+?)\*\*\s*(.*)$/);
+    if (boldMatch) {
+      flush();
+      question = boldMatch[1].trim();
+      if (boldMatch[2].trim()) {
+        answerLines = [boldMatch[2].trim()];
+        flush();
+      }
+      continue;
+    }
+    const emojiQuestion = line.match(/^❓\s*(.+)$/);
+    if (emojiQuestion) {
+      flush();
+      question = emojiQuestion[1].trim();
+      continue;
+    }
+    if (question) {
+      answerLines.push(line.replace(/^✅\s*/, ""));
+    }
+  }
+  flush();
+
+  return faqs;
+}
