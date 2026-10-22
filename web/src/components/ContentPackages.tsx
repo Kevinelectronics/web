@@ -50,11 +50,11 @@ export default function ContentPackages({ ctaHref = "/#contact" }: { ctaHref?: s
                 ))}
               </ul>
               {ctaHref.startsWith("#") ? (
-                <a href={ctaHref} className="mt-6 inline-block rounded-full bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-accent-strong">
+                <a href={ctaHref} data-package={pkg.name} className="mt-6 inline-block rounded-full bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-accent-strong">
                   {t("cta")}
                 </a>
               ) : (
-                <Link href={ctaHref} className="mt-6 inline-block rounded-full bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-accent-strong">
+                <Link href={ctaHref} data-package={pkg.name} className="mt-6 inline-block rounded-full bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-accent-strong">
                   {t("cta")}
                 </Link>
               )}

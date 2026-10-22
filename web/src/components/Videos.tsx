@@ -32,7 +32,8 @@ export default function Videos({ bare = false }: { bare?: boolean }) {
           }`}
         >
           <iframe
-            src={`https://www.youtube.com/embed/${featuredVideoId}`}
+            // enablejsapi lets GA4 enhanced measurement record video_start/progress/complete.
+            src={`https://www.youtube.com/embed/${featuredVideoId}?enablejsapi=1`}
             title={t("title")}
             className="absolute inset-0 h-full w-full"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
