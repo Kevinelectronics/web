@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { strapiUrl, contactEmail } from "@/content/site";
+import { trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -39,6 +40,8 @@ export default function ContactForm() {
       if (!res.ok) throw new Error("request failed");
 
       setStatus("success");
+      // GA4's recommended lead event — no personal data, just where it came from.
+      trackEvent("generate_lead", { form_id: "contact", locale });
       form.reset();
     } catch {
       setStatus("error");

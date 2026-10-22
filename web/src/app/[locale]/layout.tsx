@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { siteUrl, googleAnalyticsId, socials, contactEmail } from "@/content/site";
 import Header from "@/components/Header";
+import ClickTracking from "@/components/ClickTracking";
 import Footer from "@/components/Footer";
 import "../globals.css";
 
@@ -127,6 +128,14 @@ export default async function LocaleLayout({
               dangerouslySetInnerHTML={{
                 __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
+// Visiting any page with ?notrack=1 opts this browser out (Kevin's own
+// visits); ?notrack=0 opts back in.
+try {
+  var nt = new URLSearchParams(location.search).get('notrack');
+  if (nt === '1') localStorage.setItem('km_notrack', '1');
+  if (nt === '0') localStorage.removeItem('km_notrack');
+  if (localStorage.getItem('km_notrack') === '1') window['ga-disable-${googleAnalyticsId}'] = true;
+} catch (e) {}
 gtag('js', new Date());
 gtag('config', '${googleAnalyticsId}');`,
               }}
@@ -136,6 +145,7 @@ gtag('config', '${googleAnalyticsId}');`,
       </head>
       <body className="flex min-h-full flex-col bg-paper text-ink">
         <NextIntlClientProvider>
+          <ClickTracking />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
