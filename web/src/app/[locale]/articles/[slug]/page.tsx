@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -7,9 +7,31 @@ import { getTranslations } from "next-intl/server";
 import Container from "@/components/Container";
 import OutboundLinkParams from "@/components/OutboundLinkParams";
 import { Link } from "@/i18n/navigation";
-import { getArticleBySlug, getRelatedArticles, strapiImageUrl } from "@/lib/strapi";
+import {
+  findArticleElsewhere,
+  getArticleBySlug,
+  getArticleTranslationSlug,
+  getRelatedArticles,
+  strapiImageUrl,
+} from "@/lib/strapi";
+import { routing } from "@/i18n/routing";
 import { buildMetaDescription, extractFaqs } from "@/lib/seo";
 import { siteUrl, socials } from "@/content/site";
+
+/** hreflang map for an article: this locale plus every published translation. */
+async function articleLanguages(
+  documentId: string,
+  locale: string,
+  slug: string,
+): Promise<Record<string, string> | undefined> {
+  const languages: Record<string, string> = { [locale]: `/${locale}/articles/${slug}` };
+  for (const other of routing.locales) {
+    if (other === locale) continue;
+    const translated = await getArticleTranslationSlug(documentId, other);
+    if (translated) languages[other] = `/${other}/articles/${translated}`;
+  }
+  return Object.keys(languages).length > 1 ? languages : undefined;
+}
 
 export async function generateMetadata({
   params,
@@ -20,6 +42,8 @@ export async function generateMetadata({
   const article = await getArticleBySlug(slug, locale);
 
   if (!article) {
+    const elsewhere = await findArticleElsewhere(slug, locale, routing.locales);
+    if (elsewhere) permanentRedirect(elsewhere);
     return {};
   }
 
@@ -38,7 +62,12 @@ export async function generateMetadata({
     // ~60-char budget search engines display before truncating.
     title: { absolute: article.title },
     description,
-    alternates: { canonical },
+    alternates: {
+      canonical,
+      // hreflang only for local originals — syndicated copies already point
+      // their canonical at Medium.
+      languages: article.sourceUrl ? undefined : await articleLanguages(article.documentId, locale, slug),
+    },
     openGraph: {
       type: "article",
       title: article.title,
@@ -61,6 +90,8 @@ export default async function ArticlePage({
   const article = await getArticleBySlug(slug, locale);
 
   if (!article) {
+    const elsewhere = await findArticleElsewhere(slug, locale, routing.locales);
+    if (elsewhere) permanentRedirect(elsewhere);
     notFound();
   }
 

@@ -123,6 +123,45 @@ export async function getArticleBySlug(
   }
 }
 
+/** Slug of the same article (Strapi document) in another locale, if published there. */
+export async function getArticleTranslationSlug(
+  documentId: string,
+  locale: string,
+): Promise<string | null> {
+  try {
+    const json = await strapiFetch<{ data: { slug: string } | null }>(
+      `/articles/${documentId}?locale=${locale}&fields[0]=slug&status=published`,
+    );
+    return json.data?.slug ?? null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * For a slug that doesn't exist in `locale`, find where it really lives:
+ * the article's translation in `locale` if there is one, otherwise the
+ * article in its own locale. Covers the locale switcher (which keeps the
+ * slug when changing language) and old un-prefixed English URLs that the
+ * /articles → /es/articles redirect lands on the wrong locale.
+ */
+export async function findArticleElsewhere(
+  slug: string,
+  locale: string,
+  locales: readonly string[],
+): Promise<string | null> {
+  for (const other of locales) {
+    if (other === locale) continue;
+    const article = await getArticleBySlug(slug, other);
+    if (!article) continue;
+    const translated = await getArticleTranslationSlug(article.documentId, locale);
+    return translated
+      ? `/${locale}/articles/${translated}`
+      : `/${other}/articles/${article.slug}`;
+  }
+  return null;
+}
+
 // Other published articles for the "related articles" internal-linking
 // module on article detail pages. Tries every one of the article's tags
 // (not just the first) to widen the shared-topic pool, then — since a
