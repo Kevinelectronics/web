@@ -7,6 +7,13 @@
 - [Home (Spanish)](https://kevinmeneses.com/es): Services, process, case studies (including a documented EODHD engagement), and contact.
 - [Home (English)](https://kevinmeneses.com/en): Same content in English.
 
+## Service pages
+
+- [B2B SaaS copywriter](https://kevinmeneses.com/en/b2b-saas-copywriter) ([ES](https://kevinmeneses.com/es/copywriter-saas-b2b)): Landing, product, integration, and comparison page copy for technical SaaS companies, written after testing the product.
+- [SaaS technical writer](https://kevinmeneses.com/en/saas-technical-writer) ([ES](https://kevinmeneses.com/es/redactor-tecnico-saas)): SEO articles, tutorials with tested code, and comparisons for API, AI, and developer tool companies.
+- [YouTube content creation for SaaS](https://kevinmeneses.com/en/youtube-content-creation-saas) ([ES](https://kevinmeneses.com/es/creacion-contenido-youtube-saas)): Product demos, integration tutorials, and reviews published on a channel with 12,500+ subscribers.
+- [LinkedIn ghostwriter for B2B SaaS founders](https://kevinmeneses.com/en/linkedin-ghostwriter) ([ES](https://kevinmeneses.com/es/contenido-linkedin-b2b)): Ghostwritten LinkedIn posts and carousels for founders and CTOs, by the author of a LinkedIn newsletter with 1,600+ subscribers.
+
 ## Original articles (Spanish)
 
 - [Rastreador de riesgo y rentabilidad de cartera con EODHD](https://kevinmeneses.com/es/articles/rastreador-de-riesgo-y-rentabilidad-de-cartera-con-eodhd): Cómo construir un rastreador de riesgo y rentabilidad de cartera con la API de EODHD.

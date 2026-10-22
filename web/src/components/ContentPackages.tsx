@@ -5,7 +5,8 @@ import { Link } from "@/i18n/navigation";
 
 type Package = { name: string; description: string; features: string[] };
 
-export default function ContentPackages() {
+/** `ctaHref` starting with "#" stays on the current page (service landings). */
+export default function ContentPackages({ ctaHref = "/#contact" }: { ctaHref?: string }) {
   const t = useTranslations("contentPackages");
   const items = t.raw("items") as Package[];
 
@@ -48,12 +49,15 @@ export default function ContentPackages() {
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/#contact"
-                className="mt-6 inline-block rounded-full bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-accent-strong"
-              >
-                {t("cta")}
-              </Link>
+              {ctaHref.startsWith("#") ? (
+                <a href={ctaHref} className="mt-6 inline-block rounded-full bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-accent-strong">
+                  {t("cta")}
+                </a>
+              ) : (
+                <Link href={ctaHref} className="mt-6 inline-block rounded-full bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-accent-strong">
+                  {t("cta")}
+                </Link>
+              )}
             </div>
           ))}
         </div>

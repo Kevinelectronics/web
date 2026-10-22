@@ -2,11 +2,18 @@ import { useTranslations } from "next-intl";
 import { HiPlus } from "react-icons/hi2";
 import Container from "./Container";
 
-type FaqItem = { question: string; answer: string };
+export type FaqItem = { question: string; answer: string };
 
-export default function Faq() {
+/** Defaults to the homepage FAQs; service pages pass their own. */
+export default function Faq(props: {
+  eyebrow?: string;
+  title?: string;
+  items?: FaqItem[];
+}) {
   const t = useTranslations("faq");
-  const items = t.raw("items") as FaqItem[];
+  const eyebrow = props.eyebrow ?? t("eyebrow");
+  const title = props.title ?? t("title");
+  const items = props.items ?? (t.raw("items") as FaqItem[]);
 
   // FAQPage schema mirrors exactly what's rendered below.
   const jsonLd = {
@@ -27,10 +34,10 @@ export default function Faq() {
       />
       <Container className="max-w-3xl">
         <p className="text-sm font-medium uppercase tracking-wide text-accent">
-          {t("eyebrow")}
+          {eyebrow}
         </p>
         <h2 className="mt-2 font-display text-2xl font-medium tracking-tight text-ink sm:text-3xl">
-          {t("title")}
+          {title}
         </h2>
 
         <div className="mt-10 divide-y divide-line border-y border-line">

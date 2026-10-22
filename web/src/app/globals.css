@@ -124,6 +124,58 @@ body {
   }
 }
 
+/* ---------- LinkedIn / YouTube hero animations ---------- */
+
+@property --li-n { syntax: "<integer>"; initial-value: 0; inherits: false; }
+@property --yt-n { syntax: "<integer>"; initial-value: 0; inherits: false; }
+
+/* Final values, shown as-is when motion is reduced. */
+.li-count { counter-reset: li 248; }
+.li-count::after { content: counter(li); }
+.yt-count { counter-reset: yt 12400; }
+.yt-count::after { content: counter(yt); }
+.yt-progress { width: 62%; }
+.yt-subbed { opacity: 0; }
+
+@keyframes li-count { to { --li-n: 248; } }
+@keyframes yt-count { to { --yt-n: 12400; } }
+@keyframes li-bar { from { transform: scaleY(0); } }
+@keyframes li-toast {
+  0%, 8% { opacity: 0; transform: translateY(-10px) scale(0.9); }
+  14%, 80% { opacity: 1; transform: translateY(0) scale(1); }
+  90%, 100% { opacity: 0; transform: translateY(-10px) scale(0.9); }
+}
+@keyframes li-comment {
+  0%, 30% { opacity: 0; transform: translateX(-16px); }
+  38%, 85% { opacity: 1; transform: translateX(0); }
+  95%, 100% { opacity: 0; transform: translateX(-16px); }
+}
+@keyframes li-like {
+  0%, 40% { color: var(--ink-soft); transform: scale(1); }
+  45% { color: #0a66c2; transform: scale(1.35); }
+  50%, 100% { color: #0a66c2; transform: scale(1); }
+}
+@keyframes yt-progress { from { width: 0; } to { width: 100%; } }
+@keyframes yt-pulse {
+  from { opacity: 0.8; transform: scale(1); }
+  to { opacity: 0; transform: scale(1.5); }
+}
+@keyframes yt-sub { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes yt-subbed { 0%, 45% { opacity: 0; } 50%, 95% { opacity: 1; } 100% { opacity: 0; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .li-count { counter-reset: li var(--li-n); animation: li-count 2.4s 0.6s ease-out both; }
+  .yt-count { counter-reset: yt var(--yt-n); animation: yt-count 2.4s 0.6s ease-out both; }
+  .li-bar { transform-origin: bottom; animation: li-bar 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+  .li-toast { animation: li-toast 7s ease-in-out infinite; }
+  .li-comment { animation: li-comment 7s ease-in-out infinite; }
+  .li-like { animation: li-like 7s ease-in-out infinite; }
+  .yt-progress { animation: yt-progress 9s linear infinite; }
+  .yt-pulse { animation: yt-pulse 2s ease-out infinite; }
+  .yt-sub { animation: yt-sub 6s steps(1) infinite; }
+  .yt-subbed { animation: yt-subbed 6s steps(1) infinite; }
+}
+
 /* No motion: show the logos once, as a wrapped grid. */
 @media (prefers-reduced-motion: reduce) {
   .marquee { mask-image: none; }

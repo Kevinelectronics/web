@@ -290,6 +290,368 @@
     "success": "Thanks! I'll get back to you as soon as possible.",
     "error": "Something went wrong. Try again or email me directly at"
   },
+  "services": {
+    "common": {
+      "home": "Home",
+      "servicesLabel": "Services",
+      "ctaPrimary": "Request a proposal",
+      "ctaSecondary": "View case studies",
+      "problemEyebrow": "The problem",
+      "includedEyebrow": "What's included",
+      "faqEyebrow": "FAQs",
+      "faqTitle": "Frequently asked questions",
+      "otherServices": "Other services",
+      "viewService": "View service",
+      "founderEyebrow": "How we work together",
+      "founderAction": "What I do",
+      "feedback": {
+        "eyebrow": "Added value",
+        "title": "Product feedback from an outside perspective",
+        "description": "To create each piece, I use your product the way a new customer would. Along the way, I share what I find with your development team: code errors, gaps in the docs, and an honest view of how the product comes across from the outside.",
+        "items": [
+          "Errors and bugs found while integrating the product",
+          "Mistakes or gaps in the docs and examples",
+          "Points where a new user gets stuck"
+        ]
+      }
+    },
+    "copywriting": {
+      "name": "B2B SaaS copywriting",
+      "seoTitle": "B2B SaaS Copywriter | Kevin Meneses",
+      "metaDescription": "B2B SaaS copywriter with a technical background: landing, product, and integration pages your technical buyers understand and that turn them into customers.",
+      "eyebrow": "B2B SaaS copywriter",
+      "h1": "B2B SaaS copywriter: copy developers understand and that converts",
+      "intro": "I write landing pages, product pages, and integration pages for technical SaaS companies. I test your product before writing a single line, so the copy talks about what your software actually does, not generic promises.",
+      "stats": [
+        {
+          "value": "+$25,000",
+          "label": "Revenue generated for a client"
+        },
+        {
+          "value": "+700",
+          "label": "Technical articles published"
+        },
+        {
+          "value": "+35k",
+          "label": "Monthly readers"
+        }
+      ],
+      "problemTitle": "Why copy for technical SaaS often doesn't convert",
+      "founder": {
+        "title": "From \"nobody gets what we do\" to a site that converts",
+        "subtitle": "The problems I hear from almost every technical SaaS founder, and how I solve them.",
+        "steps": [
+          { "title": "Diagnosis", "pain": "\"We get traffic, but nobody signs up\"", "action": "I review your site, your product, and your competitors, and find where readers drop off.", "result": "You know what's broken and why." },
+          { "title": "Message", "pain": "\"Everyone on the team explains the product differently\"", "action": "We define a value proposition and key messages the whole team can use.", "result": "One clear message." },
+          { "title": "Copy", "pain": "\"Our landing page sounds like everyone else's\"", "action": "I write the copy with real examples from your product, after testing it myself.", "result": "A site that speaks like your customer." },
+          { "title": "Measurement", "pain": "\"I don't know if the changes work\"", "action": "UTM-tagged links and conversion tracking on every page.", "result": "More sign-ups, and you know where they come from." }
+        ]
+      },
+      "problems": [
+        {
+          "title": "It sells vague benefits",
+          "description": "\"Scale your business\" or \"empower your team\" means nothing to a developer. They want to know what your product does and how it integrates."
+        },
+        {
+          "title": "Written by someone who never used it",
+          "description": "A generalist copywriter can't explain why your SDK beats the alternative if they've never tried it."
+        },
+        {
+          "title": "It doesn't connect with your content",
+          "description": "Your landing page, blog, and docs tell different stories, and readers get lost along the way."
+        }
+      ],
+      "includedTitle": "Copy built for technical users and for whoever signs the deal",
+      "included": [
+        "Product and campaign landing pages",
+        "Integration and use-case pages",
+        "Competitor comparison pages",
+        "Review and improvement of your existing copy",
+        "Product microcopy and calls to action",
+        "Value proposition and key messaging"
+      ],
+      "faq": [
+        {
+          "question": "How is a B2B SaaS copywriter different from a generalist?",
+          "answer": "A B2B SaaS copywriter understands long sales cycles, multiple decision-makers, and technical products. On top of that, I'm a developer: I test the product and write with real examples, which is what convinces a technical audience."
+        },
+        {
+          "question": "Do you need access to our product?",
+          "answer": "Whenever possible, yes. A trial account or a demo lets me write about what your product really does and spot the arguments that matter most to your users."
+        },
+        {
+          "question": "Do you write in English and Spanish?",
+          "answer": "Yes, in both languages, so you can launch the same page in several markets without a literal translation."
+        },
+        {
+          "question": "How do you measure whether the copy works?",
+          "answer": "With each page's conversion rate and UTM tags on the links that send it traffic. That way you know which page and which channel bring the most sign-ups."
+        },
+        {
+          "question": "Can it be combined with SEO content or video?",
+          "answer": "Yes, and that's what works best: the article or video attracts the reader and the landing page converts them. It's part of the Growth and Authority packages."
+        }
+      ]
+    },
+    "technical": {
+      "name": "Technical SEO content",
+      "seoTitle": "SaaS Technical Writer & Technical Writing Services",
+      "metaDescription": "SaaS technical writer and technical content writer for API and AI companies: SEO articles, tested code tutorials, and comparisons that bring developers.",
+      "eyebrow": "SaaS technical writer",
+      "h1": "SaaS technical writer: articles and tutorials that rank on Google and bring in developers",
+      "intro": "I write SEO articles, tutorials with real code, and comparisons for API, AI, and developer tool companies. Every piece is tested end to end and built to keep bringing in visitors for months.",
+      "stats": [
+        {
+          "value": "+700",
+          "label": "Technical articles published"
+        },
+        {
+          "value": "+35k",
+          "label": "Monthly readers"
+        },
+        {
+          "value": "+5,000",
+          "label": "Medium followers"
+        }
+      ],
+      "problemTitle": "Why your technical blog doesn't bring in users",
+      "founder": {
+        "title": "From a blog nobody reads to content that attracts developers",
+        "subtitle": "The problems I hear from almost every technical SaaS founder, and how I solve them.",
+        "steps": [
+          { "title": "Strategy", "pain": "\"We publish on the blog, but nobody comes\"", "action": "I research what your technical audience searches for on Google and the gaps your competitors leave.", "result": "A topic plan with real demand." },
+          { "title": "Production", "pain": "\"My team has no time to write\"", "action": "I write the articles and tutorials myself, testing the code end to end.", "result": "Published content without taking hours from your team." },
+          { "title": "Distribution", "pain": "\"We write and nobody reads it\"", "action": "I also publish it on Medium, Dev.to, and GitHub, where I have my own audience.", "result": "Readers from day one." },
+          { "title": "Results", "pain": "\"I don't know which articles bring customers\"", "action": "UTM tags on every link and Google ranking tracking.", "result": "You know which content drives sign-ups." }
+        ]
+      },
+      "problems": [
+        {
+          "title": "Code that doesn't work",
+          "description": "A developer copies the example, it fails, and they never come back. A broken tutorial costs more trust than it earns."
+        },
+        {
+          "title": "Topics picked without data",
+          "description": "The team writes about what interests them, not what your audience searches for on Google."
+        },
+        {
+          "title": "Content that doesn't lead to the product",
+          "description": "The article gets visits but never explains where your tool fits, so readers don't turn into sign-ups."
+        }
+      ],
+      "includedTitle": "Content that educates, ranks, and leads to your product",
+      "included": [
+        "Keyword research and content gap analysis",
+        "SEO-optimized technical articles",
+        "Step-by-step tutorials with tested code",
+        "Comparisons against alternative tools and APIs",
+        "Use cases with AI, Python, and automation",
+        "Distribution on Medium and Dev.to"
+      ],
+      "faq": [
+        {
+          "question": "What does a technical writer do for a SaaS company?",
+          "answer": "They turn your product into content your technical audience searches for and understands: tutorials, integration guides, comparisons, and SEO articles. Unlike a generalist writer, they write and test the code."
+        },
+        {
+          "question": "Is the tutorial code tested?",
+          "answer": "Always. I build every example end to end before publishing, so readers can copy it and it works the first time."
+        },
+        {
+          "question": "How do you choose topics?",
+          "answer": "With keyword research and Google results analysis: I look for what your audience is already searching for and the gaps your competitors don't cover."
+        },
+        {
+          "question": "Where are the articles published?",
+          "answer": "On your blog and, if you want, also on Medium and Dev.to, where I have my own audience, with links back to your product."
+        },
+        {
+          "question": "How do you measure results?",
+          "answer": "With each article's organic traffic and Google rankings, plus UTM tags on the links to your product, to see how many sign-ups come from each piece."
+        }
+      ]
+    },
+    "youtube": {
+      "name": "YouTube content creation",
+      "seoTitle": "YouTube Content Creation for SaaS | Kevin Meneses",
+      "metaDescription": "YouTube content creation for SaaS, API, and developer tool companies: product demos, tutorials, and integration videos on a channel with 12,500+ subscribers.",
+      "eyebrow": "YouTube content creation",
+      "h1": "YouTube content creation for SaaS: videos that show your product actually working",
+      "intro": "I create demos, tutorials, and integration videos for SaaS, API, and developer tool companies. They're published on my channel, with 12,500+ subscribers, and you can reuse them on your site and social media.",
+      "stats": [
+        {
+          "value": "+12,500",
+          "label": "YouTube subscribers"
+        },
+        {
+          "value": "+350",
+          "label": "Videos published"
+        },
+        {
+          "value": "+$25,000",
+          "label": "Revenue generated for a client"
+        }
+      ],
+      "problemTitle": "Why a great product isn't enough on YouTube",
+      "founder": {
+        "title": "From \"we should have videos\" to demos that sell for you",
+        "subtitle": "The problems I hear from almost every technical SaaS founder, and how I solve them.",
+        "steps": [
+          { "title": "Idea", "pain": "\"We know we need video, but not where to start\"", "action": "We pick the use cases that convince your technical buyer the most.", "result": "A script built to convert." },
+          { "title": "Production", "pain": "\"We have no time or team to record\"", "action": "I handle the script, recording, and editing, with your product working.", "result": "Zero hours from your team." },
+          { "title": "Audience", "pain": "\"Our channel barely has subscribers\"", "action": "It's published on my channel, with 12,500+ technical subscribers.", "result": "Views from day one." },
+          { "title": "Repurposing", "pain": "\"One video and that's it\"", "action": "I turn it into clips, posts, and an SEO article with trackable links.", "result": "One video working across all your channels." }
+        ]
+      },
+      "problems": [
+        {
+          "title": "Demos look like ads",
+          "description": "Developers skip sales videos. They want to see the tool solving a real problem."
+        },
+        {
+          "title": "No audience to start with",
+          "description": "Growing a channel from scratch takes months. Without subscribers, your first videos barely get seen."
+        },
+        {
+          "title": "The video lives in isolation",
+          "description": "A video with no article, no post, and no trackable links can't be tied to a single sign-up."
+        }
+      ],
+      "includedTitle": "Technical video with an audience from day one",
+      "included": [
+        "Product demos with real use cases",
+        "Python integration tutorials",
+        "Video reviews and comparisons",
+        "Scripting, recording, and editing",
+        "Publishing on a channel with a technical audience",
+        "Short clips for LinkedIn and other networks"
+      ],
+      "faq": [
+        {
+          "question": "Which channel are the videos published on?",
+          "answer": "On my YouTube channel, with 12,500+ subscribers interested in Python, APIs, AI, and automation. You can also use the video on your site, docs, or social media."
+        },
+        {
+          "question": "What kind of videos do you make?",
+          "answer": "Product demos, integration tutorials, reviews, and comparisons, always with the tool working on a real use case."
+        },
+        {
+          "question": "Do you combine videos with articles?",
+          "answer": "Yes. Each video can come with an SEO article and LinkedIn posts, so the same content works on Google, YouTube, and social media."
+        },
+        {
+          "question": "How do you measure a video's impact?",
+          "answer": "With views and retention, plus UTM tags on the links in the description, to see how many visits and sign-ups come from each video."
+        },
+        {
+          "question": "How much does a video cost?",
+          "answer": "Videos are included in the Starter, Growth, and Authority packages, and the final proposal is tailored to your case. Tell me about your project and I'll send you a proposal."
+        }
+      ],
+      "mock": {
+        "title": "Demo: integrate your API in 5 minutes",
+        "channel": "PythonIA",
+        "subscribers": "12.5K subscribers",
+        "subscribe": "Subscribe",
+        "subscribed": "Subscribed",
+        "views": "views",
+        "chapters": "Chapters",
+        "comment": "Works on the first try! 🙌"
+      }
+    },
+    "linkedin": {
+      "name": "LinkedIn ghostwriting",
+      "seoTitle": "LinkedIn Ghostwriter for B2B SaaS Founders | Kevin Meneses",
+      "metaDescription": "LinkedIn ghostwriter for B2B SaaS founders and CTOs: posts and carousels in your voice, with real data and examples, that attract technical buyers.",
+      "eyebrow": "LinkedIn ghostwriter",
+      "h1": "LinkedIn ghostwriter for B2B SaaS founders and technical leaders",
+      "intro": "I write LinkedIn posts and carousels in your voice, built from your product, your articles, and your customer stories, to reach CTOs, developers, and technical teams. Direct content with real data and examples, no empty motivational lines. I do it for myself too: my LinkedIn newsletter has 1,600+ subscribers.",
+      "stats": [
+        {
+          "value": "+35k",
+          "label": "Monthly readers"
+        },
+        {
+          "value": "+1,600",
+          "label": "LinkedIn newsletter subscribers"
+        },
+        {
+          "value": "+$25,000",
+          "label": "Revenue generated for a client"
+        }
+      ],
+      "problemTitle": "Why LinkedIn isn't bringing you customers",
+      "founder": {
+        "title": "From \"I should post more\" to a profile that attracts customers",
+        "subtitle": "The problems I hear from almost every technical SaaS founder, and how I solve them.",
+        "steps": [
+          { "title": "Your voice", "pain": "\"I know I should post, but the product comes first\"", "action": "A call to capture your ideas, opinions, and stories.", "result": "You talk, I write." },
+          { "title": "Posts", "pain": "\"When I write, it sounds like an ad or self-help\"", "action": "I write posts and carousels in your voice, with real data and examples.", "result": "Content that sounds like you." },
+          { "title": "Consistency", "pain": "\"I post for two weeks and then stop\"", "action": "An editorial calendar and posts ready for you to just approve.", "result": "A consistent presence without the effort." },
+          { "title": "Customers", "pain": "\"Lots of likes, but no demos\"", "action": "Every post leads to a longer piece or to your product, with UTM links.", "result": "Conversations with technical buyers." }
+        ]
+      },
+      "problems": [
+        {
+          "title": "Inconsistent posting",
+          "description": "You post when there's time, and your audience forgets you between one post and the next."
+        },
+        {
+          "title": "Content that's too generic",
+          "description": "Self-help posts don't attract technical buyers. What works is teaching something useful with data and examples."
+        },
+        {
+          "title": "No link to the rest of your content",
+          "description": "The post doesn't lead to an article, demo, or landing page, so there's no way to measure the business it brings."
+        }
+      ],
+      "includedTitle": "Posts that teach something and lead to your product",
+      "included": [
+        "Ghostwritten posts in your voice",
+        "Posts built from your articles and videos",
+        "Carousels with tutorials and data",
+        "Editorial calendar",
+        "UTM-tagged links to your site and product",
+        "Distribution on Medium and Dev.to too"
+      ],
+      "faq": [
+        {
+          "question": "Do you have your own audience on LinkedIn?",
+          "answer": "Yes. I publish technical content on LinkedIn and run a newsletter with 1,600+ subscribers. The same techniques I use there are the ones I apply to your company's content."
+        },
+        {
+          "question": "How does LinkedIn ghostwriting work?",
+          "answer": "We start with a call to capture your voice, opinions, and stories. I draft the posts, you review and approve them, and they go out under your name. I write for founders, CTOs, and the company page."
+        },
+        {
+          "question": "Where does the content for the posts come from?",
+          "answer": "From your product and content that already exists: articles, videos, docs, and customer stories. That way each post teaches something concrete and leads to a longer piece."
+        },
+        {
+          "question": "How often do you post?",
+          "answer": "We set it in the editorial calendar based on your goals. Consistency matters more than posting every day."
+        },
+        {
+          "question": "How do you measure results on LinkedIn?",
+          "answer": "With each post's reach and engagement and, above all, UTM tags on the links, to see how many visits, sign-ups, and demos come from LinkedIn."
+        },
+        {
+          "question": "Can it be combined with YouTube and SEO?",
+          "answer": "Yes, and it's what I recommend: one article or video becomes several posts, and each channel reinforces the others."
+        }
+      ],
+      "mock": {
+        "role": "Technical Writer · 1h",
+        "post": "3 mistakes APIs make when documenting authentication 👇",
+        "postBody": "I see the third one in almost every integration I test.",
+        "reactions": "reactions",
+        "comments": "31 comments",
+        "comment": "Do you have a Python example?",
+        "newsletter": "New subscriber to your newsletter",
+        "newsletterCount": "1,600+ subscribers"
+      }
+    }
+  },
   "companies": {
     "title": "Companies I've collaborated with"
   },

@@ -145,14 +145,21 @@ filtering. Read submissions in Strapi admin → Content Manager → Lead.
   BreadcrumbList (article pages, only for non-syndicated content).
 - Default OG/Twitter image is the profile photo.
 
+## Service landing pages
+
+Four keyword-targeted landings at `/<locale>/<slug>`, one dynamic route
+(`web/src/app/[locale]/[service]/page.tsx`). Slugs are localized per language
+in `web/src/content/services.ts`; copy lives in `messages/*.json` under
+`services.<id>`. The locale switcher keeps the path as-is, so the page
+redirects `/en/<es-slug>` to the right slug. Slugs/titles were chosen with
+OpenSEO keyword data (2026-10-22): EN `saas copywriter` (40/mo, CPC $47),
+`linkedin ghostwriter` (260/mo), `technical writing services` (140/mo);
+Spanish volumes are near zero, so ES pages are mainly for conversion.
+`youtube content creation` (1.6k/mo) is informational/creator intent — the
+YouTube landing isn't expected to rank for it.
+
 ## Known gaps / not done yet
 
-- The 4 planned landing pages (`/technical-content`, `/developer-marketing`,
-  `/youtube`, `/case-studies`) from the redesign brief were **not** built —
-  deferred by choice.
-- No mobile hamburger menu — the header nav (Home/Services/Case
-  Studies/Articles/About/Contact) is hidden below the `sm` breakpoint, only
-  the logo + language switcher show on small screens.
 - The 3 additional case studies (Nutrient, Zernio, Snowball Analytics) use
   generic, illustrative problem/solution copy (explicitly approved as
   placeholder-style content, not verified client quotes/numbers) — the EODHD

@@ -290,6 +290,368 @@
     "success": "¡Gracias! Te responderé lo antes posible.",
     "error": "Algo ha fallado. Prueba de nuevo o escríbeme directamente a"
   },
+  "services": {
+    "common": {
+      "home": "Inicio",
+      "servicesLabel": "Servicios",
+      "ctaPrimary": "Solicitar propuesta",
+      "ctaSecondary": "Ver casos de éxito",
+      "problemEyebrow": "El problema",
+      "includedEyebrow": "Qué incluye",
+      "faqEyebrow": "FAQs",
+      "faqTitle": "Preguntas frecuentes",
+      "otherServices": "Otros servicios",
+      "viewService": "Ver servicio",
+      "founderEyebrow": "Cómo trabajo contigo",
+      "founderAction": "Lo que hago",
+      "feedback": {
+        "eyebrow": "Valor añadido",
+        "title": "Feedback de producto desde una visión externa",
+        "description": "Para crear cada pieza uso tu producto como lo haría un cliente nuevo. Por el camino comparto con tu equipo de desarrollo lo que encuentro: errores en el código, huecos en la documentación y una visión honesta de cómo se percibe el producto desde fuera.",
+        "items": [
+          "Errores y bugs detectados al integrar el producto",
+          "Fallos o huecos en la documentación y los ejemplos",
+          "Puntos donde un usuario nuevo se atasca"
+        ]
+      }
+    },
+    "copywriting": {
+      "name": "Copywriting SaaS B2B",
+      "seoTitle": "Copywriter SaaS B2B | Kevin Meneses",
+      "metaDescription": "Copywriter SaaS B2B con perfil técnico: landings, páginas de producto y de integraciones que tus usuarios técnicos entienden y que convierten en clientes.",
+      "eyebrow": "Copywriter SaaS B2B",
+      "h1": "Copywriter SaaS B2B: copy que entienden los desarrolladores y que convierte",
+      "intro": "Escribo landings, páginas de producto y de integraciones para empresas SaaS técnicas. Pruebo tu producto antes de escribir una línea, así el copy habla de lo que tu software hace de verdad, no de promesas genéricas.",
+      "stats": [
+        {
+          "value": "+25.000 €",
+          "label": "Facturación generada para un cliente"
+        },
+        {
+          "value": "+700",
+          "label": "Artículos técnicos publicados"
+        },
+        {
+          "value": "+35k",
+          "label": "Lecturas mensuales"
+        }
+      ],
+      "problemTitle": "Por qué el copy de muchos SaaS técnicos no convierte",
+      "founder": {
+        "title": "De «nadie entiende lo que hacemos» a una web que convierte",
+        "subtitle": "Los problemas que oigo a casi todos los founders de SaaS técnico, y cómo los resuelvo.",
+        "steps": [
+          { "title": "Diagnóstico", "pain": "«Tenemos tráfico, pero nadie se registra»", "action": "Reviso tu web, tu producto y a tu competencia, y detecto dónde se pierde el lector.", "result": "Sabes qué falla y por qué." },
+          { "title": "Mensaje", "pain": "«Cada uno del equipo explica el producto de una forma»", "action": "Definimos una propuesta de valor y unos mensajes clave que todo el equipo puede usar.", "result": "Un mensaje claro y único." },
+          { "title": "Copy", "pain": "«Nuestra landing suena como la de todos»", "action": "Escribo el copy con ejemplos reales de tu producto, después de probarlo yo.", "result": "Una web que habla como tu cliente." },
+          { "title": "Medición", "pain": "«No sé si los cambios funcionan»", "action": "Enlaces con UTM y seguimiento de la conversión de cada página.", "result": "Más registros, y sabes de dónde vienen." }
+        ]
+      },
+      "problems": [
+        {
+          "title": "Habla de beneficios vagos",
+          "description": "«Escala tu negocio» o «potencia tu equipo» no le dicen nada a un desarrollador. Quiere saber qué hace tu producto y cómo se integra."
+        },
+        {
+          "title": "Lo escribe alguien que no lo ha usado",
+          "description": "Un copywriter generalista no puede explicar por qué tu SDK es mejor que la alternativa si nunca lo ha probado."
+        },
+        {
+          "title": "No conecta con el resto del contenido",
+          "description": "La landing, el blog y la documentación cuentan historias distintas, y el lector se pierde por el camino."
+        }
+      ],
+      "includedTitle": "Copy pensado para el usuario técnico y para quien firma la compra",
+      "included": [
+        "Landings de producto y de campañas",
+        "Páginas de integraciones y casos de uso",
+        "Páginas de comparativa frente a competidores",
+        "Revisión y mejora del copy que ya tienes",
+        "Microcopy de producto y llamadas a la acción",
+        "Propuesta de valor y mensajes clave"
+      ],
+      "faq": [
+        {
+          "question": "¿Qué diferencia a un copywriter SaaS B2B de uno generalista?",
+          "answer": "Un copywriter SaaS B2B entiende ciclos de venta largos, varios decisores y productos técnicos. En mi caso, además, soy desarrollador: pruebo el producto y escribo con ejemplos reales, que es lo que convence a un público técnico."
+        },
+        {
+          "question": "¿Necesitas acceso a nuestro producto?",
+          "answer": "Siempre que sea posible, sí. Una cuenta de prueba o una demo me permite escribir sobre lo que tu producto hace de verdad y detectar los argumentos que más pesan para tus usuarios."
+        },
+        {
+          "question": "¿Escribes en inglés y en español?",
+          "answer": "Sí, en los dos idiomas, para que puedas lanzar la misma página en varios mercados sin pasar por una traducción literal."
+        },
+        {
+          "question": "¿Cómo se mide si el copy funciona?",
+          "answer": "Con la tasa de conversión de cada página y con etiquetas UTM en los enlaces que le llevan tráfico. Así sabes qué página y qué canal traen más registros."
+        },
+        {
+          "question": "¿Se puede combinar con contenido SEO o vídeo?",
+          "answer": "Sí, y es lo que mejor funciona: el artículo o el vídeo atraen al lector y la landing lo convierte. Lo tienes en los paquetes Growth y Authority."
+        }
+      ]
+    },
+    "technical": {
+      "name": "Contenido técnico SEO",
+      "seoTitle": "Technical writer y redactor SEO para SaaS | Kevin Meneses",
+      "metaDescription": "Technical writer y redactor SEO para SaaS, APIs e IA: artículos, tutoriales con código probado y comparativas que posicionan y traen desarrolladores.",
+      "eyebrow": "Technical writer SaaS",
+      "h1": "Redactor técnico SaaS: artículos y tutoriales que posicionan en Google y traen desarrolladores",
+      "intro": "Como redactor técnico, escribo artículos SEO, tutoriales con código real y comparativas para empresas de APIs, IA y herramientas para desarrolladores. Cada pieza está probada de principio a fin y pensada para seguir trayendo visitas durante meses.",
+      "stats": [
+        {
+          "value": "+700",
+          "label": "Artículos técnicos publicados"
+        },
+        {
+          "value": "+35k",
+          "label": "Lecturas mensuales"
+        },
+        {
+          "value": "+5.000",
+          "label": "Seguidores en Medium"
+        }
+      ],
+      "problemTitle": "Por qué tu blog técnico no trae usuarios",
+      "founder": {
+        "title": "De un blog que no trae a nadie a contenido que capta desarrolladores",
+        "subtitle": "Los problemas que oigo a casi todos los founders de SaaS técnico, y cómo los resuelvo.",
+        "steps": [
+          { "title": "Estrategia", "pain": "«Publicamos en el blog, pero no viene nadie»", "action": "Investigo qué busca tu audiencia técnica en Google y los huecos que deja tu competencia.", "result": "Un plan de temas con demanda real." },
+          { "title": "Producción", "pain": "«Mi equipo no tiene tiempo para escribir»", "action": "Escribo los artículos y tutoriales yo, probando el código de principio a fin.", "result": "Contenido publicado sin quitar horas al equipo." },
+          { "title": "Distribución", "pain": "«Escribimos y nadie lo lee»", "action": "Lo publico también en Medium, Dev.to y GitHub, donde tengo audiencia propia.", "result": "Lectores desde el primer día." },
+          { "title": "Resultados", "pain": "«No sé qué artículos traen clientes»", "action": "Etiquetas UTM en cada enlace y seguimiento de posiciones en Google.", "result": "Sabes qué contenido genera registros." }
+        ]
+      },
+      "problems": [
+        {
+          "title": "Código que no funciona",
+          "description": "Un desarrollador copia el ejemplo, falla y no vuelve. Un tutorial roto resta más confianza de la que suma."
+        },
+        {
+          "title": "Temas elegidos sin datos",
+          "description": "Se escribe sobre lo que interesa al equipo, no sobre lo que tu audiencia busca en Google."
+        },
+        {
+          "title": "Contenido que no lleva al producto",
+          "description": "El artículo atrae visitas, pero no explica dónde encaja tu herramienta, así que no se convierten en registros."
+        }
+      ],
+      "includedTitle": "Contenido que educa, posiciona y lleva a tu producto",
+      "included": [
+        "Investigación de keywords y huecos de contenido",
+        "Artículos técnicos optimizados para SEO",
+        "Tutoriales paso a paso con código probado",
+        "Comparativas frente a herramientas y APIs alternativas",
+        "Casos de uso con IA, Python y automatización",
+        "Distribución en Medium y Dev.to"
+      ],
+      "faq": [
+        {
+          "question": "¿Qué hace un technical writer para un SaaS?",
+          "answer": "Convierte tu producto en contenido que tu audiencia técnica busca y entiende: tutoriales, guías de integración, comparativas y artículos SEO. A diferencia de un redactor generalista, escribe y prueba el código."
+        },
+        {
+          "question": "¿El código de los tutoriales está probado?",
+          "answer": "Siempre. Construyo cada ejemplo de principio a fin antes de publicarlo, para que el lector pueda copiarlo y funcione a la primera."
+        },
+        {
+          "question": "¿Cómo eliges los temas?",
+          "answer": "Con investigación de keywords y análisis de los resultados de Google: busco lo que tu audiencia ya está buscando y los huecos que tu competencia no cubre."
+        },
+        {
+          "question": "¿Dónde se publican los artículos?",
+          "answer": "En tu blog y, si quieres, también en Medium y Dev.to, donde tengo audiencia propia, con enlaces a tu producto."
+        },
+        {
+          "question": "¿Cómo se miden los resultados?",
+          "answer": "Con el tráfico orgánico y las posiciones en Google de cada artículo, y con etiquetas UTM en los enlaces a tu producto, para ver cuántos registros llegan desde cada pieza."
+        }
+      ]
+    },
+    "youtube": {
+      "name": "Creación de contenido para YouTube",
+      "seoTitle": "Creación de contenido para YouTube SaaS | Kevin Meneses",
+      "metaDescription": "Creación de contenido para YouTube para empresas SaaS y APIs: demos, tutoriales e integraciones en un canal con más de 12.500 suscriptores.",
+      "eyebrow": "YouTube content creation",
+      "h1": "Creación de contenido para YouTube: vídeos que muestran tu SaaS funcionando de verdad",
+      "intro": "Creo demos, tutoriales e integraciones en vídeo para empresas SaaS, APIs y herramientas para desarrolladores. Se publican en mi canal, con más de 12.500 suscriptores, y puedes usarlos también en tu web y tus redes.",
+      "stats": [
+        {
+          "value": "+12.500",
+          "label": "Suscriptores en YouTube"
+        },
+        {
+          "value": "+350",
+          "label": "Vídeos publicados"
+        },
+        {
+          "value": "+25.000 €",
+          "label": "Facturación generada para un cliente"
+        }
+      ],
+      "problemTitle": "Por qué un buen producto no basta en YouTube",
+      "founder": {
+        "title": "De «deberíamos tener vídeos» a demos que venden por ti",
+        "subtitle": "Los problemas que oigo a casi todos los founders de SaaS técnico, y cómo los resuelvo.",
+        "steps": [
+          { "title": "Idea", "pain": "«Sabemos que necesitamos vídeo, pero no por dónde empezar»", "action": "Elegimos los casos de uso que más convencen a tu cliente técnico.", "result": "Un guion pensado para convertir." },
+          { "title": "Producción", "pain": "«No tenemos tiempo ni equipo para grabar»", "action": "Me encargo del guion, la grabación y la edición, con tu producto funcionando.", "result": "Cero horas de tu equipo." },
+          { "title": "Audiencia", "pain": "«Nuestro canal apenas tiene suscriptores»", "action": "Se publica en mi canal, con más de 12.500 suscriptores técnicos.", "result": "Visualizaciones desde el primer día." },
+          { "title": "Reutilización", "pain": "«Un vídeo y se acabó»", "action": "Lo convierto en clips, posts y un artículo SEO con enlaces medibles.", "result": "Un vídeo que trabaja en todos tus canales." }
+        ]
+      },
+      "problems": [
+        {
+          "title": "Las demos parecen anuncios",
+          "description": "Los desarrolladores saltan los vídeos comerciales. Quieren ver la herramienta resolviendo un problema real."
+        },
+        {
+          "title": "No hay audiencia de partida",
+          "description": "Lanzar un canal desde cero lleva meses. Sin suscriptores, los primeros vídeos apenas se ven."
+        },
+        {
+          "title": "El vídeo se queda aislado",
+          "description": "Un vídeo sin artículo, sin post y sin enlaces medibles no se puede atribuir a ningún registro."
+        }
+      ],
+      "includedTitle": "Vídeo técnico con audiencia desde el primer día",
+      "included": [
+        "Demos de producto con casos reales",
+        "Tutoriales de integración en Python",
+        "Reviews y comparativas en vídeo",
+        "Guion, grabación y edición",
+        "Publicación en un canal con audiencia técnica",
+        "Clips cortos para LinkedIn y otras redes"
+      ],
+      "faq": [
+        {
+          "question": "¿En qué canal se publican los vídeos?",
+          "answer": "En mi canal de YouTube, con más de 12.500 suscriptores interesados en Python, APIs, IA y automatización. También puedes usar el vídeo en tu web, tu documentación o tus redes."
+        },
+        {
+          "question": "¿Qué tipo de vídeos haces?",
+          "answer": "Demos de producto, tutoriales de integración, reviews y comparativas, siempre con la herramienta funcionando en un caso real."
+        },
+        {
+          "question": "¿Combinas los vídeos con artículos?",
+          "answer": "Sí. Cada vídeo puede ir acompañado de un artículo SEO y de posts en LinkedIn, para que el mismo contenido trabaje en Google, en YouTube y en redes."
+        },
+        {
+          "question": "¿Cómo se mide el impacto de un vídeo?",
+          "answer": "Con las visualizaciones y la retención, y con etiquetas UTM en los enlaces de la descripción, para ver cuántas visitas y registros llegan desde cada vídeo."
+        },
+        {
+          "question": "¿Cuánto cuesta un vídeo?",
+          "answer": "Los vídeos están incluidos en los paquetes Starter, Growth y Authority, y la propuesta final se adapta a tu caso. Cuéntame tu proyecto y te envío una propuesta."
+        }
+      ],
+      "mock": {
+        "title": "Demo: integra tu API en 5 minutos",
+        "channel": "PythonIA",
+        "subscribers": "12,5K suscriptores",
+        "subscribe": "Suscribirse",
+        "subscribed": "Suscrito",
+        "views": "visualizaciones",
+        "chapters": "Capítulos",
+        "comment": "¡Funciona a la primera! 🙌"
+      }
+    },
+    "linkedin": {
+      "name": "Contenido para LinkedIn B2B",
+      "seoTitle": "Creación de contenido para LinkedIn B2B | Kevin Meneses",
+      "metaDescription": "Creación de contenido para LinkedIn B2B para empresas SaaS y técnicas: posts y carruseles con datos y ejemplos reales que atraen a compradores técnicos.",
+      "eyebrow": "LinkedIn content creation",
+      "h1": "Contenido para LinkedIn B2B que convierte tu conocimiento técnico en clientes",
+      "intro": "Transformo tus artículos, vídeos y casos de uso en posts para LinkedIn que llegan a CTOs, desarrolladores y equipos técnicos. Contenido directo, con datos y ejemplos reales, sin frases motivacionales vacías. Lo hago también para mí: mi newsletter de LinkedIn tiene más de 1.600 suscriptores.",
+      "stats": [
+        {
+          "value": "+35k",
+          "label": "Lecturas mensuales"
+        },
+        {
+          "value": "+1.600",
+          "label": "Suscriptores a mi newsletter de LinkedIn"
+        },
+        {
+          "value": "+25.000 €",
+          "label": "Facturación generada para un cliente"
+        }
+      ],
+      "problemTitle": "Por qué LinkedIn no te trae clientes",
+      "founder": {
+        "title": "De «debería publicar más» a un perfil que atrae clientes",
+        "subtitle": "Los problemas que oigo a casi todos los founders de SaaS técnico, y cómo los resuelvo.",
+        "steps": [
+          { "title": "Tu voz", "pain": "«Sé que debería publicar, pero el producto va primero»", "action": "Una llamada para captar tus ideas, tus opiniones y tus historias.", "result": "Tú hablas, yo escribo." },
+          { "title": "Posts", "pain": "«Cuando escribo, suena a anuncio o a autoayuda»", "action": "Escribo posts y carruseles con tu voz, con datos y ejemplos reales.", "result": "Contenido que suena a ti." },
+          { "title": "Constancia", "pain": "«Publico dos semanas y lo dejo»", "action": "Calendario editorial y posts listos para que solo tengas que aprobarlos.", "result": "Presencia constante sin esfuerzo." },
+          { "title": "Clientes", "pain": "«Muchos likes, pero ninguna demo»", "action": "Cada post lleva a una pieza más larga o a tu producto, con enlaces UTM.", "result": "Conversaciones con compradores técnicos." }
+        ]
+      },
+      "problems": [
+        {
+          "title": "Publicaciones sin constancia",
+          "description": "Se publica cuando hay tiempo, y la audiencia se olvida de ti entre un post y el siguiente."
+        },
+        {
+          "title": "Contenido demasiado genérico",
+          "description": "Los posts de autoayuda no atraen a compradores técnicos. Lo que funciona es enseñar algo útil con datos y ejemplos."
+        },
+        {
+          "title": "Sin conexión con el resto del contenido",
+          "description": "El post no lleva a ningún artículo, demo ni landing, así que no hay forma de medir qué negocio genera."
+        }
+      ],
+      "includedTitle": "Posts que enseñan algo y llevan a tu producto",
+      "included": [
+        "Ghostwriting: posts con tu voz para fundadores y CTOs",
+        "Posts a partir de tus artículos y vídeos",
+        "Carruseles con tutoriales y datos",
+        "Calendario editorial",
+        "Enlaces con UTM a tu web y tu producto",
+        "Distribución también en Medium y Dev.to"
+      ],
+      "faq": [
+        {
+          "question": "¿Tienes audiencia propia en LinkedIn?",
+          "answer": "Sí. Publico contenido técnico en LinkedIn y tengo una newsletter con más de 1.600 suscriptores. Las mismas técnicas que uso con ella son las que aplico al contenido de tu empresa."
+        },
+        {
+          "question": "¿Haces ghostwriting para fundadores?",
+          "answer": "Sí. Empezamos con una llamada para captar tu voz, tus opiniones y tus historias. Yo redacto los posts, tú los revisas y apruebas, y se publican con tu nombre. Escribo para fundadores, CTOs y también para la página de empresa."
+        },
+        {
+          "question": "¿De dónde sale el contenido de los posts?",
+          "answer": "De tu producto y de contenido que ya existe: artículos, vídeos, documentación y casos de clientes. Así cada post enseña algo concreto y lleva a una pieza más larga."
+        },
+        {
+          "question": "¿Cada cuánto se publica?",
+          "answer": "Lo definimos en el calendario editorial según tus objetivos. Lo importante es la constancia, no publicar todos los días."
+        },
+        {
+          "question": "¿Cómo se mide el resultado en LinkedIn?",
+          "answer": "Con el alcance y la interacción de cada post y, sobre todo, con etiquetas UTM en los enlaces, para ver cuántas visitas, registros y demos llegan desde LinkedIn."
+        },
+        {
+          "question": "¿Se puede combinar con YouTube y SEO?",
+          "answer": "Sí, y es lo recomendable: un artículo o un vídeo se convierte en varios posts, y cada canal refuerza a los demás."
+        }
+      ],
+      "mock": {
+        "role": "Technical Writer · 1 h",
+        "post": "3 errores que cometen las APIs al documentar la autenticación 👇",
+        "postBody": "El tercero lo veo en casi todas las integraciones que pruebo.",
+        "reactions": "reacciones",
+        "comments": "31 comentarios",
+        "comment": "¿Tenéis un ejemplo en Python?",
+        "newsletter": "Nuevo suscriptor a tu newsletter",
+        "newsletterCount": "1.600+ suscriptores"
+      }
+    }
+  },
   "companies": {
     "title": "Empresas con las que he colaborado"
   },
