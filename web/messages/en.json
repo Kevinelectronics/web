@@ -5,30 +5,33 @@
     "caseStudies": "Case Studies",
     "articles": "Articles",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Kevin Meneses",
-    "role": "SaaS Content Writer & Technical Writer",
+    "role": "B2B SaaS Copywriter & Technical Writer",
     "headline": "Turn your SaaS into technical content that attracts developers and generates customers",
-    "tagline": "Technical content for API, SaaS, and fintech companies: SEO articles and tutorials developers actually finish reading, not marketing fluff.",
+    "tagline": "B2B SaaS copywriting, SEO articles, code tutorials, and YouTube and LinkedIn content creation for API, AI, and fintech companies. Content developers actually finish, not marketing fluff.",
     "cta": "View case studies",
     "ctaSecondary": "Request a proposal",
     "authority": [
       "+12,500 YouTube subscribers",
-      "+27,000 monthly reads",
+      "+35,000 monthly reads",
       "+5,000 Medium followers",
-      "+$20,000 generated for a client through content"
-    ]
+      "+$25,000 generated for a client through content"
+    ],
+    "orbit": ["SEO articles", "Code tutorials", "YouTube videos", "Documentation", "Use cases", "Comparisons"]
   },
   "metrics": {
     "items": [
       { "value": "+12,500", "label": "YouTube subscribers" },
       { "value": "+350", "label": "YouTube videos" },
-      { "value": "+27k", "label": "Monthly readers" },
-      { "value": "+600", "label": "Technical articles" },
-      { "value": "+$20,000", "label": "Revenue generated for a client" }
+      { "value": "+35k", "label": "Monthly readers" },
+      { "value": "+700", "label": "Technical articles" },
+      { "value": "+$25,000", "label": "Revenue generated for a client" }
     ]
   },
   "pitch": {
@@ -40,28 +43,29 @@
     "title": "What I can do for your company",
     "categories": [
       {
-        "title": "Technical SEO Content",
+        "title": "Technical SEO & SaaS Copywriting",
         "benefit": "Content that ranks on Google and educates at the same time, so developers find you when they're searching for a solution.",
         "items": [
           "SEO-optimized technical articles",
           "Tool and API comparisons",
           "Step-by-step tutorials with real code",
-          "Use cases with AI, Python, and automation"
+          "Use cases with AI, Python, and automation",
+          "B2B SaaS copywriting for landing and product pages"
         ]
       },
       {
-        "title": "Developer Marketing",
+        "title": "LinkedIn & Developer Marketing",
         "benefit": "Distribution where your technical audience already is, to build authority beyond your own blog.",
         "items": [
           "Full content campaigns",
           "Medium publishing",
           "Dev.to publishing",
-          "LinkedIn content",
+          "LinkedIn content creation",
           "Technical presence on GitHub"
         ]
       },
       {
-        "title": "YouTube & Product Demos",
+        "title": "YouTube Content Creation",
         "benefit": "Video content that shows your product actually working — the fastest way to build technical trust.",
         "items": [
           "YouTube videos with hands-on demos",
@@ -72,6 +76,29 @@
         ]
       }
     ]
+  },
+  "journey": {
+    "eyebrow": "How it works",
+    "title": "From a Google search to a paying customer",
+    "subtitle": "This is how a developer moves through the content I create for your SaaS.",
+    "persona": "Alex",
+    "steps": [
+      { "title": "Finds you", "subtitle": "Alex searches on Google", "result": "An SEO article that ranks." },
+      { "title": "Gets it", "subtitle": "Alex watches the demo", "result": "A YouTube video and a LinkedIn post." },
+      { "title": "Tries you", "subtitle": "Alex copies the code", "result": "A tutorial with code that works." },
+      { "title": "Buys", "subtitle": "Alex signs up", "result": "Traffic that turns into customers." }
+    ],
+    "mock": {
+      "query": "best scraping api python",
+      "resultTitle": "How to scrape without getting blocked",
+      "rank": "#1 on Google",
+      "videoTitle": "Demo: your API in 5 minutes",
+      "videoMeta": "YouTube · 12K views",
+      "linkedin": "248 reactions · 31 comments",
+      "signup": "New sign-up",
+      "signupMeta": "Alex · Pro plan",
+      "fromContent": "Came from your article"
+    }
   },
   "featuredArticles": {
     "eyebrow": "Featured",
@@ -179,7 +206,7 @@
     "quote": "Kevin's content doesn't stay surface-level — he understands the API, tests the examples, and explains exactly why a developer should use EODHD APIs. His work helped us convert organic traffic better.",
     "name": "Nick",
     "role": "EODHD APIs",
-    "statValue": "+$20,000",
+    "statValue": "+$25,000",
     "statLabel": "in revenue generated through organic content"
   },
   "caseStudies": {
@@ -203,6 +230,44 @@
         "problem": "They wanted to drive product adoption among a technical and investor audience, without sounding like generic marketing.",
         "solution": "Content that explains the product through the real use case, with data and practical examples.",
         "contentType": "Articles and use cases backed by real data."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQs",
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "question": "What does a B2B SaaS copywriter and technical writer do?",
+        "answer": "I turn a technical product into content your audience understands and wants to use: SEO articles, tutorials with real code, comparisons, landing page copy, and videos. Unlike a generalist copywriter, I test the product, write the code, and explain why a developer should choose it."
+      },
+      {
+        "question": "Do you write copy for landing and product pages?",
+        "answer": "Yes. Alongside technical content, I do B2B SaaS copywriting for landing pages, product pages, and integration pages, with the same approach: concrete benefits, real examples, and no marketing fluff."
+      },
+      {
+        "question": "Do you offer YouTube content creation?",
+        "answer": "Yes. My channel has 12,500+ subscribers and 350+ published videos. I create product demos, integration videos, reviews, and Python tutorials that show your tool actually working."
+      },
+      {
+        "question": "What about LinkedIn content creation?",
+        "answer": "Yes. I adapt each technical piece into LinkedIn posts and also distribute it on Medium, Dev.to, and GitHub, so your content reaches the B2B audience where it already is instead of depending only on your blog."
+      },
+      {
+        "question": "What kind of companies do you work with?",
+        "answer": "B2B SaaS companies, APIs, AI platforms, fintech, and developer tools. I've worked with companies like EODHD APIs, ZenRows, ScrapingBee, Snowball Analytics, Financial Modeling Prep, and Unstract."
+      },
+      {
+        "question": "How do you measure results?",
+        "answer": "With data, not impressions. Every link in my articles, videos, and posts carries UTM tags, so your Google Analytics shows exactly how many visits, sign-ups, and conversions come from each piece of content and each channel: Google, YouTube, LinkedIn, or Medium. On top of that, I track organic traffic and Google rankings."
+      },
+      {
+        "question": "Which languages do you write in?",
+        "answer": "English and Spanish. I can create content natively in both languages or adapt existing pieces for another market."
+      },
+      {
+        "question": "How much does it cost to work with you?",
+        "answer": "It depends on the scope. The Starter, Growth, and Authority packages are a starting point, and the final proposal is tailored to your case. Send me your project and I'll get back to you with a proposal."
       }
     ]
   },

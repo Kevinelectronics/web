@@ -5,30 +5,33 @@
     "caseStudies": "Casos de éxito",
     "articles": "Artículos",
     "about": "Sobre mí",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
   },
   "hero": {
     "greeting": "Hola, soy",
     "name": "Kevin Meneses",
-    "role": "Redactor SaaS y Technical Writer",
+    "role": "Copywriter SaaS B2B y Technical Writer",
     "headline": "Convierte tu SaaS en contenido técnico que atrae desarrolladores y genera clientes",
-    "tagline": "Creo artículos SEO, tutoriales con código, vídeos de YouTube y campañas de contenido para empresas de IA, APIs, FinTech y herramientas para desarrolladores.",
+    "tagline": "Artículos SEO, tutoriales con código, copywriting SaaS y creación de contenido para YouTube y LinkedIn, para empresas B2B SaaS de IA, APIs, FinTech y herramientas para desarrolladores.",
     "cta": "Ver casos de éxito",
     "ctaSecondary": "Solicitar propuesta",
     "authority": [
       "+12.500 suscriptores en YouTube",
-      "+27.000 lecturas mensuales",
+      "+35.000 lecturas mensuales",
       "+5.000 seguidores en Medium",
-      "+20.000 € generados para un cliente mediante contenido"
-    ]
+      "+25.000 € generados para un cliente mediante contenido"
+    ],
+    "orbit": ["Artículos SEO", "Tutoriales con código", "Vídeos YouTube", "Documentación", "Casos de uso", "Comparativas"]
   },
   "metrics": {
     "items": [
       { "value": "+12.500", "label": "Suscriptores en YouTube" },
       { "value": "+350", "label": "Vídeos de YouTube" },
-      { "value": "+27k", "label": "Lecturas mensuales" },
-      { "value": "+600", "label": "Artículos técnicos" },
-      { "value": "+20.000 €", "label": "Facturación generada para un cliente" }
+      { "value": "+35k", "label": "Lecturas mensuales" },
+      { "value": "+700", "label": "Artículos técnicos" },
+      { "value": "+25.000 €", "label": "Facturación generada para un cliente" }
     ]
   },
   "pitch": {
@@ -40,28 +43,29 @@
     "title": "¿Qué puedo hacer por tu empresa?",
     "categories": [
       {
-        "title": "Technical SEO Content",
+        "title": "Technical SEO & SaaS Copywriting",
         "benefit": "Contenido que posiciona en Google y educa a la vez, para que los desarrolladores te encuentren cuando buscan una solución.",
         "items": [
           "Artículos técnicos optimizados para SEO",
           "Comparativas entre herramientas y APIs",
           "Tutoriales paso a paso con código real",
-          "Casos de uso con IA, Python y automatización"
+          "Casos de uso con IA, Python y automatización",
+          "Copywriting SaaS B2B para landings y páginas de producto"
         ]
       },
       {
-        "title": "Developer Marketing",
+        "title": "LinkedIn & Developer Marketing",
         "benefit": "Distribución donde vive tu audiencia técnica, para generar autoridad más allá de tu propio blog.",
         "items": [
           "Campañas de contenido completas",
           "Publicación en Medium",
           "Publicación en Dev.to",
-          "Contenido para LinkedIn",
+          "Creación de contenido para LinkedIn",
           "Presencia técnica en GitHub"
         ]
       },
       {
-        "title": "YouTube & Product Demos",
+        "title": "YouTube Content Creation",
         "benefit": "Contenido en vídeo que muestra tu producto funcionando de verdad, la forma más rápida de generar confianza técnica.",
         "items": [
           "Vídeos de YouTube con demostraciones prácticas",
@@ -72,6 +76,29 @@
         ]
       }
     ]
+  },
+  "journey": {
+    "eyebrow": "Cómo funciona",
+    "title": "De una búsqueda en Google a un cliente de pago",
+    "subtitle": "Así recorre un desarrollador el contenido que creo para tu SaaS.",
+    "persona": "Alex",
+    "steps": [
+      { "title": "Te encuentra", "subtitle": "Alex busca en Google", "result": "Artículo SEO que posiciona." },
+      { "title": "Te entiende", "subtitle": "Alex ve la demo", "result": "Vídeo en YouTube y post en LinkedIn." },
+      { "title": "Te prueba", "subtitle": "Alex copia el código", "result": "Tutorial con código que funciona." },
+      { "title": "Te compra", "subtitle": "Alex se registra", "result": "Tráfico que se convierte en clientes." }
+    ],
+    "mock": {
+      "query": "mejor api de scraping en python",
+      "resultTitle": "Cómo scrapear sin bloqueos con Python",
+      "rank": "#1 en Google",
+      "videoTitle": "Demo: tu API en 5 minutos",
+      "videoMeta": "YouTube · 12K visualizaciones",
+      "linkedin": "248 reacciones · 31 comentarios",
+      "signup": "Nuevo registro",
+      "signupMeta": "Alex · Plan Pro",
+      "fromContent": "Vino desde tu artículo"
+    }
   },
   "featuredArticles": {
     "eyebrow": "Destacados",
@@ -179,7 +206,7 @@
     "quote": "El contenido de Kevin no se queda en la superficie: entiende la API, prueba los ejemplos y explica exactamente por qué un desarrollador debería usar EODHD APIs. Su trabajo nos ayudó a convertir mejor el tráfico orgánico.",
     "name": "Nick",
     "role": "EODHD APIs",
-    "statValue": "+20.000 €",
+    "statValue": "+25.000 €",
     "statLabel": "en facturación generada a través de contenido orgánico"
   },
   "caseStudies": {
@@ -203,6 +230,44 @@
         "problem": "Buscaban generar adopción de producto entre un público técnico e inversor, sin sonar a marketing genérico.",
         "solution": "Contenido que explica el producto desde el caso de uso real, con datos y ejemplos prácticos.",
         "contentType": "Artículos y casos de uso con datos reales."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQs",
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "question": "¿Qué hace un copywriter SaaS B2B y technical writer?",
+        "answer": "Convierto un producto técnico en contenido que tu audiencia entiende y quiere usar: artículos SEO, tutoriales con código real, comparativas, copy para landings y vídeos. La diferencia con un copywriter generalista es que pruebo el producto, escribo el código y explico por qué un desarrollador debería elegirlo."
+      },
+      {
+        "question": "¿Escribes copy para landings y páginas de producto?",
+        "answer": "Sí. Además del contenido técnico, hago copywriting SaaS B2B para landings, páginas de producto y de integraciones, siempre con el mismo enfoque: beneficios concretos, ejemplos reales y cero relleno de marketing."
+      },
+      {
+        "question": "¿Ofreces creación de contenido para YouTube?",
+        "answer": "Sí. Tengo un canal con más de 12.500 suscriptores y más de 350 vídeos publicados. Creo demos de producto, vídeos de integraciones, reviews y tutoriales en Python que muestran tu herramienta funcionando de verdad."
+      },
+      {
+        "question": "¿Y creación de contenido para LinkedIn?",
+        "answer": "Sí. Adapto cada pieza técnica en posts para LinkedIn y la distribuyo también en Medium, Dev.to y GitHub, para que tu contenido llegue a la audiencia B2B donde ya está y no dependa solo de tu blog."
+      },
+      {
+        "question": "¿Con qué tipo de empresas trabajas?",
+        "answer": "Con empresas B2B SaaS, APIs, plataformas de IA, FinTech y herramientas para desarrolladores. He colaborado con empresas como EODHD APIs, ZenRows, ScrapingBee, Snowball Analytics, Financial Modeling Prep o Unstract."
+      },
+      {
+        "question": "¿Cómo se miden los resultados?",
+        "answer": "Con datos, no con impresiones. Todos los enlaces de mis artículos, vídeos y posts llevan etiquetas UTM, así que en tu Google Analytics ves exactamente cuántas visitas, registros y conversiones llegan desde cada pieza de contenido y desde cada canal: Google, YouTube, LinkedIn o Medium. A eso le sumo el seguimiento del tráfico orgánico y de las posiciones en Google."
+      },
+      {
+        "question": "¿En qué idiomas escribes?",
+        "answer": "En inglés y en español. Puedo crear el contenido directamente en ambos idiomas o adaptar piezas existentes para otro mercado."
+      },
+      {
+        "question": "¿Cuánto cuesta trabajar contigo?",
+        "answer": "Depende del alcance. Los paquetes Starter, Growth y Authority sirven de punto de partida, y la propuesta final se adapta a tu caso. Escríbeme con tu proyecto y te envío una propuesta."
       }
     ]
   },

@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Container from "./Container";
 import SocialLinks from "./SocialLinks";
-import PhotoCard from "./PhotoCard";
+import HeroOrbit from "./HeroOrbit";
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -11,7 +11,7 @@ export default function Hero() {
   const authority = t.raw("authority") as string[];
 
   return (
-    <section className="py-16 sm:py-24">
+    <section className="overflow-x-clip py-16 sm:py-24">
       <Container className="max-w-5xl">
         <div className="grid items-center gap-14 sm:grid-cols-[1.15fr_0.85fr] sm:gap-10">
           <div className="order-2 sm:order-1">
@@ -64,7 +64,7 @@ export default function Hero() {
           </div>
 
           <div className="order-1 sm:order-2">
-            <PhotoCard name={name} />
+            <HeroOrbit name={name} labels={t.raw("orbit") as string[]} />
           </div>
         </div>
       </Container>

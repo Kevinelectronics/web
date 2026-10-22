@@ -157,4 +157,4 @@ filtering. Read submissions in Strapi admin → Content Manager → Lead.
   generic, illustrative problem/solution copy (explicitly approved as
   placeholder-style content, not verified client quotes/numbers) — the EODHD
   case study is the only one with a real client quote and a real revenue
-  figure (+€20,000).
+  figure (+€25,000).

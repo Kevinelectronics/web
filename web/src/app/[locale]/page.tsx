@@ -11,6 +11,8 @@ import CaseStudyMain from "@/components/CaseStudyMain";
 import CaseStudies from "@/components/CaseStudies";
 import ContentPackages from "@/components/ContentPackages";
 import Talk from "@/components/Talk";
+import Faq from "@/components/Faq";
+import Journey from "@/components/Journey";
 
 export async function generateMetadata({
   params,
@@ -33,6 +35,7 @@ export default function HomePage() {
       <Metrics />
       <CompanyLogos />
       <Offerings />
+      <Journey />
       <FeaturedArticles />
       <Videos />
       <CaseStudyMain />
@@ -40,6 +43,7 @@ export default function HomePage() {
       <ContentPackages />
       <Process />
       <WhyMe />
+      <Faq />
       <Talk />
     </>
   );

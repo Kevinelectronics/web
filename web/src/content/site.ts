@@ -42,7 +42,7 @@ export const companies: Company[] = [
   },
   {
     name: "ZenRows",
-    logoUrl: "/logos/zenrows.png",
+    logoUrl: "/logos/zenrows-wordmark.png",
     url: "https://www.zenrows.com",
   },
   {
@@ -62,12 +62,43 @@ export const companies: Company[] = [
   },
   {
     name: "Zernio",
-    logoUrl: "/logos/zernio.png",
+    logoUrl: "/logos/zernio-wordmark.png",
+    url: "https://zernio.com",
   },
   {
     name: "Mailtrap",
     logoUrl: "/logos/mailtrap.png",
     url: "https://mailtrap.io",
+  },
+  {
+    name: "ScrapingBee",
+    logoUrl: "/logos/scrapingbee.png",
+    url: "https://www.scrapingbee.com",
+  },
+  {
+    name: "Snowball Analytics",
+    logoUrl: "/logos/snowball-analytics-logo.png",
+    url: "https://snowball-analytics.com",
+  },
+  {
+    name: "Financial Modeling Prep",
+    logoUrl: "/logos/fmp.png",
+    url: "https://site.financialmodelingprep.com",
+  },
+  {
+    name: "Gologin",
+    logoUrl: "/logos/gologin.png",
+    url: "https://gologin.com",
+  },
+  {
+    name: "Unstract",
+    logoUrl: "/logos/unstract.png",
+    url: "https://unstract.com",
+  },
+  {
+    name: "Staplit",
+    logoUrl: "/logos/staplit.png",
+    url: "https://staplit.com",
   },
 ];
 
