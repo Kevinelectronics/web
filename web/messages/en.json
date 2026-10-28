@@ -673,7 +673,8 @@
   },
   "footer": {
     "rights": "All rights reserved.",
-    "builtWith": "Built with Next.js and Strapi"
+    "builtWith": "Built with Next.js and Strapi",
+    "privacy": "Privacy policy"
   },
   "social": {
     "linkedin": "LinkedIn",
