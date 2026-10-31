@@ -53,6 +53,18 @@ local secrets and are gitignored.
   come back too. `web/src/lib/strapi.ts` also has an 8s `AbortSignal.timeout`
   on CMS fetches and `articles`/`articles/[slug]` have `loading.tsx` skeletons
   — both defensive since the plan upgrade, kept in case Render has a bad day.
+- **Neon Free bills compute for every minute the DB is awake**, and it only
+  scales to zero after ~5 min with *no open connections*. With Strapi
+  always-on (Render Starter), the old pool default (`min: 2`) plus the web's
+  60s fetch revalidate kept Neon awake 24/7 and hit 80% of the compute quota
+  (2026-10-31). Fixed by pool `min: 0` + 30s idle timeout
+  (`cms/config/database.ts`) and caching CMS fetches for 24h under the
+  `strapi` tag (`web/src/lib/strapi.ts`). Freshness comes from on-demand
+  revalidation instead: a document-service middleware in `cms/src/index.ts`
+  POSTs to `/api/revalidate` on any article/tag write. Needs the same
+  `REVALIDATE_SECRET` env var in **both** Vercel and Render — if new posts
+  stop showing up for a day, check that first. Don't lower the revalidate
+  back to seconds.
 - **Render doesn't auto-deploy on git push** — no GitHub App is installed on
   the (public) repo, so pushing to `main` does not trigger a CMS deploy by
   itself. Trigger manually: `POST https://api.render.com/v1/services/<id>/deploys`

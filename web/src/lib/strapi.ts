@@ -36,9 +36,16 @@ type StrapiListResponse<T> = {
 // cap, a stale page (or a request nothing has warmed yet) blocks the whole
 // SSR response for that long. Bail out well before that and let the callers'
 // existing try/catch fall back to an empty state instead of hanging.
+//
+// Cached for a day and tagged so the CMS can purge it on publish (Strapi
+// calls /api/revalidate, see cms/src/index.ts). A short revalidate meant
+// any bot visit re-queried Strapi, which kept the Neon database from ever
+// scaling to zero and ate the free compute-hour quota.
+export const STRAPI_CACHE_TAG = "strapi";
+
 async function strapiFetch<T>(path: string): Promise<T> {
   const res = await fetch(`${strapiUrl}/api${path}`, {
-    next: { revalidate: 60 },
+    next: { revalidate: 86400, tags: [STRAPI_CACHE_TAG] },
     signal: AbortSignal.timeout(8000),
   });
 

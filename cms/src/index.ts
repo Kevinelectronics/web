@@ -37,8 +37,62 @@ async function grantPublicArticleReadAccess(strapi: Core.Strapi) {
   }
 }
 
+const REVALIDATED_MODELS = ["api::article.article", "api::tag.tag"];
+const WRITE_ACTIONS = [
+  "create",
+  "update",
+  "delete",
+  "publish",
+  "unpublish",
+  "discardDraft",
+];
+
+/**
+ * The site caches CMS responses for a day (so bot traffic doesn't keep the
+ * Neon database awake). Whenever an article or tag changes, tell the site to
+ * drop that cache so the change shows up on the next visit. Debounced
+ * because one save in the admin fires several document actions (update +
+ * publish, one per locale, ...). Skipped when REVALIDATE_SECRET is unset
+ * (local dev).
+ */
+function registerSiteRevalidation(strapi: Core.Strapi) {
+  const secret = process.env.REVALIDATE_SECRET;
+  if (!secret) return;
+
+  const url = `${process.env.SITE_URL ?? "https://kevinmeneses.com"}/api/revalidate`;
+  let timer: NodeJS.Timeout | undefined;
+
+  const revalidateSite = () => {
+    clearTimeout(timer);
+    timer = setTimeout(async () => {
+      try {
+        const res = await fetch(url, {
+          method: "POST",
+          headers: { "x-revalidate-secret": secret },
+        });
+        if (!res.ok) strapi.log.warn(`Site revalidation failed: ${res.status}`);
+      } catch (error) {
+        strapi.log.warn(`Site revalidation failed: ${error}`);
+      }
+    }, 2000);
+  };
+
+  strapi.documents.use(async (context, next) => {
+    const result = await next();
+    if (
+      REVALIDATED_MODELS.includes(context.uid) &&
+      WRITE_ACTIONS.includes(context.action)
+    ) {
+      revalidateSite();
+    }
+    return result;
+  });
+}
+
 export default {
-  register(/* { strapi }: { strapi: Core.Strapi } */) {},
+  register({ strapi }: { strapi: Core.Strapi }) {
+    registerSiteRevalidation(strapi);
+  },
 
   async bootstrap({ strapi }: { strapi: Core.Strapi }) {
     await grantPublicArticleReadAccess(strapi);

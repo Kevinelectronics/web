@@ -41,7 +41,16 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Database 
         },
         schema: env('DATABASE_SCHEMA', 'public'),
       },
-      pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
+      // min 0 + a short idle timeout lets the pool drop to zero connections
+      // when nobody is using the CMS. Neon only scales its compute to zero
+      // after ~5 min with no open connections, so a permanent minimum (the
+      // old default of 2) kept it awake 24/7 and burned the free-tier
+      // compute-hour quota once Render Starter made Strapi always-on.
+      pool: {
+        min: env.int('DATABASE_POOL_MIN', 0),
+        max: env.int('DATABASE_POOL_MAX', 10),
+        idleTimeoutMillis: env.int('DATABASE_POOL_IDLE_TIMEOUT', 30000),
+      },
     },
     sqlite: {
       connection: {
