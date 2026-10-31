@@ -8,6 +8,12 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.join(__dirname),
   },
+  // Next's default list of bots that get metadata rendered in <head> leaves
+  // out Googlebot (it assumes JS rendering). With streamed metadata, routes
+  // with a loading.tsx (articles) emit canonical/hreflang in <body>, which
+  // Google ignores — it then picks its own canonical. Default list + Googlebot.
+  htmlLimitedBots:
+    /Googlebot|[\w-]+-Google|Google-[\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight/i,
   // Permanent (308) so Google consolidates signals on the canonical URL.
   // The next-intl proxy would otherwise answer these with a temporary 307.
   async redirects() {
