@@ -51,8 +51,12 @@ local secrets and are gitignored.
   10 min as a workaround — removed once Starter made it unnecessary. If the
   CMS ever gets moved back to Free, that workaround (or an equivalent) should
   come back too. `web/src/lib/strapi.ts` also has an 8s `AbortSignal.timeout`
-  on CMS fetches and `articles`/`articles/[slug]` have `loading.tsx` skeletons
-  — both defensive since the plan upgrade, kept in case Render has a bad day.
+  on CMS fetches and the articles list has a `loading.tsx` skeleton
+  (`articles/(list)/`) — both defensive since the plan upgrade, kept in case
+  Render has a bad day. **Don't add a `loading.tsx` to `articles/[slug]` or
+  back at `articles/`** (it would wrap the article page too): a Suspense
+  fallback streams a 200 before the slug lookup, so missing articles become
+  soft 404s and the cross-locale 308 redirect becomes client-side.
 - **Neon Free bills compute for every minute the DB is awake**, and it only
   scales to zero after ~5 min with *no open connections*. With Strapi
   always-on (Render Starter), the old pool default (`min: 2`) plus the web's

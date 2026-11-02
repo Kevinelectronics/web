@@ -87,6 +87,11 @@ export default async function ArticlePage({
 }) {
   const { locale, slug } = await params;
   const t = await getTranslations("articles");
+  const nav = await getTranslations("nav");
+  // No loading.tsx for this segment (the list's skeleton lives in the
+  // (list) route group): a Suspense fallback would start streaming with a
+  // 200 before this check, turning notFound() into a soft 404 and the
+  // cross-locale permanentRedirect into a client-side redirect.
   const article = await getArticleBySlug(slug, locale);
 
   if (!article) {
@@ -110,7 +115,7 @@ export default async function ArticlePage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: t("back"), item: `${siteUrl}/${locale}` },
+      { "@type": "ListItem", position: 1, name: nav("home"), item: `${siteUrl}/${locale}` },
       {
         "@type": "ListItem",
         position: 2,
