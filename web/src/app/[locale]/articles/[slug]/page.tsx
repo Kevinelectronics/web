@@ -17,6 +17,7 @@ import {
 import { routing } from "@/i18n/routing";
 import { buildMetaDescription, extractFaqs } from "@/lib/seo";
 import { siteUrl, socials } from "@/content/site";
+import MarkdownParagraph from "@/components/MarkdownParagraph";
 
 /** hreflang map for an article: this locale plus every published translation. */
 async function articleLanguages(
@@ -241,7 +242,7 @@ export default async function ArticlePage({
 
         <OutboundLinkParams>
           <div className="prose mt-10 max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:no-underline hover:prose-a:underline">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} components={{ p: MarkdownParagraph }}>
               {article.content}
             </ReactMarkdown>
           </div>
