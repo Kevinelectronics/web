@@ -1,8 +1,12 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaLinkedin, FaProductHunt, FaYoutube } from "react-icons/fa";
 import {
+  HiArrowUpRight,
   HiOutlineBell,
+  HiOutlineBolt,
+  HiOutlineFilm,
+  HiOutlineSparkles,
   HiOutlineChatBubbleOvalLeft,
   HiOutlineHandThumbUp,
   HiOutlineNewspaper,
@@ -11,8 +15,8 @@ import {
 } from "react-icons/hi2";
 import { avatarPhoto } from "@/content/site";
 
-// Decorative hero visuals for the LinkedIn and YouTube landings. All motion is
-// CSS (see the `li-*` / `yt-*` rules in globals.css) and stops under
+// Decorative hero visuals for the LinkedIn, YouTube and demo video landings. All motion is
+// CSS (see the `li-*` / `yt-*` / `dv-*` rules in globals.css) and stops under
 // prefers-reduced-motion, leaving the final state visible.
 
 const card =
@@ -188,6 +192,90 @@ export function YouTubeAnimation() {
         </span>
         <p className="text-[11px] text-ink">{t("comment")}</p>
       </div>
+    </div>
+  );
+}
+
+export function DemoAnimation() {
+  const t = useTranslations("services.demo.mock");
+  const toggles = t.raw("toggles") as string[];
+
+  return (
+    <div aria-hidden className="relative mx-auto w-full max-w-[440px] pt-6">
+      {/* Floating launch chips */}
+      <span className="dv-chip absolute -right-1 top-0 z-10 flex items-center gap-1.5 rounded-full border border-rose-200 bg-rose-50 px-2.5 py-1 text-[11px] font-medium text-rose-600 sm:-right-6 dark:border-rose-400/20 dark:bg-rose-400/10 dark:text-rose-300">
+        <HiOutlineSparkles className="h-3.5 w-3.5" />
+        {t("chipNew")}
+      </span>
+
+      {/* The "frame" of the video, on grid paper like the reel */}
+      <div className={`${card} overflow-hidden`}>
+        <div className="dv-grid relative aspect-video">
+          <div className="dv-pill absolute left-1/2 top-[14%] flex -translate-x-1/2 items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5 shadow-[0_10px_30px_-14px_rgba(15,26,51,0.5)] dark:bg-paper">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent text-white">
+              <HiOutlineBolt className="h-3.5 w-3.5" />
+            </span>
+            <span className="whitespace-nowrap text-sm font-semibold text-ink">{t("product")}</span>
+            <HiArrowUpRight className="h-3.5 w-3.5 text-ink-soft" />
+          </div>
+
+          <div className="absolute left-[8%] top-[42%] w-[46%] space-y-1.5">
+            {toggles.map((label, index) => (
+              <div
+                key={label}
+                className="flex items-center justify-between rounded-lg border border-line bg-white px-2.5 py-1.5 dark:bg-paper"
+              >
+                <span className="truncate text-[11px] font-medium text-ink">{label}</span>
+                <span
+                  className="dv-track relative h-3.5 w-6 shrink-0 rounded-full"
+                  style={{ animationDelay: `${0.6 + index * 0.5}s` }}
+                >
+                  <span
+                    className="dv-knob absolute left-0.5 top-0.5 h-2.5 w-2.5 rounded-full bg-white shadow"
+                    style={{ animationDelay: `${0.6 + index * 0.5}s` }}
+                  />
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <p className="dv-bubble absolute right-[6%] top-[46%] max-w-[42%] rounded-lg bg-ink px-2.5 py-1.5 text-[11px] font-medium leading-snug text-paper">
+            {t("prompt")}
+          </p>
+
+          <span className="dv-cta absolute bottom-[16%] right-[6%] rounded-md bg-accent px-2.5 py-1 text-[11px] font-semibold text-white">
+            {t("cta")}
+          </span>
+
+          {/* Scrubber with scene marks */}
+          <div className="absolute inset-x-3 bottom-2.5">
+            <div className="relative h-1 rounded-full bg-ink/10 dark:bg-white/15">
+              <div className="dv-play absolute inset-y-0 left-0 rounded-full bg-accent" />
+              {[8, 16, 27, 50, 62].map((left) => (
+                <span key={left} className="absolute top-0 h-1 w-0.5 bg-white dark:bg-paper" style={{ left: `${left}%` }} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Export toast */}
+      <div className={`dv-export absolute -bottom-7 -left-2 flex items-center gap-2.5 px-3 py-2 sm:-left-8 ${card}`}>
+        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent-soft text-accent">
+          <HiOutlineFilm className="h-4 w-4" />
+        </span>
+        <div>
+          <p className="text-[11px] font-medium text-ink">{t("render")}</p>
+          <div className="mt-1 h-1 w-24 overflow-hidden rounded-full bg-line">
+            <div className="dv-play h-full rounded-full bg-emerald-500" />
+          </div>
+        </div>
+      </div>
+
+      <span className="dv-chip-late absolute -right-2 -bottom-4 flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-[11px] font-medium text-amber-700 sm:-right-6 dark:border-amber-400/20 dark:bg-amber-400/10 dark:text-amber-300">
+        <FaProductHunt className="h-3.5 w-3.5" />
+        {t("chipLaunch")}
+      </span>
     </div>
   );
 }

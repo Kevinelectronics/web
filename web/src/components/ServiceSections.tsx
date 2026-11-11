@@ -5,6 +5,7 @@ import {
   HiCheck,
   HiOutlineBugAnt,
   HiOutlineCodeBracket,
+  HiOutlineFilm,
   HiOutlinePencilSquare,
 } from "react-icons/hi2";
 import { FaLinkedin, FaYoutube } from "react-icons/fa";
@@ -13,7 +14,7 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { serviceIds, servicePath, type ServiceId } from "@/content/services";
 import Container from "./Container";
-import { LinkedInAnimation, YouTubeAnimation } from "./ServiceAnimations";
+import { DemoAnimation, LinkedInAnimation, YouTubeAnimation } from "./ServiceAnimations";
 
 type Stat = { value: string; label: string };
 type Problem = { title: string; description: string };
@@ -23,6 +24,7 @@ export const serviceIcons: Record<ServiceId, IconType> = {
   technical: HiOutlineCodeBracket,
   youtube: FaYoutube,
   linkedin: FaLinkedin,
+  demo: HiOutlineFilm,
 };
 
 /** Brand colour for the channel services; the rest use the site accent. */
@@ -31,11 +33,13 @@ export const serviceIconColors: Record<ServiceId, string> = {
   technical: "text-accent",
   youtube: "text-[#ff0000]",
   linkedin: "text-[#0a66c2] dark:text-[#5aa9f5]",
+  demo: "text-accent",
 };
 
 const heroVisuals: Partial<Record<ServiceId, () => ReactNode>> = {
   linkedin: () => <LinkedInAnimation />,
   youtube: () => <YouTubeAnimation />,
+  demo: () => <DemoAnimation />,
 };
 
 export function ServiceHero({ id }: { id: ServiceId }) {
@@ -199,7 +203,7 @@ export function OtherServices({ current }: { current: ServiceId }) {
         <h2 className="font-display text-2xl font-medium tracking-tight text-ink">
           {common("otherServices")}
         </h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {serviceIds
             .filter((id) => id !== current)
             .map((id) => {

@@ -24,6 +24,12 @@ import Videos from "@/components/Videos";
 import ContentPackages from "@/components/ContentPackages";
 import Faq, { type FaqItem } from "@/components/Faq";
 import Talk from "@/components/Talk";
+import {
+  DemoPackages,
+  DemoReelSection,
+  DemoUseCases,
+  demoVideo,
+} from "@/components/DemoVideoSections";
 
 type Params = Promise<{ locale: string; service: string }>;
 
@@ -110,6 +116,20 @@ export default async function ServicePage({ params }: { params: Params }) {
           { "@type": "ListItem", position: 2, name: t("name"), item: url },
         ],
       },
+      ...(id === "demo"
+        ? [
+            {
+              "@type": "VideoObject",
+              name: t("reel.videoTitle"),
+              description: t("reel.subtitle"),
+              thumbnailUrl: `${siteUrl}${demoVideo.poster}`,
+              contentUrl: `${siteUrl}${demoVideo.src}`,
+              uploadDate: demoVideo.uploadDate,
+              duration: demoVideo.duration,
+              creator: { "@id": `${siteUrl}/#person` },
+            },
+          ]
+        : []),
     ],
   };
 
@@ -121,14 +141,16 @@ export default async function ServicePage({ params }: { params: Params }) {
       />
       <ServiceHero id={id} />
       {id === "youtube" && <Videos bare />}
+      {id === "demo" && <DemoReelSection />}
       <CompanyLogos />
       <ServiceProblem id={id} />
+      {id === "demo" && <DemoUseCases />}
       <FounderJourney id={id} />
       <ServiceIncluded id={id} />
       <ServiceFeedback />
-      {id !== "youtube" && <FeaturedArticles />}
+      {id !== "youtube" && id !== "demo" && <FeaturedArticles />}
       <CaseStudyMain />
-      <ContentPackages ctaHref="#contact" />
+      {id === "demo" ? <DemoPackages /> : <ContentPackages ctaHref="#contact" />}
       <Faq
         eyebrow={common("faqEyebrow")}
         title={common("faqTitle")}

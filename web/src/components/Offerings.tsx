@@ -11,7 +11,7 @@ type Category = { title: string; benefit: string; items: string[] };
 const categoryServices: ServiceId[][] = [
   ["technical", "copywriting"],
   ["linkedin"],
-  ["youtube"],
+  ["youtube", "demo"],
 ];
 
 export default function Offerings() {

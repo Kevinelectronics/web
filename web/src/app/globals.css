@@ -176,6 +176,55 @@ body {
   .yt-subbed { animation: yt-subbed 6s steps(1) infinite; }
 }
 
+/* ---------- Demo video hero animation + reel ---------- */
+
+/* Grid paper, same backdrop as the launch videos themselves. */
+.dv-grid {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Final values, shown as-is when motion is reduced. */
+.dv-track { background: var(--accent); }
+.dv-knob { transform: translateX(10px); }
+.dv-play { width: 100%; }
+
+@keyframes dv-track {
+  0%, 8% { background: var(--line); }
+  14%, 88% { background: var(--accent); }
+  94%, 100% { background: var(--line); }
+}
+@keyframes dv-knob {
+  0%, 8% { transform: translateX(0); }
+  14%, 88% { transform: translateX(10px); }
+  94%, 100% { transform: translateX(0); }
+}
+@keyframes dv-bubble {
+  0%, 30% { opacity: 0; transform: translateY(8px); }
+  36%, 88% { opacity: 1; transform: translateY(0); }
+  94%, 100% { opacity: 0; transform: translateY(8px); }
+}
+@keyframes dv-cta {
+  0%, 55% { opacity: 0; transform: scale(0.8); }
+  62%, 88% { opacity: 1; transform: scale(1); }
+  94%, 100% { opacity: 0; transform: scale(0.8); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dv-pill { animation: orbit-pop-in 0.6s 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+  .dv-track { animation: dv-track 8s ease-in-out infinite; }
+  .dv-knob { animation: dv-knob 8s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+  .dv-bubble { animation: dv-bubble 8s ease-out infinite; }
+  .dv-cta { animation: dv-cta 8s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+  .dv-play { animation: yt-progress 8s linear infinite; }
+  .dv-chip { animation: li-toast 8s ease-in-out infinite; }
+  .dv-chip-late { animation: li-comment 8s ease-in-out infinite; }
+  .dv-export { animation: orbit-float 6s ease-in-out infinite; }
+}
+
 /* No motion: show the logos once, as a wrapped grid. */
 @media (prefers-reduced-motion: reduce) {
   .marquee { mask-image: none; }

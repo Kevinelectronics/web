@@ -650,6 +650,233 @@
         "newsletter": "Nuevo suscriptor a tu newsletter",
         "newsletterCount": "1.600+ suscriptores"
       }
+    },
+    "demo": {
+      "name": "Vídeo demo para SaaS",
+      "seoTitle": "Vídeo demo para SaaS con motion graphics | Kevin Meneses",
+      "metaDescription": "Vídeos demo de producto para SaaS y APIs con motion graphics: de 30 a 90 segundos para tu lanzamiento, tu landing o Product Hunt. Guion, animación y formatos para redes.",
+      "eyebrow": "SaaS demo videos",
+      "h1": "Vídeo demo para SaaS: tu lanzamiento explicado en 30 segundos",
+      "intro": "Convierto tu producto en un vídeo corto con motion graphics: tu interfaz animada, datos reales y un cierre con llamada a la acción. Listo para tu landing, Product Hunt, LinkedIn y el email de lanzamiento.",
+      "stats": [
+        {
+          "value": "30–90 s",
+          "label": "Duración pensada para lanzamientos"
+        },
+        {
+          "value": "3 formatos",
+          "label": "16:9, 9:16 y 1:1 para web y redes"
+        },
+        {
+          "value": "+350",
+          "label": "Vídeos publicados"
+        }
+      ],
+      "reel": {
+        "eyebrow": "Ejemplo real",
+        "title": "Así se construye un vídeo de lanzamiento",
+        "subtitle": "Vídeo demo de 26 segundos para el servidor MCP de EODHD APIs. Pulsa una escena para saltar a ella y ver qué papel cumple cada parte.",
+        "client": "Cliente: EODHD APIs",
+        "videoTitle": "Vídeo demo del servidor MCP de EODHD APIs",
+        "chapters": [
+          {
+            "time": 0,
+            "label": "Gancho",
+            "description": "Abre con la pregunta que tu cliente ya se está haciendo."
+          },
+          {
+            "time": 2,
+            "label": "Producto",
+            "description": "Qué es y qué incluye, en un solo plano."
+          },
+          {
+            "time": 4,
+            "label": "Problema",
+            "description": "Lo que falla sin tu producto: precios inventados, datos desactualizados."
+          },
+          {
+            "time": 7,
+            "label": "Prueba",
+            "description": "Una pregunta real y una respuesta con datos reales, no una maqueta."
+          },
+          {
+            "time": 13,
+            "label": "Puesta en marcha",
+            "description": "Una línea de código: se ve lo fácil que es empezar."
+          },
+          {
+            "time": 16,
+            "label": "Llamada a la acción",
+            "description": "Mensaje final y un botón con el siguiente paso."
+          }
+        ]
+      },
+      "problemTitle": "Por qué tu lanzamiento pasa desapercibido",
+      "problems": [
+        {
+          "title": "Un changelog no emociona a nadie",
+          "description": "Escribes «nueva feature» en un post y nadie la entiende hasta que la ve funcionando."
+        },
+        {
+          "title": "Las capturas no cuentan la historia",
+          "description": "Una imagen estática no enseña el antes y el después, ni lo rápido que es empezar."
+        },
+        {
+          "title": "Grabar la pantalla no basta",
+          "description": "Un screencast de cuatro minutos con el ratón dando vueltas no se ve en LinkedIn ni en Product Hunt. Se ve en 30 segundos, o no se ve."
+        }
+      ],
+      "useCases": {
+        "eyebrow": "Dónde usarlo",
+        "title": "Un vídeo para todos los canales de tu lanzamiento",
+        "items": [
+          {
+            "title": "Product Hunt",
+            "description": "El vídeo de la galería que decide si alguien entra a probarlo."
+          },
+          {
+            "title": "Hero de tu landing",
+            "description": "Explica el producto antes de que el visitante lea una sola línea."
+          },
+          {
+            "title": "LinkedIn y X",
+            "description": "Versiones vertical y cuadrada con subtítulos, pensadas para verse sin sonido."
+          },
+          {
+            "title": "Email de lanzamiento",
+            "description": "Un GIF o una miniatura que lleva al vídeo y anima a hacer clic."
+          },
+          {
+            "title": "Ventas y onboarding",
+            "description": "La demo que tu equipo comercial envía antes de la primera llamada."
+          },
+          {
+            "title": "Docs y changelog",
+            "description": "Cada feature nueva, explicada en segundos dentro de la documentación."
+          }
+        ]
+      },
+      "founder": {
+        "title": "De «lanzamos el martes» a un vídeo listo para publicar",
+        "subtitle": "Lo que me cuentan los equipos SaaS antes de un lanzamiento, y cómo lo resuelvo.",
+        "steps": [
+          {
+            "title": "Brief",
+            "pain": "«Lanzamos pronto y no tenemos nada que enseñar»",
+            "action": "Pruebo tu producto y definimos juntos el mensaje, la audiencia y el momento clave que hay que mostrar.",
+            "result": "Un mensaje claro para el lanzamiento."
+          },
+          {
+            "title": "Guion",
+            "pain": "«No sabemos contarlo en 30 segundos»",
+            "action": "Escribo el guion escena a escena: gancho, problema, producto, prueba y llamada a la acción.",
+            "result": "Un storyboard aprobado antes de animar."
+          },
+          {
+            "title": "Motion",
+            "pain": "«No tenemos diseñador de motion graphics»",
+            "action": "Animo la interfaz de tu producto con tus colores, tu tipografía y datos reales.",
+            "result": "Un vídeo con tu marca, no una plantilla."
+          },
+          {
+            "title": "Entrega",
+            "pain": "«Lo necesitamos para la web, LinkedIn y Product Hunt»",
+            "action": "Exporto en 16:9, 9:16 y 1:1, con subtítulos para verlo sin sonido.",
+            "result": "Listo para publicar el día del lanzamiento."
+          }
+        ]
+      },
+      "includedTitle": "Todo lo que necesitas para lanzar con vídeo",
+      "included": [
+        "Guion y storyboard escena a escena",
+        "Motion graphics con la interfaz de tu producto",
+        "Tu marca: colores, tipografía y logo",
+        "Datos y casos de uso reales, no maquetas genéricas",
+        "Música y efectos de sonido",
+        "Subtítulos para ver sin sonido",
+        "Exportación en 16:9, 9:16 y 1:1",
+        "Revisiones sobre el storyboard y el vídeo final"
+      ],
+      "packages": {
+        "eyebrow": "Formatos",
+        "title": "Elige el vídeo que necesita tu lanzamiento",
+        "subtitle": "Cada proyecto se presupuesta según la duración y el número de escenas. Cuéntame qué vas a lanzar y te envío una propuesta cerrada.",
+        "cta": "Solicitar propuesta",
+        "recommended": "Recomendado",
+        "items": [
+          {
+            "name": "Feature clip",
+            "duration": "15–30 s",
+            "description": "Para anunciar una feature o una integración nueva.",
+            "features": [
+              "Una idea en 3–5 escenas",
+              "Formatos 16:9 y 9:16",
+              "Subtítulos incluidos"
+            ]
+          },
+          {
+            "name": "Launch video",
+            "duration": "30–60 s",
+            "description": "El vídeo principal de tu lanzamiento, como el de EODHD.",
+            "features": [
+              "Guion y storyboard",
+              "Motion graphics con tu interfaz",
+              "Formatos 16:9, 9:16 y 1:1",
+              "Música y efectos de sonido"
+            ]
+          },
+          {
+            "name": "Launch kit",
+            "duration": "60–90 s + clips",
+            "description": "El lanzamiento completo: vídeo principal y piezas para cada canal.",
+            "features": [
+              "Todo lo del Launch video",
+              "Clips cortos para redes",
+              "Miniatura y GIF para el email",
+              "Copy del post de LinkedIn"
+            ]
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "¿Qué es un vídeo demo para SaaS?",
+          "answer": "Un vídeo corto que enseña tu producto funcionando: qué problema resuelve, cómo se usa y por qué merece la pena. En lugar de grabar la pantalla tal cual, animo la interfaz con motion graphics para que se entienda en segundos."
+        },
+        {
+          "question": "¿En qué se diferencia de un vídeo explicativo animado?",
+          "answer": "Un vídeo explicativo suele usar personajes e ilustraciones. Un vídeo demo enseña tu interfaz y datos reales, que es lo que convence a un comprador técnico."
+        },
+        {
+          "question": "¿Cuánto dura el vídeo?",
+          "answer": "Entre 15 y 90 segundos según el formato. Para un lanzamiento recomiendo de 30 a 60 segundos: da tiempo a enseñar el producto y es lo bastante corto para que se vea entero en redes."
+        },
+        {
+          "question": "¿Qué necesitas de mi parte?",
+          "answer": "Acceso al producto o a una cuenta de prueba, tu guía de marca y una llamada corta para el brief. Del guion, la animación y la edición me encargo yo."
+        },
+        {
+          "question": "¿Cuánto tarda en estar listo?",
+          "answer": "Depende del formato y de las revisiones. Antes de empezar fijamos juntos la fecha de entrega para que el vídeo llegue a tiempo a tu lanzamiento."
+        },
+        {
+          "question": "¿Cuánto cuesta un vídeo demo?",
+          "answer": "Depende de la duración y del número de escenas. Cuéntame qué vas a lanzar y te envío una propuesta cerrada, sin sorpresas."
+        }
+      ],
+      "mock": {
+        "product": "Tu producto",
+        "toggles": [
+          "Integraciones",
+          "Analytics",
+          "API"
+        ],
+        "prompt": "¿Cómo funciona en 30 segundos?",
+        "cta": "Pruébalo gratis →",
+        "chipNew": "Nueva feature",
+        "chipLaunch": "Listo para Product Hunt",
+        "render": "Exportando 1080p"
+      }
     }
   },
   "companies": {

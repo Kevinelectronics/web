@@ -650,6 +650,233 @@
         "newsletter": "New subscriber to your newsletter",
         "newsletterCount": "1,600+ subscribers"
       }
+    },
+    "demo": {
+      "name": "SaaS product demo video",
+      "seoTitle": "SaaS Product Demo & Launch Video Production | Kevin Meneses",
+      "metaDescription": "SaaS product demo videos with motion graphics: 30-90 second launch videos for your landing page, Product Hunt and LinkedIn. Script, animation and social formats included.",
+      "eyebrow": "SaaS demo videos",
+      "h1": "SaaS product demo videos that explain your launch in 30 seconds",
+      "intro": "I turn your product into a short motion graphics video: your UI animated, real data and a closing call to action. Ready for your landing page, Product Hunt, LinkedIn and the launch email.",
+      "stats": [
+        {
+          "value": "30–90 s",
+          "label": "Length built for launches"
+        },
+        {
+          "value": "3 formats",
+          "label": "16:9, 9:16 and 1:1 for web and social"
+        },
+        {
+          "value": "350+",
+          "label": "Videos published"
+        }
+      ],
+      "reel": {
+        "eyebrow": "Real example",
+        "title": "How a product launch video is built",
+        "subtitle": "A 26-second demo video for the EODHD APIs MCP server. Click a scene to jump to it and see the job each part does.",
+        "client": "Client: EODHD APIs",
+        "videoTitle": "EODHD APIs MCP server demo video",
+        "chapters": [
+          {
+            "time": 0,
+            "label": "Hook",
+            "description": "Opens with the question your buyer is already asking."
+          },
+          {
+            "time": 2,
+            "label": "Product",
+            "description": "What it is and what it includes, in a single shot."
+          },
+          {
+            "time": 4,
+            "label": "Problem",
+            "description": "What breaks without your product: made-up prices, stale numbers."
+          },
+          {
+            "time": 7,
+            "label": "Proof",
+            "description": "A real question and an answer with real data, not a mockup."
+          },
+          {
+            "time": 13,
+            "label": "Setup",
+            "description": "One line of code: it shows how easy it is to get started."
+          },
+          {
+            "time": 16,
+            "label": "Call to action",
+            "description": "A closing line and a button with the next step."
+          }
+        ]
+      },
+      "problemTitle": "Why your launch goes unnoticed",
+      "problems": [
+        {
+          "title": "Nobody gets excited about a changelog",
+          "description": "You write \"new feature\" in a post and nobody gets it until they see it working."
+        },
+        {
+          "title": "Screenshots don't tell the story",
+          "description": "A static image can't show the before and after, or how fast it is to get started."
+        },
+        {
+          "title": "A screen recording isn't enough",
+          "description": "A four-minute screencast with the cursor wandering around won't get watched on LinkedIn or Product Hunt. It gets watched in 30 seconds, or not at all."
+        }
+      ],
+      "useCases": {
+        "eyebrow": "Where to use it",
+        "title": "One video for every channel of your launch",
+        "items": [
+          {
+            "title": "Product Hunt",
+            "description": "The gallery video that decides whether people click through to try it."
+          },
+          {
+            "title": "Landing page hero",
+            "description": "Explains the product before the visitor reads a single line."
+          },
+          {
+            "title": "LinkedIn and X",
+            "description": "Vertical and square cuts with captions, made to work with the sound off."
+          },
+          {
+            "title": "Launch email",
+            "description": "A GIF or thumbnail that links to the video and earns the click."
+          },
+          {
+            "title": "Sales and onboarding",
+            "description": "The demo your sales team sends before the first call."
+          },
+          {
+            "title": "Docs and changelog",
+            "description": "Every new feature, explained in seconds right inside the docs."
+          }
+        ]
+      },
+      "founder": {
+        "title": "From \"we launch on Tuesday\" to a video ready to post",
+        "subtitle": "What SaaS teams tell me before a launch, and how I handle it.",
+        "steps": [
+          {
+            "title": "Brief",
+            "pain": "\"We launch soon and have nothing to show\"",
+            "action": "I try your product and we agree on the message, the audience and the key moment to show.",
+            "result": "A clear message for the launch."
+          },
+          {
+            "title": "Script",
+            "pain": "\"We can't explain it in 30 seconds\"",
+            "action": "I write the script scene by scene: hook, problem, product, proof and call to action.",
+            "result": "An approved storyboard before animating."
+          },
+          {
+            "title": "Motion",
+            "pain": "\"We don't have a motion designer\"",
+            "action": "I animate your product's UI with your colours, your typography and real data.",
+            "result": "A video with your brand, not a template."
+          },
+          {
+            "title": "Delivery",
+            "pain": "\"We need it for the website, LinkedIn and Product Hunt\"",
+            "action": "I export in 16:9, 9:16 and 1:1, with captions so it works with the sound off.",
+            "result": "Ready to post on launch day."
+          }
+        ]
+      },
+      "includedTitle": "Everything you need to launch with video",
+      "included": [
+        "Scene-by-scene script and storyboard",
+        "Motion graphics built on your product's UI",
+        "Your brand: colours, typography and logo",
+        "Real data and use cases, not generic mockups",
+        "Music and sound effects",
+        "Captions for sound-off viewing",
+        "Exports in 16:9, 9:16 and 1:1",
+        "Revisions on the storyboard and the final cut"
+      ],
+      "packages": {
+        "eyebrow": "Formats",
+        "title": "Pick the video your launch needs",
+        "subtitle": "Every project is quoted on length and number of scenes. Tell me what you're launching and I'll send you a fixed proposal.",
+        "cta": "Request a proposal",
+        "recommended": "Recommended",
+        "items": [
+          {
+            "name": "Feature clip",
+            "duration": "15–30 s",
+            "description": "To announce a new feature or integration.",
+            "features": [
+              "One idea in 3–5 scenes",
+              "16:9 and 9:16 formats",
+              "Captions included"
+            ]
+          },
+          {
+            "name": "Launch video",
+            "duration": "30–60 s",
+            "description": "The main video for your launch, like the EODHD one.",
+            "features": [
+              "Script and storyboard",
+              "Motion graphics on your UI",
+              "16:9, 9:16 and 1:1 formats",
+              "Music and sound effects"
+            ]
+          },
+          {
+            "name": "Launch kit",
+            "duration": "60–90 s + clips",
+            "description": "The full launch: main video plus assets for every channel.",
+            "features": [
+              "Everything in Launch video",
+              "Short clips for social",
+              "Thumbnail and GIF for the email",
+              "Copy for the LinkedIn post"
+            ]
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "What is a SaaS demo video?",
+          "answer": "A short video that shows your product working: the problem it solves, how it's used and why it's worth it. Instead of a raw screen recording, I animate the UI with motion graphics so it makes sense in seconds."
+        },
+        {
+          "question": "How is it different from a SaaS explainer video?",
+          "answer": "An explainer video usually relies on characters and illustrations. A product demo video shows your real interface and real data, which is what convinces a technical buyer."
+        },
+        {
+          "question": "How long is the video?",
+          "answer": "Between 15 and 90 seconds depending on the format. For a product launch video I recommend 30 to 60 seconds: enough to show the product, short enough to be watched in full on social."
+        },
+        {
+          "question": "What do you need from me?",
+          "answer": "Access to the product or a test account, your brand guidelines and a short call for the brief. I take care of the script, the animation and the edit."
+        },
+        {
+          "question": "How long does it take?",
+          "answer": "It depends on the format and the revisions. Before we start we agree on a delivery date so the video is ready in time for your launch."
+        },
+        {
+          "question": "How much does a product demo video cost?",
+          "answer": "It depends on the length and the number of scenes. Tell me what you're launching and I'll send you a fixed proposal, no surprises."
+        }
+      ],
+      "mock": {
+        "product": "Your product",
+        "toggles": [
+          "Integrations",
+          "Analytics",
+          "API"
+        ],
+        "prompt": "How does it work in 30 seconds?",
+        "cta": "Try it free →",
+        "chipNew": "New feature",
+        "chipLaunch": "Ready for Product Hunt",
+        "render": "Exporting 1080p"
+      }
     }
   },
   "companies": {

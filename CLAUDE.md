@@ -174,6 +174,15 @@ Spanish volumes are near zero, so ES pages are mainly for conversion.
 `youtube content creation` (1.6k/mo) is informational/creator intent — the
 YouTube landing isn't expected to rank for it.
 
+A fifth landing, **SaaS demo / launch videos** (id `demo`, `/es/video-demo-saas`,
+`/en/saas-product-demo-video`), added 2026-11-11. Same route, but with extra
+sections in `DemoVideoSections.tsx`: a reel of the EODHD MCP demo
+(`public/videos/`) with clickable scene chapters (`DemoReel.tsx`), use cases,
+and its own formats/packages instead of `ContentPackages`. Keyword cluster
+(US, OpenSEO): `product launch video` 260/mo KD0, `product demo video` 140/mo
+KD18, `saas explainer video` 110/mo KD0, `saas demo video` 50/mo; Spanish
+volumes are near zero again.
+
 ## Known gaps / not done yet
 
 - The 3 additional case studies (Nutrient, Zernio, Snowball Analytics) use
