@@ -877,6 +877,195 @@
         "chipLaunch": "Ready for Product Hunt",
         "render": "Exporting 1080p"
       }
+    },
+    "automation": {
+      "name": "AI content automation",
+      "seoTitle": "AI Content Automation for B2B: LinkedIn Leads + Multi-Platform Publishing | Kevin Meneses",
+      "metaDescription": "AI content automation systems built with Claude: a LinkedIn radar that finds clients and drafts posts every morning, and one-click publishing to LinkedIn, Instagram, X, TikTok and more.",
+      "eyebrow": "AI content systems",
+      "h1": "AI content automation that finds clients and publishes everywhere",
+      "intro": "I build content systems with Claude that work while you sleep: a LinkedIn radar that spots clients and writes your drafts every morning, and a publishing flow that sends one approved post to every network at once. These are the systems I run my own business on.",
+      "stats": [
+        {
+          "value": "2",
+          "label": "post drafts written every morning"
+        },
+        {
+          "value": "41",
+          "label": "client opportunities in my radar this week"
+        },
+        {
+          "value": "1 click",
+          "label": "to publish on every network"
+        }
+      ],
+      "mock": {
+        "approved": "Approved",
+        "opportunity": "New opportunity",
+        "opportunityDetail": "Hiring a technical writer"
+      },
+      "problemTitle": "Why content alone doesn't bring clients",
+      "problems": [
+        {
+          "title": "You post, but you don't prospect",
+          "description": "Content and client search live in different tools and different days. The posts go out; the leads never get followed up."
+        },
+        {
+          "title": "Ideas run out by Wednesday",
+          "description": "Writing every day from a blank page burns hours, and the posts that do work are hard to repeat."
+        },
+        {
+          "title": "Every network wants its own upload",
+          "description": "One post becomes seven manual uploads, seven formats and seven chances to forget one."
+        }
+      ],
+      "radar": {
+        "eyebrow": "System 1 · LinkedIn client radar",
+        "title": "A radar that finds clients and writes your posts every morning",
+        "subtitle": "LinkedIn is where the people who buy my work are. Every post is content and a way for clients to find me, so I built a system that does both jobs at once.",
+        "imageAlt": "LinkedIn Radar app: tabs for viral ideas, opportunities, launches and formats, with two post drafts and their images created the same morning",
+        "tabs": [
+          {
+            "value": "69",
+            "label": "viral ideas"
+          },
+          {
+            "value": "41",
+            "label": "opportunities"
+          },
+          {
+            "value": "19",
+            "label": "launches"
+          },
+          {
+            "value": "20",
+            "label": "post formats"
+          }
+        ],
+        "steps": [
+          {
+            "title": "LinkedIn posts",
+            "description": "Apify collects the latest posts from the creators you learn from, the people you want as clients and searches like \"hiring technical writer\"."
+          },
+          {
+            "title": "The open web",
+            "description": "Google searches, Product Hunt, Hacker News and company changelogs add new launches that will need content soon."
+          },
+          {
+            "title": "Claude, every morning",
+            "description": "A scheduled task filters out job seekers and self-promotion, scores each opportunity and writes two post drafts, each with its own image."
+          },
+          {
+            "title": "You decide",
+            "description": "Everything lands in one app: you vote, edit and approve. Nothing goes out without you."
+          }
+        ],
+        "traits": [
+          {
+            "title": "It learns from you",
+            "description": "Every like, every version you choose and every \"what would you change?\" updates a style profile that the next drafts follow."
+          },
+          {
+            "title": "It never invents",
+            "description": "It checks that tools and repos exist, leaves a blank for your personal story and never posts on its own."
+          },
+          {
+            "title": "It runs almost free",
+            "description": "Data comes from Apify's free plan and free RSS feeds. The heavy lifting is done by Claude."
+          }
+        ],
+        "github": "See how it's built on GitHub"
+      },
+      "publish": {
+        "eyebrow": "System 2 · Publish everywhere",
+        "title": "Approve once. It goes out on every network.",
+        "subtitle": "When a post is ready, you pick the date and time. The system schedules it through a publishing API (Zernio) and reports back when it's live.",
+        "postTitle": "Your approved post",
+        "formats": [
+          "Text",
+          "Image",
+          "Carousel",
+          "Video"
+        ],
+        "published": "Scheduled",
+        "steps": [
+          {
+            "title": "Approve in the app",
+            "description": "One button: publish now or schedule it. Posts with unfilled gaps like [your story] are blocked automatically."
+          },
+          {
+            "title": "Schedule once",
+            "description": "Pick the date and time zone. Text, image, PDF carousel or video: each network gets the right format."
+          },
+          {
+            "title": "Track it in one place",
+            "description": "The link to each live post comes back into the app, so you know what went out and what to repeat."
+          }
+        ]
+      },
+      "founder": {
+        "title": "From scattered posting to a system that runs every morning",
+        "subtitle": "How I build a content system for your team, step by step.",
+        "steps": [
+          {
+            "title": "Audit",
+            "pain": "\"We post when we remember\"",
+            "action": "I review your channels, your best posts and who you want as clients.",
+            "result": "Clear sources, niche and goals for the system."
+          },
+          {
+            "title": "Design",
+            "pain": "\"We don't know what to automate\"",
+            "action": "I map which steps the system does (finding, writing, scheduling) and which stay human.",
+            "result": "A plan you approve before anything is built."
+          },
+          {
+            "title": "Build",
+            "pain": "\"We tried tools and they didn't stick\"",
+            "action": "I build it with Claude, Apify and a publishing API, with your voice, formats and brand.",
+            "result": "A working system, tested on your real content."
+          },
+          {
+            "title": "Handover",
+            "pain": "\"We need it to keep working without you\"",
+            "action": "I document it and train your team on the daily routine: review, approve, publish.",
+            "result": "A routine that takes minutes a day."
+          }
+        ]
+      },
+      "includedTitle": "What your content system includes",
+      "included": [
+        "LinkedIn radar tuned to your niche and ideal clients",
+        "Daily post drafts with images, in your voice",
+        "Opportunity list with a score and a suggested angle",
+        "Product launch tracking for timely outreach",
+        "One-click publishing to every network you use",
+        "Approval step: nothing goes out without you",
+        "A style profile that learns from your choices",
+        "Documentation and team training"
+      ],
+      "faq": [
+        {
+          "question": "Will you sell me your radar as it is?",
+          "answer": "No. I build a version for your team: your niche, your ideal clients, your voice and the networks you use. The idea is the same; the setup is yours."
+        },
+        {
+          "question": "Does it automate actions on my LinkedIn account?",
+          "answer": "No. It reads public posts to find ideas and opportunities, and it never sends connection requests or messages for you. Publishing goes through a scheduling API, and only after you approve each post."
+        },
+        {
+          "question": "What does it cost to run every month?",
+          "answer": "Very little. Data collection fits in Apify's free plan for most teams, launches come from free feeds, and the rest is your Claude plan plus a publishing API plan."
+        },
+        {
+          "question": "Does my team need to code?",
+          "answer": "No. I set everything up. Day to day, your team opens one app, reviews the drafts and approves what goes out."
+        },
+        {
+          "question": "Which networks can it publish to?",
+          "answer": "LinkedIn, Instagram, X, TikTok, YouTube, Facebook, Threads, Bluesky and more, depending on the accounts you connect."
+        }
+      ]
     }
   },
   "companies": {

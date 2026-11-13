@@ -30,6 +30,7 @@ import {
   DemoUseCases,
   demoVideo,
 } from "@/components/DemoVideoSections";
+import { PublishSystem, RadarSystem } from "@/components/AutomationSections";
 
 type Params = Promise<{ locale: string; service: string }>;
 
@@ -145,12 +146,22 @@ export default async function ServicePage({ params }: { params: Params }) {
       <CompanyLogos />
       <ServiceProblem id={id} />
       {id === "demo" && <DemoUseCases />}
+      {id === "automation" && (
+        <>
+          <RadarSystem />
+          <PublishSystem />
+        </>
+      )}
       <FounderJourney id={id} />
       <ServiceIncluded id={id} />
-      <ServiceFeedback />
-      {id !== "youtube" && id !== "demo" && <FeaturedArticles />}
-      <CaseStudyMain />
-      {id === "demo" ? <DemoPackages /> : <ContentPackages ctaHref="#contact" />}
+      {id !== "automation" && <ServiceFeedback />}
+      {id !== "youtube" && id !== "demo" && id !== "automation" && <FeaturedArticles />}
+      {id !== "automation" && <CaseStudyMain />}
+      {id === "demo" ? (
+        <DemoPackages />
+      ) : (
+        id !== "automation" && <ContentPackages ctaHref="#contact" />
+      )}
       <Faq
         eyebrow={common("faqEyebrow")}
         title={common("faqTitle")}

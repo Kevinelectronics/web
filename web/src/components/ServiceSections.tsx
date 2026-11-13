@@ -5,6 +5,7 @@ import {
   HiCheck,
   HiOutlineBugAnt,
   HiOutlineCodeBracket,
+  HiOutlineCpuChip,
   HiOutlineFilm,
   HiOutlinePencilSquare,
 } from "react-icons/hi2";
@@ -15,6 +16,7 @@ import type { Locale } from "@/i18n/routing";
 import { serviceIds, servicePath, type ServiceId } from "@/content/services";
 import Container from "./Container";
 import { DemoAnimation, LinkedInAnimation, YouTubeAnimation } from "./ServiceAnimations";
+import { AutomationAnimation } from "./AutomationSections";
 
 type Stat = { value: string; label: string };
 type Problem = { title: string; description: string };
@@ -25,6 +27,7 @@ export const serviceIcons: Record<ServiceId, IconType> = {
   youtube: FaYoutube,
   linkedin: FaLinkedin,
   demo: HiOutlineFilm,
+  automation: HiOutlineCpuChip,
 };
 
 /** Brand colour for the channel services; the rest use the site accent. */
@@ -34,12 +37,14 @@ export const serviceIconColors: Record<ServiceId, string> = {
   youtube: "text-[#ff0000]",
   linkedin: "text-[#0a66c2] dark:text-[#5aa9f5]",
   demo: "text-accent",
+  automation: "text-accent",
 };
 
 const heroVisuals: Partial<Record<ServiceId, () => ReactNode>> = {
   linkedin: () => <LinkedInAnimation />,
   youtube: () => <YouTubeAnimation />,
   demo: () => <DemoAnimation />,
+  automation: () => <AutomationAnimation />,
 };
 
 export function ServiceHero({ id }: { id: ServiceId }) {

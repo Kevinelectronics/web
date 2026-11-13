@@ -877,6 +877,195 @@
         "chipLaunch": "Listo para Product Hunt",
         "render": "Exportando 1080p"
       }
+    },
+    "automation": {
+      "name": "Automatización de contenidos con IA",
+      "seoTitle": "Automatización de contenidos con IA: clientes en LinkedIn y publicación multicanal | Kevin Meneses",
+      "metaDescription": "Sistemas de automatización de contenidos con IA hechos con Claude: un radar de LinkedIn que encuentra clientes y escribe tus posts cada mañana, y publicación en un clic en LinkedIn, Instagram, X, TikTok y más.",
+      "eyebrow": "Sistemas de contenido con IA",
+      "h1": "Automatización de contenidos con IA que encuentra clientes y publica en todas partes",
+      "intro": "Construyo sistemas de contenido con Claude que trabajan mientras duermes: un radar de LinkedIn que detecta clientes y te escribe los borradores cada mañana, y un flujo que envía un post aprobado a todas tus redes a la vez. Son los sistemas con los que funciona mi propio negocio.",
+      "stats": [
+        {
+          "value": "2",
+          "label": "borradores escritos cada mañana"
+        },
+        {
+          "value": "41",
+          "label": "oportunidades de cliente en mi radar esta semana"
+        },
+        {
+          "value": "1 clic",
+          "label": "para publicar en todas las redes"
+        }
+      ],
+      "mock": {
+        "approved": "Aprobado",
+        "opportunity": "Nueva oportunidad",
+        "opportunityDetail": "Buscan technical writer"
+      },
+      "problemTitle": "Por qué el contenido solo no trae clientes",
+      "problems": [
+        {
+          "title": "Publicas, pero no prospectas",
+          "description": "El contenido y la búsqueda de clientes viven en herramientas y días distintos. Los posts salen; los leads nunca se siguen."
+        },
+        {
+          "title": "Las ideas se acaban el miércoles",
+          "description": "Escribir cada día desde cero consume horas, y los posts que funcionan cuesta repetirlos."
+        },
+        {
+          "title": "Cada red quiere su propia subida",
+          "description": "Un post se convierte en siete subidas manuales, siete formatos y siete ocasiones de olvidar una."
+        }
+      ],
+      "radar": {
+        "eyebrow": "Sistema 1 · Radar de clientes en LinkedIn",
+        "title": "Un radar que encuentra clientes y escribe tus posts cada mañana",
+        "subtitle": "LinkedIn es donde están las personas que compran mi trabajo. Cada post es contenido y una forma de que los clientes me encuentren, así que construí un sistema que hace las dos cosas a la vez.",
+        "imageAlt": "App LinkedIn Radar: pestañas de ideas virales, oportunidades, lanzamientos y formatos, con dos borradores y sus imágenes creados la misma mañana",
+        "tabs": [
+          {
+            "value": "69",
+            "label": "ideas virales"
+          },
+          {
+            "value": "41",
+            "label": "oportunidades"
+          },
+          {
+            "value": "19",
+            "label": "lanzamientos"
+          },
+          {
+            "value": "20",
+            "label": "formatos de post"
+          }
+        ],
+        "steps": [
+          {
+            "title": "Posts de LinkedIn",
+            "description": "Apify recoge los últimos posts de los creadores de los que aprendes, de las personas que quieres como clientes y de búsquedas como \"hiring technical writer\"."
+          },
+          {
+            "title": "La web abierta",
+            "description": "Búsquedas en Google, Product Hunt, Hacker News y los changelogs de empresas añaden lanzamientos que pronto necesitarán contenido."
+          },
+          {
+            "title": "Claude, cada mañana",
+            "description": "Una tarea programada descarta a quien busca empleo y la autopromoción, puntúa cada oportunidad y escribe dos borradores, cada uno con su imagen."
+          },
+          {
+            "title": "Tú decides",
+            "description": "Todo llega a una sola app: votas, editas y apruebas. Nada sale sin ti."
+          }
+        ],
+        "traits": [
+          {
+            "title": "Aprende de ti",
+            "description": "Cada me gusta, cada versión que eliges y cada \"¿qué cambiarías?\" actualiza un perfil de estilo que siguen los siguientes borradores."
+          },
+          {
+            "title": "Nunca se inventa nada",
+            "description": "Comprueba que las herramientas y repos existen, deja en blanco tu historia personal y nunca publica por su cuenta."
+          },
+          {
+            "title": "Cuesta casi nada",
+            "description": "Los datos salen del plan gratuito de Apify y de feeds RSS gratis. El trabajo pesado lo hace Claude."
+          }
+        ],
+        "github": "Mira cómo está hecho en GitHub"
+      },
+      "publish": {
+        "eyebrow": "Sistema 2 · Publica en todas partes",
+        "title": "Apruebas una vez. Sale en todas tus redes.",
+        "subtitle": "Cuando un post está listo, eliges día y hora. El sistema lo programa a través de una API de publicación (Zernio) y te avisa cuando está publicado.",
+        "postTitle": "Tu post aprobado",
+        "formats": [
+          "Texto",
+          "Imagen",
+          "Carrusel",
+          "Vídeo"
+        ],
+        "published": "Programado",
+        "steps": [
+          {
+            "title": "Apruebas en la app",
+            "description": "Un botón: publicar ahora o programar. Los posts con huecos sin rellenar como [tu historia] se bloquean solos."
+          },
+          {
+            "title": "Programas una vez",
+            "description": "Eliges fecha y zona horaria. Texto, imagen, carrusel en PDF o vídeo: cada red recibe el formato correcto."
+          },
+          {
+            "title": "Lo sigues en un solo sitio",
+            "description": "El enlace de cada post publicado vuelve a la app, así sabes qué salió y qué repetir."
+          }
+        ]
+      },
+      "founder": {
+        "title": "De publicar a ratos a un sistema que funciona cada mañana",
+        "subtitle": "Cómo construyo un sistema de contenido para tu equipo, paso a paso.",
+        "steps": [
+          {
+            "title": "Auditoría",
+            "pain": "\"Publicamos cuando nos acordamos\"",
+            "action": "Reviso tus canales, tus mejores posts y quién quieres que sea tu cliente.",
+            "result": "Fuentes, nicho y objetivos claros para el sistema."
+          },
+          {
+            "title": "Diseño",
+            "pain": "\"No sabemos qué automatizar\"",
+            "action": "Defino qué pasos hace el sistema (buscar, escribir, programar) y cuáles siguen siendo humanos.",
+            "result": "Un plan que apruebas antes de construir nada."
+          },
+          {
+            "title": "Construcción",
+            "pain": "\"Probamos herramientas y no cuajaron\"",
+            "action": "Lo construyo con Claude, Apify y una API de publicación, con tu voz, tus formatos y tu marca.",
+            "result": "Un sistema funcionando, probado con tu contenido real."
+          },
+          {
+            "title": "Entrega",
+            "pain": "\"Necesitamos que siga funcionando sin ti\"",
+            "action": "Lo documento y formo a tu equipo en la rutina diaria: revisar, aprobar, publicar.",
+            "result": "Una rutina de minutos al día."
+          }
+        ]
+      },
+      "includedTitle": "Qué incluye tu sistema de contenido",
+      "included": [
+        "Radar de LinkedIn ajustado a tu nicho y a tus clientes ideales",
+        "Borradores diarios con imagen, con tu voz",
+        "Lista de oportunidades con puntuación y ángulo sugerido",
+        "Seguimiento de lanzamientos para contactar a tiempo",
+        "Publicación en un clic en todas las redes que uses",
+        "Paso de aprobación: nada sale sin ti",
+        "Un perfil de estilo que aprende de tus elecciones",
+        "Documentación y formación del equipo"
+      ],
+      "faq": [
+        {
+          "question": "¿Me vendes tu radar tal cual?",
+          "answer": "No. Construyo una versión para tu equipo: tu nicho, tus clientes ideales, tu voz y las redes que usas. La idea es la misma; la configuración es tuya."
+        },
+        {
+          "question": "¿Automatiza acciones en mi cuenta de LinkedIn?",
+          "answer": "No. Lee posts públicos para encontrar ideas y oportunidades, y nunca envía solicitudes de conexión ni mensajes por ti. La publicación va por una API de programación, y solo después de que apruebes cada post."
+        },
+        {
+          "question": "¿Cuánto cuesta mantenerlo cada mes?",
+          "answer": "Muy poco. La recogida de datos cabe en el plan gratuito de Apify para la mayoría de equipos, los lanzamientos salen de feeds gratuitos y el resto es tu plan de Claude más un plan de la API de publicación."
+        },
+        {
+          "question": "¿Mi equipo tiene que programar?",
+          "answer": "No. Yo lo dejo todo montado. En el día a día, tu equipo abre una app, revisa los borradores y aprueba lo que sale."
+        },
+        {
+          "question": "¿En qué redes puede publicar?",
+          "answer": "LinkedIn, Instagram, X, TikTok, YouTube, Facebook, Threads, Bluesky y más, según las cuentas que conectes."
+        }
+      ]
     }
   },
   "companies": {
