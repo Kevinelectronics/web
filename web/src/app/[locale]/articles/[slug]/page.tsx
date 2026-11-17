@@ -193,7 +193,7 @@ export default async function ArticlePage({
           ← {t("back")}
         </Link>
 
-        <time className="mt-6 block text-xs uppercase tracking-wide text-ink-soft/70">
+        <time className="mt-6 block text-xs uppercase tracking-wide text-ink-soft">
           {date}
         </time>
         <h1 className="mt-2 font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl">

@@ -15,6 +15,7 @@
     "role": "B2B SaaS Copywriter & Technical Writer",
     "headline": "Turn your SaaS into technical content that attracts developers and generates customers",
     "tagline": "B2B SaaS copywriting, SEO articles, code tutorials, and YouTube and LinkedIn content creation for API, AI, and fintech companies. Content developers actually finish, not marketing fluff.",
+    "metaDescription": "B2B SaaS copywriter and technical writer: SEO articles, code tutorials, and YouTube and LinkedIn content for API, AI, and fintech companies. No fluff.",
     "cta": "View case studies",
     "ctaSecondary": "Request a proposal",
     "authority": [
@@ -654,7 +655,7 @@
     "demo": {
       "name": "SaaS product demo video",
       "seoTitle": "SaaS Product Demo & Launch Video Production | Kevin Meneses",
-      "metaDescription": "SaaS product demo videos with motion graphics: 30-90 second launch videos for your landing page, Product Hunt and LinkedIn. Script, animation and social formats included.",
+      "metaDescription": "SaaS product demo videos with motion graphics: 30-90 second launch videos for your landing page, Product Hunt and LinkedIn, with script and social cuts.",
       "eyebrow": "SaaS demo videos",
       "h1": "SaaS product demo videos that explain your launch in 30 seconds",
       "intro": "I turn your product into a short motion graphics video: your UI animated, real data and a closing call to action. Ready for your landing page, Product Hunt, LinkedIn and the launch email.",
@@ -880,8 +881,8 @@
     },
     "automation": {
       "name": "AI content automation",
-      "seoTitle": "AI Content Automation for B2B: LinkedIn Leads + Multi-Platform Publishing | Kevin Meneses",
-      "metaDescription": "AI content automation systems built with Claude: a LinkedIn radar that finds clients and drafts posts every morning, and one-click publishing to LinkedIn, Instagram, X, TikTok and more.",
+      "seoTitle": "AI Content Automation for B2B | Kevin Meneses",
+      "metaDescription": "AI content automation built with Claude: a LinkedIn radar that finds clients and drafts your posts every morning, plus one-click publishing everywhere.",
       "eyebrow": "AI content systems",
       "h1": "AI content automation that finds clients and publishes everywhere",
       "intro": "I build content systems with Claude that work while you sleep: a LinkedIn radar that spots clients and writes your drafts every morning, and a publishing flow that sends one approved post to every network at once. These are the systems I run my own business on.",

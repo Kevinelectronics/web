@@ -30,7 +30,7 @@ export default function ArticleCard({ article }: { article: Article }) {
       )}
       <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-2">
-          <time className="text-xs uppercase tracking-wide text-ink-soft/70">
+          <time className="text-xs uppercase tracking-wide text-ink-soft">
             {date}
           </time>
           {article.featured && (

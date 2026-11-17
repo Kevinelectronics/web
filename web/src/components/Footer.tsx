@@ -46,7 +46,7 @@ export default function Footer() {
           }}
         />
 
-        <p className="text-xs text-ink-soft/70">
+        <p className="text-xs text-ink-soft">
           © {year} {hero("name")}. {t("rights")}{" "}
           <Link href="/privacy" className="underline-offset-4 transition-colors hover:text-accent hover:underline">
             {t("privacy")}

@@ -9,13 +9,15 @@ function LogoCard({ company, hidden }: { company: Company; hidden?: boolean }) {
       {company.logoUrl ? (
         <Image
           src={company.logoUrl}
-          alt={hidden ? "" : company.name}
+          // The duplicate marquee copy sits inside aria-hidden, so screen
+          // readers skip it either way; crawlers still flag an empty alt.
+          alt={company.name}
           width={160}
           height={64}
           className="h-full w-full object-contain"
         />
       ) : (
-        <span className="font-display text-base font-medium tracking-tight text-ink-soft/70">
+        <span className="font-display text-base font-medium tracking-tight text-ink-soft">
           {company.name}
         </span>
       )}

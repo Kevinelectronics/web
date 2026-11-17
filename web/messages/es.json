@@ -15,6 +15,7 @@
     "role": "Copywriter SaaS B2B y Technical Writer",
     "headline": "Convierte tu SaaS en contenido técnico que atrae desarrolladores y genera clientes",
     "tagline": "Artículos SEO, tutoriales con código, copywriting SaaS y creación de contenido para YouTube y LinkedIn, para empresas B2B SaaS de IA, APIs, FinTech y herramientas para desarrolladores.",
+    "metaDescription": "Copywriter SaaS B2B y technical writer: artículos SEO, tutoriales con código y contenido para YouTube y LinkedIn para empresas de IA, APIs y FinTech.",
     "cta": "Ver casos de éxito",
     "ctaSecondary": "Solicitar propuesta",
     "authority": [
@@ -654,7 +655,7 @@
     "demo": {
       "name": "Vídeo demo para SaaS",
       "seoTitle": "Vídeo demo para SaaS con motion graphics | Kevin Meneses",
-      "metaDescription": "Vídeos demo de producto para SaaS y APIs con motion graphics: de 30 a 90 segundos para tu lanzamiento, tu landing o Product Hunt. Guion, animación y formatos para redes.",
+      "metaDescription": "Vídeos demo para SaaS y APIs con motion graphics: de 30 a 90 segundos para tu lanzamiento, tu landing o Product Hunt, con guion y formatos para redes.",
       "eyebrow": "SaaS demo videos",
       "h1": "Vídeo demo para SaaS: tu lanzamiento explicado en 30 segundos",
       "intro": "Convierto tu producto en un vídeo corto con motion graphics: tu interfaz animada, datos reales y un cierre con llamada a la acción. Listo para tu landing, Product Hunt, LinkedIn y el email de lanzamiento.",
@@ -880,8 +881,8 @@
     },
     "automation": {
       "name": "Automatización de contenidos con IA",
-      "seoTitle": "Automatización de contenidos con IA: clientes en LinkedIn y publicación multicanal | Kevin Meneses",
-      "metaDescription": "Sistemas de automatización de contenidos con IA hechos con Claude: un radar de LinkedIn que encuentra clientes y escribe tus posts cada mañana, y publicación en un clic en LinkedIn, Instagram, X, TikTok y más.",
+      "seoTitle": "Automatización de contenidos con IA | Kevin Meneses",
+      "metaDescription": "Automatización de contenidos con IA hecha con Claude: un radar de LinkedIn que encuentra clientes y redacta tus posts, y publicación en un clic en tus redes.",
       "eyebrow": "Sistemas de contenido con IA",
       "h1": "Automatización de contenidos con IA que encuentra clientes y publica en todas partes",
       "intro": "Construyo sistemas de contenido con Claude que trabajan mientras duermes: un radar de LinkedIn que detecta clientes y te escribe los borradores cada mañana, y un flujo que envía un post aprobado a todas tus redes a la vez. Son los sistemas con los que funciona mi propio negocio.",

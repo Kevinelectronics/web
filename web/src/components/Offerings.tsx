@@ -10,7 +10,7 @@ type Category = { title: string; benefit: string; items: string[] };
 // Service landing pages linked from each category card, by position.
 const categoryServices: ServiceId[][] = [
   ["technical", "copywriting"],
-  ["linkedin"],
+  ["linkedin", "automation"],
   ["youtube", "demo"],
 ];
 

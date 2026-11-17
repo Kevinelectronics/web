@@ -30,7 +30,8 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "hero" });
 
   const title = `${t("name")} — ${t("role")}`;
-  const description = t("tagline");
+  // The hero tagline runs ~185 chars, so search snippets get a shorter one.
+  const description = t("metaDescription");
 
   return {
     metadataBase: new URL(siteUrl),
