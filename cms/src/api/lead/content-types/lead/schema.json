@@ -13,27 +13,34 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 120
     },
     "company": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 120
     },
     "email": {
       "type": "email",
-      "required": true
+      "required": true,
+      "maxLength": 254
     },
     "projectType": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 200
     },
     "budget": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 100
     },
     "message": {
       "type": "text",
-      "required": true
+      "required": true,
+      "maxLength": 5000
     },
     "locale": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 10
     }
   }
 }

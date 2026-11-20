@@ -130,3 +130,11 @@ export function extractFaqs(content: string): Faq[] {
 
   return faqs;
 }
+
+/**
+ * Serialize JSON-LD for a <script> tag. JSON.stringify doesn't escape "<",
+ * so a CMS string containing "</script>" would close the tag and inject HTML.
+ */
+export function jsonLdHtml(data: unknown): string {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}

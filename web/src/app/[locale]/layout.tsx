@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import ClickTracking from "@/components/ClickTracking";
 import Footer from "@/components/Footer";
 import "../globals.css";
+import { jsonLdHtml } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -117,7 +118,7 @@ export default async function LocaleLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }}
         />
         {process.env.NODE_ENV === "production" && (
           <>

@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { HiPlus } from "react-icons/hi2";
 import Container from "./Container";
+import { jsonLdHtml } from "@/lib/seo";
 
 export type FaqItem = { question: string; answer: string };
 
@@ -30,7 +31,7 @@ export default function Faq(props: {
     <section id="faq" className="scroll-mt-16 border-t border-line py-20">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }}
       />
       <Container className="max-w-3xl">
         <p className="text-sm font-medium uppercase tracking-wide text-accent">

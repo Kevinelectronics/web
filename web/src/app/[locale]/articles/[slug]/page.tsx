@@ -15,7 +15,7 @@ import {
   strapiImageUrl,
 } from "@/lib/strapi";
 import { routing } from "@/i18n/routing";
-import { buildMetaDescription, extractFaqs } from "@/lib/seo";
+import { buildMetaDescription, extractFaqs, jsonLdHtml } from "@/lib/seo";
 import { siteUrl, socials } from "@/content/site";
 import MarkdownParagraph from "@/components/MarkdownParagraph";
 
@@ -171,18 +171,18 @@ export default async function ArticlePage({
     <article className="py-16 sm:py-24">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(breadcrumbJsonLd) }}
       />
       {articleJsonLd && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdHtml(articleJsonLd) }}
         />
       )}
       {faqJsonLd && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdHtml(faqJsonLd) }}
         />
       )}
       <Container className="max-w-2xl">

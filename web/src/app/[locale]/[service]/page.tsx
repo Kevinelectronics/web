@@ -31,6 +31,7 @@ import {
   demoVideo,
 } from "@/components/DemoVideoSections";
 import { PublishSystem, RadarSystem } from "@/components/AutomationSections";
+import { jsonLdHtml } from "@/lib/seo";
 
 type Params = Promise<{ locale: string; service: string }>;
 
@@ -138,7 +139,7 @@ export default async function ServicePage({ params }: { params: Params }) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }}
       />
       <ServiceHero id={id} />
       {id === "youtube" && <Videos bare />}

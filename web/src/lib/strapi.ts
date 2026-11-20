@@ -73,7 +73,7 @@ export async function getArticles(
     // any locale with more than 25 published articles silently loses the
     // rest from the listing page and the sitemap.
     const json = await strapiFetch<StrapiListResponse<Article>>(
-      `/articles?locale=${locale}&sort=publishedAt:desc&populate=coverImage,tags&status=published&pagination[limit]=200${tagFilter}`,
+      `/articles?locale=${encodeURIComponent(locale)}&sort=publishedAt:desc&populate=coverImage,tags&status=published&pagination[limit]=200${tagFilter}`,
     );
     return json.data;
   } catch {
@@ -91,7 +91,7 @@ export async function getFeaturedArticles(
       ? `&filters[tags][slug][$eq]=${encodeURIComponent(tagSlug)}`
       : "";
     const json = await strapiFetch<StrapiListResponse<Article>>(
-      `/articles?locale=${locale}&filters[featured][$eq]=true&sort=publishedAt:desc&populate=coverImage,tags&status=published&pagination[limit]=${limit}${tagFilter}`,
+      `/articles?locale=${encodeURIComponent(locale)}&filters[featured][$eq]=true&sort=publishedAt:desc&populate=coverImage,tags&status=published&pagination[limit]=${limit}${tagFilter}`,
     );
     return json.data;
   } catch {
@@ -122,7 +122,7 @@ export async function getArticleBySlug(
 ): Promise<Article | null> {
   try {
     const json = await strapiFetch<StrapiListResponse<Article>>(
-      `/articles?locale=${locale}&filters[slug][$eq]=${encodeURIComponent(slug)}&populate=coverImage,tags&status=published`,
+      `/articles?locale=${encodeURIComponent(locale)}&filters[slug][$eq]=${encodeURIComponent(slug)}&populate=coverImage,tags&status=published`,
     );
     return json.data[0] ?? null;
   } catch {
@@ -137,7 +137,7 @@ export async function getArticleTranslationSlug(
 ): Promise<string | null> {
   try {
     const json = await strapiFetch<{ data: { slug: string } | null }>(
-      `/articles/${documentId}?locale=${locale}&fields[0]=slug&status=published`,
+      `/articles/${encodeURIComponent(documentId)}?locale=${encodeURIComponent(locale)}&fields[0]=slug&status=published`,
     );
     return json.data?.slug ?? null;
   } catch {

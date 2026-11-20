@@ -12,11 +12,15 @@ const policy: Core.Policy = (policyContext, _config, { strapi }) => {
   // Strapi's PolicyContext type doesn't declare `request`/`state` (they're
   // only present on the runtime Koa context), hence the cast.
   const ctx = policyContext as unknown as {
-    request: { query?: { status?: string }; ip?: string };
+    request: { query?: { status?: string | string[] }; ip?: string };
     state?: { auth?: { strategy?: { name?: string } } };
   };
 
-  if (ctx.request.query?.status !== "draft") {
+  // Normalize first: `?status[0]=draft` or a repeated `?status=` param
+  // parses as an array and would slip past a plain string comparison.
+  const status = ctx.request.query?.status;
+  const statuses = Array.isArray(status) ? status : status ? [status] : [];
+  if (!statuses.includes("draft")) {
     return true;
   }
 

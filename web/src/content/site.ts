@@ -91,6 +91,21 @@ export const companies: Company[] = [
     url: "https://gologin.com",
   },
   {
+    name: "Browser Use",
+    logoUrl: "/logos/browser-use.png",
+    url: "https://browser-use.com",
+  },
+  {
+    name: "Context.dev",
+    logoUrl: "/logos/context-dev.png",
+    url: "https://www.context.dev",
+  },
+  {
+    name: "Krisp",
+    logoUrl: "/logos/krisp.png",
+    url: "https://krisp.ai",
+  },
+  {
     name: "Unstract",
     logoUrl: "/logos/unstract.png",
     url: "https://unstract.com",
