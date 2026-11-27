@@ -1067,6 +1067,253 @@
           "answer": "LinkedIn, Instagram, X, TikTok, YouTube, Facebook, Threads, Bluesky and more, depending on the accounts you connect."
         }
       ]
+    },
+    "comparisons": {
+      "name": "SaaS comparison pages",
+      "seoTitle": "SaaS Comparison Pages That Rank and Convert | Kevin Meneses",
+      "metaDescription": "SaaS comparison pages built on hands-on tests: X vs Y pages, alternatives pages and best-tools listicles that win buyers on Google and in AI answers.",
+      "eyebrow": "SaaS comparison pages",
+      "h1": "SaaS comparison pages that win buyers right when they're choosing",
+      "intro": "I write \"you vs competitor\" pages, alternatives pages and \"best tools\" listicles for SaaS and API companies. I test every tool, compare real pricing and end with a clear verdict, so the page ranks, gets cited by AI assistants and sends readers to try your product.",
+      "stats": [
+        {
+          "value": "+25",
+          "label": "Comparisons published"
+        },
+        {
+          "value": "+35k",
+          "label": "Monthly readers"
+        },
+        {
+          "value": "+5,000",
+          "label": "Medium followers"
+        }
+      ],
+      "mock": {
+        "query": "your-product vs competitor",
+        "criteria": "Criteria",
+        "you": "You",
+        "them": "Competitor",
+        "rows": [
+          {
+            "label": "Free plan, no card",
+            "you": true,
+            "them": false
+          },
+          {
+            "label": "Price per 1,000 requests",
+            "you": true,
+            "them": false
+          },
+          {
+            "label": "Python and Node SDKs",
+            "you": true,
+            "them": true
+          },
+          {
+            "label": "MCP server for AI agents",
+            "you": true,
+            "them": false
+          }
+        ],
+        "verdict": "Verdict: best pick for small teams",
+        "cta": "Try it free",
+        "rank": "Top 3 on Google for \"vs\"",
+        "cited": "Cited in ChatGPT"
+      },
+      "problemTitle": "Why your competitors win the buyers who compare",
+      "process": {
+        "eyebrow": "The process, in 10 seconds",
+        "title": "How your comparison wins the buyer who's deciding",
+        "query": "yourapp vs rival",
+        "searchHint": "Has the problem and two options left",
+        "you": "yourapp.com/vs/rival",
+        "results": [
+          "rival.com/vs/yourapp",
+          "affiliate.com/top-10",
+          "reddit.com/r/saas"
+        ],
+        "rows": [
+          "Same test",
+          "Today's pricing",
+          "Who it's for"
+        ],
+        "verdict": "Verdict: you, for small teams",
+        "cta": "Try it free",
+        "toast": "New sign-up",
+        "steps": [
+          {
+            "title": "They search",
+            "caption": "The buyer types \"your product vs competitor\" into Google or asks ChatGPT."
+          },
+          {
+            "title": "They find your page",
+            "caption": "Your comparison shows up first, instead of your competitor's or an affiliate site's."
+          },
+          {
+            "title": "They trust the data",
+            "caption": "Real tests, checked pricing and an honest verdict that answers their question."
+          },
+          {
+            "title": "They try your product",
+            "caption": "The CTA sits right where they decide, so the visit ends in a sign-up or a demo."
+          }
+        ]
+      },
+      "problems": [
+        {
+          "title": "Someone else writes your comparison",
+          "description": "Without your own \"you vs X\" page, the one that ranks is your competitor's or an affiliate site's, and they decide how you're described."
+        },
+        {
+          "title": "Tables with no proof",
+          "description": "Feature lists copied from pricing pages convince no one. Buyers spot the bias, Google doesn't reward it and AI assistants don't cite it."
+        },
+        {
+          "title": "Traffic that never reaches a demo",
+          "description": "A comparison without a verdict or a \"who each option is for\" section informs but doesn't convert. The reader leaves to try the other tool."
+        }
+      ],
+      "formats": {
+        "eyebrow": "Formats",
+        "title": "Three comparison formats for every stage of the purchase",
+        "subtitle": "These are the highest-intent searches in the funnel: the person typing them already has the problem and is picking a tool.",
+        "items": [
+          {
+            "title": "\"X vs Y\" pages",
+            "query": "your-product vs competitor",
+            "intent": "Down to two options",
+            "description": "An honest, data-backed head-to-head with your main competitor that answers the last question before the purchase.",
+            "includes": [
+              "Feature and pricing table",
+              "The same test run on both products",
+              "A \"who should pick which\" section"
+            ]
+          },
+          {
+            "title": "Alternatives pages",
+            "query": "competitor alternatives",
+            "intent": "Ready to switch",
+            "description": "They capture users unhappy with a big competitor and show why your product fits better and how to migrate.",
+            "includes": [
+              "The real reasons people switch",
+              "Price comparison against the leader",
+              "Step-by-step migration guide"
+            ]
+          },
+          {
+            "title": "\"Best tools\" listicles",
+            "query": "best [category] tools 2026",
+            "intent": "Building a shortlist",
+            "description": "Rankings of 5 to 8 tools tested one by one, with your product well placed and well argued, on your blog or mine.",
+            "includes": [
+              "A hands-on test of every tool",
+              "Side-by-side pricing table",
+              "Screenshots and links to each official site"
+            ]
+          }
+        ],
+        "geoNote": "GEO bonus: when someone asks ChatGPT, Perplexity or Google's AI Overviews \"which tool should I use for X?\", the answers lean on comparisons with clear criteria and quotable tables. I write every page so AI can cite it."
+      },
+      "examples": {
+        "eyebrow": "Real examples",
+        "title": "Three comparisons I've already published, one per format",
+        "subtitle": "Each one is built on my own tests, pricing checked on publication day and a verdict per use case.",
+        "cta": "Read the comparison",
+        "items": [
+          {
+            "format": "Listicle · Best tools",
+            "title": "7 Best OCR Tools with AI in 2026 (Compared)",
+            "description": "Google Cloud Vision, Mistral OCR, ABBYY, Mindee and three more, sorted by the problem each one solves instead of by \"which is best\".",
+            "highlights": [
+              "A decision by use case, not a generic ranking",
+              "What happens to your documents in each service",
+              "A SaaS client found me through this article"
+            ]
+          },
+          {
+            "format": "X vs Y page",
+            "title": "EODHD vs Alpha Vantage: Stock API Comparison (2026)",
+            "description": "A head-to-head between two financial data APIs: real free-tier limits, a feature table and the same request made with each one.",
+            "highlights": [
+              "Side-by-side feature table",
+              "The same code run against both APIs",
+              "Takeaways and FAQs for the \"vs\" search"
+            ]
+          },
+          {
+            "format": "Alternatives page",
+            "title": "7 Best OpenAI API Alternatives in 2026",
+            "description": "The same JSON task run on OpenAI, Groq and Gemini with one SDK, and seven providers compared on price per 1M tokens.",
+            "highlights": [
+              "My own test: latency, valid JSON and cost",
+              "Pricing and free-tier table",
+              "The best pick for each use case"
+            ]
+          }
+        ]
+      },
+      "founder": {
+        "title": "From missing in every comparison to winning the \"vs\" searches",
+        "subtitle": "What SaaS marketing teams tell me when a competitor owns the buying searches.",
+        "steps": [
+          {
+            "title": "Research",
+            "pain": "\"We don't know who we're compared with\"",
+            "action": "I pull from Google and AI answers which comparisons your market searches for and who wins them today.",
+            "result": "A prioritised list of vs and alternatives pages."
+          },
+          {
+            "title": "Testing",
+            "pain": "\"Our comparisons read like ads\"",
+            "action": "I test your product and the competition with the same task and check pricing on publication day.",
+            "result": "First-hand data readers believe."
+          },
+          {
+            "title": "Writing",
+            "pain": "\"People read it but don't sign up\"",
+            "action": "I write with a clear verdict, a \"who each option is for\" section and CTAs where the decision happens.",
+            "result": "Pages that lead to a trial or a demo."
+          },
+          {
+            "title": "Distribution",
+            "pain": "\"We publish and it doesn't rank\"",
+            "action": "It goes live on your site and I take it to Medium, Dev.to and LinkedIn, where I already have an audience, with UTMs on every link.",
+            "result": "Traffic from day one and per-page tracking."
+          }
+        ]
+      },
+      "includedTitle": "Comparisons that rank, get cited and convert",
+      "included": [
+        "Keyword research for \"vs\", \"alternatives\" and \"best\" searches",
+        "Hands-on tests of your product and every competitor",
+        "Verified pricing and feature tables",
+        "A verdict and a \"who each option is for\" section",
+        "Structure built for AI Overviews and ChatGPT",
+        "Pricing and data updates when they change"
+      ],
+      "faq": [
+        {
+          "question": "What is a SaaS comparison page?",
+          "answer": "A page that puts your product next to one or more competitors with clear criteria: features, pricing, limits and who each option is for. It answers searches like \"your product vs competitor\", \"competitor alternatives\" or \"best [category] tools\", made by people who are about to choose."
+        },
+        {
+          "question": "Is it a good idea to name competitors on my site?",
+          "answer": "Yes, if the comparison is honest. Someone searching \"X vs Y\" already knows your competitor; if you don't answer, another site will. A page that admits where the other tool wins earns more trust than one that only praises you."
+        },
+        {
+          "question": "How do you keep the comparison fair?",
+          "answer": "I test every tool with the same task, check pricing and limits on their sites on publication day and link to each source. If your product isn't the best pick for a use case, I say so and explain who it is for."
+        },
+        {
+          "question": "Do comparison pages help you show up in ChatGPT and AI Overviews?",
+          "answer": "They're one of the formats AI cites most. AI assistants look for explicit criteria, tables and conclusions they can summarise, so I structure every page with direct answers, clean tables and FAQs."
+        },
+        {
+          "question": "Are they published on my site or yours?",
+          "answer": "Vs and alternatives pages go on your site, so the traffic and the conversions are yours. \"Best tools\" listicles can go on your blog or on kevinmeneses.com, Medium and Dev.to, where I already have readers."
+        }
+      ]
     }
   },
   "companies": {

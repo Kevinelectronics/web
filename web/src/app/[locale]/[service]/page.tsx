@@ -31,6 +31,12 @@ import {
   demoVideo,
 } from "@/components/DemoVideoSections";
 import { PublishSystem, RadarSystem } from "@/components/AutomationSections";
+import {
+  ComparisonExamples,
+  ComparisonFormats,
+  ComparisonProcess,
+  comparisonExamples,
+} from "@/components/ComparisonSections";
 import { jsonLdHtml } from "@/lib/seo";
 
 type Params = Promise<{ locale: string; service: string }>;
@@ -132,6 +138,20 @@ export default async function ServicePage({ params }: { params: Params }) {
             },
           ]
         : []),
+      ...(id === "comparisons"
+        ? [
+            {
+              "@type": "ItemList",
+              name: t("examples.title"),
+              itemListElement: (t.raw("examples.items") as { title: string }[]).map((item, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name: item.title,
+                url: `${siteUrl}/${locale}/articles/${comparisonExamples[index].slug[locale as Locale]}`,
+              })),
+            },
+          ]
+        : []),
     ],
   };
 
@@ -145,8 +165,14 @@ export default async function ServicePage({ params }: { params: Params }) {
       {id === "youtube" && <Videos bare />}
       {id === "demo" && <DemoReelSection />}
       <CompanyLogos />
-      <ServiceProblem id={id} />
+      <ServiceProblem id={id}>{id === "comparisons" && <ComparisonProcess />}</ServiceProblem>
       {id === "demo" && <DemoUseCases />}
+      {id === "comparisons" && (
+        <>
+          <ComparisonFormats />
+          <ComparisonExamples />
+        </>
+      )}
       {id === "automation" && (
         <>
           <RadarSystem />
@@ -156,7 +182,9 @@ export default async function ServicePage({ params }: { params: Params }) {
       <FounderJourney id={id} />
       <ServiceIncluded id={id} />
       {id !== "automation" && <ServiceFeedback />}
-      {id !== "youtube" && id !== "demo" && id !== "automation" && <FeaturedArticles />}
+      {id !== "youtube" && id !== "demo" && id !== "automation" && id !== "comparisons" && (
+        <FeaturedArticles />
+      )}
       {id !== "automation" && <CaseStudyMain />}
       {id === "demo" ? (
         <DemoPackages />

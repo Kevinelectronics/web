@@ -5,7 +5,7 @@ import type { Locale } from "@/i18n/routing";
  * localized per language (it's the keyword the page targets). Copy lives in
  * messages/<locale>.json under `services.<id>`.
  */
-export const serviceIds = ["copywriting", "technical", "youtube", "linkedin", "demo", "automation"] as const;
+export const serviceIds = ["copywriting", "technical", "youtube", "linkedin", "demo", "automation", "comparisons"] as const;
 export type ServiceId = (typeof serviceIds)[number];
 
 export const serviceSlugs: Record<ServiceId, Record<Locale, string>> = {
@@ -15,6 +15,7 @@ export const serviceSlugs: Record<ServiceId, Record<Locale, string>> = {
   linkedin: { es: "contenido-linkedin-b2b", en: "linkedin-ghostwriter" },
   demo: { es: "video-demo-saas", en: "saas-product-demo-video" },
   automation: { es: "automatizacion-contenidos-ia", en: "ai-content-automation" },
+  comparisons: { es: "comparativas-saas", en: "saas-comparison-pages" },
 };
 
 /** Finds which service (and in which locale) a URL slug belongs to. */

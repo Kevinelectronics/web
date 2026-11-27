@@ -1067,6 +1067,253 @@
           "answer": "LinkedIn, Instagram, X, TikTok, YouTube, Facebook, Threads, Bluesky y más, según las cuentas que conectes."
         }
       ]
+    },
+    "comparisons": {
+      "name": "Comparativas SaaS",
+      "seoTitle": "Comparativas SaaS que posicionan y venden | Kevin Meneses",
+      "metaDescription": "Páginas comparativas para SaaS: «X vs Y», alternativas y listicles de mejores herramientas, con pruebas reales, que captan compradores en Google y en la IA.",
+      "eyebrow": "Páginas comparativas SaaS",
+      "h1": "Comparativas SaaS que captan al comprador justo cuando está decidiendo",
+      "intro": "Escribo páginas «tu producto vs competidor», páginas de alternativas y listicles de «mejores herramientas» para empresas SaaS y de APIs. Pruebo cada herramienta, comparo precios reales y cierro con un veredicto claro, para que la página posicione, la citen las IA y lleve al lector a probar tu producto.",
+      "stats": [
+        {
+          "value": "+25",
+          "label": "Comparativas publicadas"
+        },
+        {
+          "value": "+35k",
+          "label": "Lecturas mensuales"
+        },
+        {
+          "value": "+5.000",
+          "label": "Seguidores en Medium"
+        }
+      ],
+      "mock": {
+        "query": "tu-producto vs competidor",
+        "criteria": "Criterio",
+        "you": "Tú",
+        "them": "Competidor",
+        "rows": [
+          {
+            "label": "Plan gratuito sin tarjeta",
+            "you": true,
+            "them": false
+          },
+          {
+            "label": "Precio por 1.000 peticiones",
+            "you": true,
+            "them": false
+          },
+          {
+            "label": "SDK para Python y Node",
+            "you": true,
+            "them": true
+          },
+          {
+            "label": "Servidor MCP para agentes IA",
+            "you": true,
+            "them": false
+          }
+        ],
+        "verdict": "Veredicto: mejor opción para equipos pequeños",
+        "cta": "Probar gratis",
+        "rank": "Top 3 en Google para «vs»",
+        "cited": "Citado en ChatGPT"
+      },
+      "problemTitle": "Por qué tus competidores se llevan a los compradores que comparan",
+      "process": {
+        "eyebrow": "El proceso, en 10 segundos",
+        "title": "Así es como tu comparativa gana al comprador que está decidiendo",
+        "query": "tuapp vs rival",
+        "searchHint": "Ya tiene el problema y dos opciones",
+        "you": "tuapp.com/vs/rival",
+        "results": [
+          "rival.com/vs/tuapp",
+          "afiliados.com/top-10",
+          "reddit.com/r/saas"
+        ],
+        "rows": [
+          "Misma prueba",
+          "Precios de hoy",
+          "Para quién es"
+        ],
+        "verdict": "Veredicto: tú, para equipos pequeños",
+        "cta": "Probar gratis",
+        "toast": "Nuevo registro",
+        "steps": [
+          {
+            "title": "Busca",
+            "caption": "El comprador escribe «tu producto vs competidor» en Google o se lo pregunta a ChatGPT."
+          },
+          {
+            "title": "Encuentra tu página",
+            "caption": "Tu comparativa sale primero, en lugar de la de tu competidor o la de una web de afiliados."
+          },
+          {
+            "title": "Se fía de los datos",
+            "caption": "Pruebas reales, precios comprobados y un veredicto honesto que responde su duda."
+          },
+          {
+            "title": "Prueba tu producto",
+            "caption": "El CTA aparece justo donde decide, así que la visita termina en registro o demo."
+          }
+        ]
+      },
+      "problems": [
+        {
+          "title": "Otro escribe la comparativa por ti",
+          "description": "Si no tienes tu página «tú vs X», la que posiciona es la de tu competidor o la de una web de afiliados, y ellos deciden cómo te describen."
+        },
+        {
+          "title": "Tablas sin pruebas",
+          "description": "Copiar funcionalidades de las páginas de precios no convence a nadie. El comprador nota el sesgo, Google no la premia y las IA no la citan."
+        },
+        {
+          "title": "Tráfico que no llega a la demo",
+          "description": "Una comparativa sin veredicto ni «para quién es cada opción» informa, pero no convierte. El lector se va a probar la otra herramienta."
+        }
+      ],
+      "formats": {
+        "eyebrow": "Formatos",
+        "title": "Tres tipos de comparativa para cada momento de la compra",
+        "subtitle": "Son las búsquedas con más intención de compra del funnel: quien las hace ya tiene el problema y está eligiendo herramienta.",
+        "items": [
+          {
+            "title": "Páginas «X vs Y»",
+            "query": "tu-producto vs competidor",
+            "intent": "Le quedan dos opciones",
+            "description": "Una comparación cara a cara con tu principal competidor, honesta y con datos, que responde la duda final antes de la compra.",
+            "includes": [
+              "Tabla de funcionalidades y precios",
+              "Misma prueba ejecutada en ambos productos",
+              "Sección «quién debería elegir cada uno»"
+            ]
+          },
+          {
+            "title": "Páginas de alternativas",
+            "query": "alternativas a competidor",
+            "intent": "Quiere cambiar de herramienta",
+            "description": "Captan a usuarios descontentos con un competidor grande y les muestran por qué tu producto encaja mejor y cómo migrar.",
+            "includes": [
+              "Los motivos reales para cambiar",
+              "Comparativa de precio frente al líder",
+              "Guía de migración paso a paso"
+            ]
+          },
+          {
+            "title": "Listicles «mejores herramientas»",
+            "query": "mejores herramientas [categoría]",
+            "intent": "Está haciendo su lista corta",
+            "description": "Rankings de 5 a 8 herramientas probadas una a una, con tu producto bien posicionado y argumentado, en tu blog o en el mío.",
+            "includes": [
+              "Prueba práctica de cada herramienta",
+              "Tabla de precios comparada",
+              "Capturas y enlaces a cada web oficial"
+            ]
+          }
+        ],
+        "geoNote": "Bonus GEO: cuando alguien pregunta a ChatGPT, Perplexity o los AI Overviews de Google «¿qué herramienta uso para X?», las respuestas se apoyan en comparativas con criterios claros y tablas citables. Escribo cada página para que la IA pueda citarla."
+      },
+      "examples": {
+        "eyebrow": "Ejemplos reales",
+        "title": "Tres comparativas que ya he publicado, una por formato",
+        "subtitle": "Cada una está construida con pruebas propias, precios comprobados el día de publicación y un veredicto por caso de uso.",
+        "cta": "Leer la comparativa",
+        "items": [
+          {
+            "format": "Listicle · Mejores herramientas",
+            "title": "7 mejores herramientas de OCR con IA en 2026",
+            "description": "Google Cloud Vision, Mistral OCR, ABBYY, Mindee y tres más, ordenadas por el problema que resuelve cada una en lugar de por «cuál es la mejor».",
+            "highlights": [
+              "Decisión por caso de uso, no un ranking genérico",
+              "Qué pasa con tus documentos en cada servicio",
+              "Un cliente SaaS me encontró por este artículo"
+            ]
+          },
+          {
+            "format": "Página X vs Y",
+            "title": "EODHD vs Alpha Vantage: APIs bursátiles (2026)",
+            "description": "Un cara a cara entre dos APIs de datos financieros: límites reales del plan gratuito, tabla de funcionalidades y la misma consulta hecha con cada una.",
+            "highlights": [
+              "Tabla comparativa de funcionalidades",
+              "Mismo código ejecutado contra las dos APIs",
+              "Conclusiones y FAQs para la búsqueda «vs»"
+            ]
+          },
+          {
+            "format": "Página de alternativas",
+            "title": "Las 7 mejores alternativas a la API de OpenAI en 2026",
+            "description": "La misma tarea en JSON ejecutada en OpenAI, Groq y Gemini con un solo SDK, y siete proveedores comparados por precio por millón de tokens.",
+            "highlights": [
+              "Prueba propia: latencia, JSON válido y coste",
+              "Tabla de precios y planes gratuitos",
+              "La mejor opción según el caso de uso"
+            ]
+          }
+        ]
+      },
+      "founder": {
+        "title": "De no aparecer en las comparativas a ganar las búsquedas «vs»",
+        "subtitle": "Lo que me cuentan los equipos de marketing SaaS cuando un competidor se queda con las búsquedas de compra.",
+        "steps": [
+          {
+            "title": "Investigación",
+            "pain": "«No sé con quién nos comparan»",
+            "action": "Saco de Google y de las respuestas de IA qué comparativas busca tu mercado y quién las gana hoy.",
+            "result": "Una lista priorizada de páginas «vs» y de alternativas."
+          },
+          {
+            "title": "Pruebas",
+            "pain": "«Nuestras comparativas parecen publicidad»",
+            "action": "Pruebo tu producto y el de la competencia con la misma tarea y compruebo los precios el día de publicación.",
+            "result": "Datos propios que el lector se cree."
+          },
+          {
+            "title": "Redacción",
+            "pain": "«Nos leen, pero no prueban el producto»",
+            "action": "Escribo con un veredicto claro, una sección «para quién es cada opción» y CTAs donde se toma la decisión.",
+            "result": "Páginas que llevan a la prueba o a la demo."
+          },
+          {
+            "title": "Distribución",
+            "pain": "«Publicamos y no posiciona»",
+            "action": "La publico en tu web y la llevo a Medium, Dev.to y LinkedIn, donde ya tengo audiencia, con UTM en cada enlace.",
+            "result": "Visitas desde el primer día y medición por página."
+          }
+        ]
+      },
+      "includedTitle": "Comparativas que posicionan, se citan y convierten",
+      "included": [
+        "Investigación de keywords «vs», «alternativas» y «mejores»",
+        "Pruebas prácticas de tu producto y de cada competidor",
+        "Tablas de precios y funcionalidades verificadas",
+        "Veredicto y sección «para quién es cada opción»",
+        "Estructura pensada para AI Overviews y ChatGPT",
+        "Actualización de precios y datos cuando cambian"
+      ],
+      "faq": [
+        {
+          "question": "¿Qué es una página comparativa para un SaaS?",
+          "answer": "Una página que pone tu producto frente a uno o varios competidores con criterios claros: funcionalidades, precio, límites y para quién es cada opción. Responde búsquedas como «tu producto vs competidor», «alternativas a competidor» o «mejores herramientas de [categoría]», que hace gente que ya está a punto de elegir."
+        },
+        {
+          "question": "¿Es buena idea nombrar a la competencia en mi web?",
+          "answer": "Sí, si la comparativa es honesta. Quien busca «X vs Y» ya conoce a tu competidor; si no le respondes tú, le responde otra web. Una página que reconoce dónde gana el otro genera más confianza que una que solo habla bien de ti."
+        },
+        {
+          "question": "¿Cómo te aseguras de que la comparativa sea justa?",
+          "answer": "Pruebo cada herramienta con la misma tarea, compruebo precios y límites en sus webs el día de publicación y enlazo a cada fuente. Si tu producto no es la mejor opción para un caso, lo digo y explico para quién sí lo es."
+        },
+        {
+          "question": "¿Ayudan las comparativas a aparecer en ChatGPT y en los AI Overviews?",
+          "answer": "Es uno de los formatos que más citan. Las IA buscan criterios explícitos, tablas y conclusiones que puedan resumir, así que estructuro cada página con respuestas directas, tablas limpias y FAQs."
+        },
+        {
+          "question": "¿Se publican en mi web o en la tuya?",
+          "answer": "Las páginas «vs» y de alternativas van en tu web, para que el tráfico y la conversión sean tuyos. Los listicles de «mejores herramientas» pueden ir en tu blog o en kevinmeneses.com, Medium y Dev.to, donde ya tengo lectores."
+        }
+      ]
     }
   },
   "companies": {

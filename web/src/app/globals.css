@@ -225,6 +225,80 @@ body {
   .dv-export { animation: orbit-float 6s ease-in-out infinite; }
 }
 
+/* ---------- SaaS comparison pages hero ---------- */
+
+@keyframes cp-row {
+  0%, 4% { opacity: 0; transform: translateX(-10px); }
+  10%, 88% { opacity: 1; transform: translateX(0); }
+  94%, 100% { opacity: 0; transform: translateX(-10px); }
+}
+
+/* Process strip: four stages lit in turn on one 12s loop (3s each). */
+@keyframes cp-stage {
+  0% { border-color: var(--line); transform: translateY(0); box-shadow: none; }
+  3%, 22% {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 24px 50px -28px rgba(15, 26, 51, 0.55);
+  }
+  25%, 100% { border-color: var(--line); transform: translateY(0); box-shadow: none; }
+}
+@keyframes cp-type {
+  0% { clip-path: inset(0 100% 0 0); animation-timing-function: steps(22); }
+  16%, 96% { clip-path: inset(0 0 0 0); }
+  100% { clip-path: inset(0 100% 0 0); }
+}
+@keyframes cp-caret { 50% { opacity: 0; } }
+@keyframes cp-win {
+  0%, 25% { opacity: 0; transform: translateY(-8px) scale(0.96); }
+  31%, 95% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-8px) scale(0.96); }
+}
+@keyframes cp-lose {
+  0%, 25% { opacity: 1; }
+  31%, 95% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+@keyframes cp-tick {
+  0% { opacity: 0; transform: scale(0); }
+  4%, 70% { opacity: 1; transform: scale(1); }
+  76%, 100% { opacity: 0; transform: scale(0); }
+}
+@keyframes cp-verdict {
+  0%, 60% { opacity: 0; transform: translateY(6px); }
+  65%, 95% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(6px); }
+}
+@keyframes cp-button {
+  0%, 80% { transform: scale(1); }
+  83% { transform: scale(0.9); }
+  87%, 100% { transform: scale(1); }
+}
+@keyframes cp-toast {
+  0%, 84% { opacity: 0; transform: translateY(8px); }
+  88%, 97% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(8px); }
+}
+@keyframes cp-arrow {
+  0%, 100% { background: var(--paper); color: var(--accent); scale: 1; }
+  4% { background: var(--accent); color: #fff; scale: 1.2; }
+  10% { background: var(--paper); color: var(--accent); scale: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cp-row { animation: cp-row 8s ease-out infinite; }
+  .cp-stage { animation: cp-stage 12s ease-in-out infinite both; }
+  .cp-type { animation: cp-type 12s infinite; }
+  .cp-caret { animation: cp-caret 1s steps(1) infinite; }
+  .cp-win { animation: cp-win 12s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+  .cp-lose { animation: cp-lose 12s ease-out infinite; }
+  .cp-tick { animation: cp-tick 12s cubic-bezier(0.34, 1.56, 0.64, 1) infinite backwards; }
+  .cp-verdict { animation: cp-verdict 12s ease-out infinite; }
+  .cp-button { animation: cp-button 12s ease-in-out infinite; }
+  .cp-toast { animation: cp-toast 12s ease-out infinite; }
+  .cp-arrow { animation: cp-arrow 12s ease-out infinite backwards; }
+}
+
 /* ---------- AI content automation hero + systems ---------- */
 
 @keyframes au-dash { to { stroke-dashoffset: -20; } }

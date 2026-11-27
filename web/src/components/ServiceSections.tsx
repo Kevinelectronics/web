@@ -8,6 +8,7 @@ import {
   HiOutlineCpuChip,
   HiOutlineFilm,
   HiOutlinePencilSquare,
+  HiOutlineScale,
 } from "react-icons/hi2";
 import { FaLinkedin, FaYoutube } from "react-icons/fa";
 import type { IconType } from "react-icons";
@@ -17,6 +18,7 @@ import { serviceIds, servicePath, type ServiceId } from "@/content/services";
 import Container from "./Container";
 import { DemoAnimation, LinkedInAnimation, YouTubeAnimation } from "./ServiceAnimations";
 import { AutomationAnimation } from "./AutomationSections";
+import { ComparisonAnimation } from "./ComparisonSections";
 
 type Stat = { value: string; label: string };
 type Problem = { title: string; description: string };
@@ -28,6 +30,7 @@ export const serviceIcons: Record<ServiceId, IconType> = {
   linkedin: FaLinkedin,
   demo: HiOutlineFilm,
   automation: HiOutlineCpuChip,
+  comparisons: HiOutlineScale,
 };
 
 /** Brand colour for the channel services; the rest use the site accent. */
@@ -38,6 +41,7 @@ export const serviceIconColors: Record<ServiceId, string> = {
   linkedin: "text-[#0a66c2] dark:text-[#5aa9f5]",
   demo: "text-accent",
   automation: "text-accent",
+  comparisons: "text-accent",
 };
 
 const heroVisuals: Partial<Record<ServiceId, () => ReactNode>> = {
@@ -45,6 +49,7 @@ const heroVisuals: Partial<Record<ServiceId, () => ReactNode>> = {
   youtube: () => <YouTubeAnimation />,
   demo: () => <DemoAnimation />,
   automation: () => <AutomationAnimation />,
+  comparisons: () => <ComparisonAnimation />,
 };
 
 export function ServiceHero({ id }: { id: ServiceId }) {
@@ -133,7 +138,7 @@ export function ServiceHero({ id }: { id: ServiceId }) {
   );
 }
 
-export function ServiceProblem({ id }: { id: ServiceId }) {
+export function ServiceProblem({ id, children }: { id: ServiceId; children?: ReactNode }) {
   const t = useTranslations(`services.${id}`);
   const common = useTranslations("services.common");
   const problems = t.raw("problems") as Problem[];
@@ -160,6 +165,7 @@ export function ServiceProblem({ id }: { id: ServiceId }) {
             </div>
           ))}
         </div>
+        {children}
       </Container>
     </section>
   );
